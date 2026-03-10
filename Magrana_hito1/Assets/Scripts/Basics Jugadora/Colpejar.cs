@@ -3,25 +3,29 @@ using UnityEngine.InputSystem;
 
 public class Colpejar : MonoBehaviour
 {
-    // El mínim necessari
     public InputActionReference atac;
     public Animator animador;
-    public GameObject colliderAtac;
+    public GameObject objecteAmbCollider;  // 👈 Ara és GameObject
     public GameObject objecteColor;
 
+    private Collider colliderAtac;          // 👈 El guardem aquí dins
     private Renderer renderObjectiu;
     private Color colorOriginal;
 
     void Start()
     {
-        // Guardem color original
+        // Agafem el collider de l'objecte
+        if (objecteAmbCollider != null)
+        {
+            colliderAtac = objecteAmbCollider.GetComponent<Collider>();
+            colliderAtac.enabled = false; // Desactivat al començar
+        }
+        
         if (objecteColor != null)
         {
             renderObjectiu = objecteColor.GetComponent<Renderer>();
             colorOriginal = renderObjectiu.material.color;
         }
-        
-        colliderAtac.SetActive(false); // Desactivat al començar
     }
 
     void OnEnable()
@@ -37,31 +41,26 @@ public class Colpejar : MonoBehaviour
 
     void PremF(InputAction.CallbackContext context)
     {
-        // 1. Animació
-        if (animador != null) animador.SetTrigger("Atacar");
+        if (animador != null) animador.SetTrigger("attack_jug1");
         
-        // 2. Activar collider
-        colliderAtac.SetActive(true);
-        
-        // 3. Desactivar collider després
-        Invoke(nameof(DesactivarAtac), 0.3f);
+        if (colliderAtac != null)
+        {
+            colliderAtac.enabled = true;           // 👈 Activar collider
+            Invoke(nameof(DesactivarAtac), 0.3f);
+        }
     }
 
     void DesactivarAtac()
     {
-        colliderAtac.SetActive(false);
+        if (colliderAtac != null)
+            colliderAtac.enabled = false;          // 👈 Desactivar collider
     }
 
-    // Quan el collider toca alguna cosa
     void OnTriggerEnter(Collider other)
     {
-        // Si el que toca és el nostre objecte
         if (other.gameObject == objecteColor)
         {
-            // Canviar color
-            renderObjectiu.material.color = Color.green;
-            
-            // Tornar al color original després
+            renderObjectiu.material.color = Color.red;
             Invoke(nameof(RestaurarColor), 0.2f);
         }
     }
