@@ -1,7 +1,9 @@
+using System.Numerics;
 using UnityEngine;
 
 public class Moviment_jugadora_1 : MonoBehaviour
 {
+    private Rigidbody rb;
     public float velocitat = 5f;
 
     void Update()
