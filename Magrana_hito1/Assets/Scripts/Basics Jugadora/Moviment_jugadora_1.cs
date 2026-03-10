@@ -1,18 +1,39 @@
-using System.Numerics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Moviment_jugadora_1 : MonoBehaviour
 {
     private Rigidbody rb;
     public float velocitat = 5f;
+    
+    public InputActionReference move;
+    public InputActionReference attack;
+    
+    // Variable per guardar la direcció
+    private Vector2 moveDirection;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
-        float movimentHorizontal = Input.GetAxis("Horizontal");
-        float movimentVertical = Input.GetAxis("Vertical");
+        // Llegim el valor de l'acció
+        if (move != null)
+        {
+            moveDirection = move.action.ReadValue<Vector2>();
+        }
+    }
 
-        Vector3 moviment = new Vector3(movimentHorizontal, 0, movimentVertical) * velocitat * Time.deltaTime;
+    private void FixedUpdate()
+    {
+        // CORRECCIÓ: Utilitzem moveDirection (Vector2) correctament
+        Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
         
-        transform.Translate(moviment);
+        // Mantenim la velocitat vertical actual (per gravetat)
+        moviment.y = rb.linearVelocity.y;
+        
+        rb.linearVelocity = moviment;
     }
 }
