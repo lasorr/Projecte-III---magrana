@@ -259,6 +259,7 @@ Transform:
   - {fileID: 1943533107}
   - {fileID: 1993561194}
   - {fileID: 1652816056}
+  - {fileID: 1908583703}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522494105
@@ -415,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930704117}
   - component: {fileID: 930704118}
+  - component: {fileID: 930704119}
   m_Layer: 0
   m_Name: Jugadora 1
   m_TagString: Untagged
@@ -452,6 +454,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocitat: 5
+--- !u!114 &930704119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930704116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
+  m_NotificationBehavior: 0
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Moviment_1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +914,7 @@ GameObject:
   - component: {fileID: 1908583701}
   - component: {fileID: 1908583700}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Obj_especial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,12 +1002,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908583699}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3195, y: 1.14, z: 0.97336745}
   m_LocalScale: {x: 0.43431, y: 0.43431, z: 0.43431}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 517021524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1943533106
 GameObject:
@@ -1341,4 +1372,3 @@ SceneRoots:
   - {fileID: 517021524}
   - {fileID: 930704117}
   - {fileID: 522494106}
-  - {fileID: 1908583703}
