@@ -5,7 +5,7 @@ public class Moviment_jugadora_1 : MonoBehaviour
 {
     private Rigidbody rb;
     public float velocitat = 5f;
-    public float velocitatGir = 100f;
+    
     
     public InputActionReference move;
     public InputActionReference attack;
@@ -29,21 +29,14 @@ public class Moviment_jugadora_1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // 1. GIRAR amb A/D (moveDirection.x)
-        float gir = moveDirection.x * velocitatGir * Time.fixedDeltaTime;
-        rb.rotation *= Quaternion.Euler(0, gir, 0);
+        // CORRECCIÓ: Utilitzem moveDirection (Vector2) correctament
+        Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
         
-        // 2. MOVIMENT endavant/endarrere amb W/S (moveDirection.y)
-        float movimentEndavant = moveDirection.y * velocitat * Time.fixedDeltaTime;
+        // Mantenim la velocitat vertical actual (per gravetat)
+        moviment.y = rb.linearVelocity.y;
         
-        // Moure en la direcció on està mirant el personatge (transform.forward)
-        Vector3 desplacament = transform.forward * movimentEndavant;
-        
-        // Aplicar moviment mantenint la gravetat
-        Vector3 novaVelocitat = new Vector3(desplacament.x, rb.linearVelocity.y, desplacament.z);
-        rb.linearVelocity = novaVelocitat;
+        rb.linearVelocity = moviment;
     }
-
 
     private void Attack (InputAction.CallbackContext obj)
     {
