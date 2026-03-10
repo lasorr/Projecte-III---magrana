@@ -172,8 +172,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 8.30629, y: 1, z: 7.579109}
+  m_Center: {x: -0.85238254, y: -0.0000000032728953, z: 0.33307585}
 --- !u!23 &224605421
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -669,7 +669,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: f987053755b63f34a95436b2c8aa8991, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -779,6 +780,7 @@ GameObject:
   - component: {fileID: 980058471}
   - component: {fileID: 980058470}
   - component: {fileID: 980058469}
+  - component: {fileID: 980058472}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -795,7 +797,7 @@ Transform:
   m_GameObject: {fileID: 980058467}
   serializedVersion: 2
   m_LocalRotation: {x: -0.063276075, y: -0, z: -0, w: 0.9979961}
-  m_LocalPosition: {x: 4.130875, y: 1.5788132, z: -2.9915643}
+  m_LocalPosition: {x: 4.130875, y: 1.578813, z: -2.9915643}
   m_LocalScale: {x: 0.18204513, y: 1, z: 0.14666001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -820,8 +822,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10.013042, y: 1, z: 8.417689}
+  m_Center: {x: -1.2206964, y: -0.000000007852552, z: 0.8412998}
 --- !u!23 &980058470
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -875,6 +877,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980058467}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &980058472
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980058467}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bb00286274e089428275edffaaeaf1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1652816055
 GameObject:
   m_ObjectHideFlags: 0
