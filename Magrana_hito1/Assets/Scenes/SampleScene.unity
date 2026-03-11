@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 522494107}
   - component: {fileID: 522494108}
   - component: {fileID: 522494109}
+  - component: {fileID: 522494110}
   m_Layer: 0
   m_Name: Jugadora 2
   m_TagString: Player
@@ -495,6 +496,22 @@ MonoBehaviour:
   weaponMesh: {fileID: 980058467}
   attackCooldown: 0.5
   weaponActiveTime: 0.3
+--- !u!114 &522494110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522494105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02bd5616b932d941b3650a09302865e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Jugadora: {fileID: 980058469}
+  ObjecteEspecial: {fileID: 1908583700}
+  Edifici: {fileID: 1943533106}
+  colorVerd: {fileID: 2100000, guid: 385db43edef5eef4e96de1d93a20ef49, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
