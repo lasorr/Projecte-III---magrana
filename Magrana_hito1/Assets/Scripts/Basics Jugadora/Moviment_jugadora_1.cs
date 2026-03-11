@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class Moviment_jugadora_1 : MonoBehaviour
 {
@@ -9,13 +10,25 @@ public class Moviment_jugadora_1 : MonoBehaviour
     
     public InputActionReference move;
     public InputActionReference attack;
+
+    public Animator animator; // Arrastra aquí el Animator
+    public GameObject weaponMesh; // Arrastra aquí el mesh del arma
     
-    // Variable per guardar la direcció
     private Vector2 moveDirection;
+    private bool isAttacking = false;
+    private float nextAttackTime = 0f;
+    public float attackCooldown = 0.5f;
+    public float weaponActiveTime = 0.3f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+                if (attack != null)
+            attack.action.performed += Attack;
+            
+        if (weaponMesh != null)
+            weaponMesh.SetActive(false);
     }
 
     void Update()
@@ -38,12 +51,26 @@ public class Moviment_jugadora_1 : MonoBehaviour
         rb.linearVelocity = moviment;
     }
 
-    private void Attack (InputAction.CallbackContext obj)
+    private void Attack(InputAction.CallbackContext obj)
     {
-        Debug.Log("Atacando");
-        //llamar a la animacion atacar
-        //on off el mesh de l'arma?? per quan colisioni amb el objecte
-        //no sigui per estar al costat sino per haver atacat?
+        if (Time.time < nextAttackTime) return;
         
+        Debug.Log("Atacando");
+        nextAttackTime = Time.time + attackCooldown;
+        
+        if (animator != null)
+            animator.SetTrigger("Attack");
+        
+        if (weaponMesh != null)
+            StartCoroutine(ActivateWeapon());
+    }
+    
+    private IEnumerator ActivateWeapon()
+    {
+        isAttacking = true;
+        weaponMesh.SetActive(true);
+        yield return new WaitForSeconds(weaponActiveTime);
+        weaponMesh.SetActive(false);
+        isAttacking = false;
     }
 }

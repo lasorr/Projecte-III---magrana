@@ -169,7 +169,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -669,6 +669,10 @@ MonoBehaviour:
   velocitat: 5
   move: {fileID: 698821300252711660, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
   attack: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
+  animator: {fileID: 224605423}
+  weaponMesh: {fileID: 224605418}
+  attackCooldown: 0.5
+  weaponActiveTime: 0.3
 --- !u!54 &930704121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -705,7 +709,7 @@ Animation:
   m_GameObject: {fileID: 930704116}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: f987053755b63f34a95436b2c8aa8991, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: f987053755b63f34a95436b2c8aa8991, type: 2}
   m_WrapMode: 0
