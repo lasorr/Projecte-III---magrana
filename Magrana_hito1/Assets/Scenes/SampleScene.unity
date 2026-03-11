@@ -601,7 +601,6 @@ GameObject:
   - component: {fileID: 930704120}
   - component: {fileID: 930704121}
   - component: {fileID: 930704122}
-  - component: {fileID: 930704123}
   m_Layer: 0
   m_Name: Jugadora 1
   m_TagString: Player
@@ -714,22 +713,6 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
---- !u!114 &930704123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930704116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02bd5616b932d941b3650a09302865e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atac: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  animador: {fileID: 224605423}
-  objecteAmbCollider: {fileID: 224605418}
-  objecteColor: {fileID: 1943533106}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
