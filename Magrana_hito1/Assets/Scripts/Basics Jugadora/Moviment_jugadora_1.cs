@@ -24,7 +24,7 @@ public class Moviment_jugadora_1 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-                if (attack != null)
+        if (attack != null)
             attack.action.performed += Attack;
             
         if (weaponMesh != null)
