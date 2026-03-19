@@ -5,7 +5,7 @@ Aquest projecte és el resultat d'una feina a classe. Aquest videojoc consta d'u
 ## 📁 Estructura del projecte
 
 Dins del projecte a **Unity**, les carpetes estan separades en:
-`Assets` 
+- **Assets/** 
 - **`Scripts/`** - Conté tots els codis font del joc.
 - **`Scenes/`** - Aquí es troben les diferents escenes del joc (menú principal, nivells, etc.).
 - **`Prefabs/`** - Objectes reutilitzables del joc.
