@@ -13,4 +13,4 @@ Dins del projecte a **Unity**, les carpetes estan separades en:
 - **`Audio/`** - Sons, música i efectes d'àudio.
 - **`Animations/`** - Controladors i clips d'animació.
 
-...
+(seguir l'explicacio abans d'entregar)
