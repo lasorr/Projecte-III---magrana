@@ -194,7 +194,7 @@
                     "name": "Navigate",
                     "type": "PassThrough",
                     "id": "1dccae18-e686-4709-9356-105a679143a9",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -221,6 +221,42 @@
                     "name": "Point",
                     "type": "PassThrough",
                     "id": "12d99521-42c8-4dc5-b17f-e79d5b70ef02",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "4f33b4c9-e6eb-4846-8f8e-7b6190fd575c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightClick",
+                    "type": "PassThrough",
+                    "id": "afae4567-9bab-4714-8908-ea3a565bbaa0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MiddleClick",
+                    "type": "PassThrough",
+                    "id": "61de4d8f-1dd6-4649-ade4-07746f8ab3ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ScrollWheel",
+                    "type": "PassThrough",
+                    "id": "c8157ee5-d942-4d0f-a96b-d1a701278437",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -417,50 +453,6 @@
                 },
                 {
                     "name": "",
-                    "id": "93ef8cdc-ad14-437a-a67e-c9662e48dc59",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dd2d8cd7-5c46-4f3f-afa5-73773c7f6c16",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "99b22116-3cbb-4adb-a722-10259d249a74",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d9ddc953-99be-43d1-9146-0b2c236ca395",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0cc641ef-5c73-4b54-95b3-405bcb0ad838",
                     "path": "<Mouse>/position",
                     "interactions": "",
@@ -482,59 +474,48 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "47316f13-fabf-4d41-8697-431b9688c254",
-                    "path": "2DVector(mode=1)",
+                    "name": "",
+                    "id": "62069c73-e22d-43d9-a74e-a16b399577b3",
+                    "path": "Mouse/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
-                    "isComposite": true,
+                    "action": "Click",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "732f3adf-9365-4d52-a195-a42b2b716592",
-                    "path": "",
+                    "name": "",
+                    "id": "01b1b3f4-105b-4b60-9821-d40e22abf488",
+                    "path": "Mouse/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "RightClick",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "down",
-                    "id": "b4345e98-7696-4967-9a70-59eb410d06a4",
-                    "path": "",
+                    "name": "",
+                    "id": "ab8031e2-ab25-4cd9-b06c-fb13307c3fbd",
+                    "path": "Mouse/middleButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "MiddleClick",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "left",
-                    "id": "d7bb775e-efc3-4359-a4ea-41134439323b",
-                    "path": "",
+                    "name": "",
+                    "id": "3b59dc67-a0c4-4b0d-820a-30e748ab6b0c",
+                    "path": "Mouse/scroll/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "ScrollWheel",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "549e17e3-764d-40b0-a06b-ef91232f604e",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }
