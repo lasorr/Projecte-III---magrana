@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class CamaraControl : MonoBehaviour
 {
-    public Transform objetivo;
-    public float velocidadCam = 0.025f;
-    public Vector3 desplazamiento;
+    public Transform jugadora;
+    public Vector3 offset; //la distancia entre la jugadora i la camera
+    public float velocidadCam = 0.5f;
+    //public Vector3 desplazamiento;
 
     private void LateUpdate()
-    {
-        Vector3 posicionDeseada = objetivo.position + desplazamiento;
+    { 
+        transform.position = jugadora.position + offset;
+
+        /*Vector3 posicionDeseada = objetivo.position + desplazamiento;
         Vector3 posicionSuavizada = Vector3.Lerp(transform.position, posicionDeseada, velocidadCam);
-        transform.position = posicionSuavizada;
+        transform.position = posicionSuavizada;*/
     }
 }
