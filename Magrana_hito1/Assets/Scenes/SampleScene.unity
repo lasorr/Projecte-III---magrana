@@ -525,8 +525,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 522494106}
-  - component: {fileID: 522494109}
   - component: {fileID: 522494108}
+  - component: {fileID: 522494112}
   - component: {fileID: 522494110}
   - component: {fileID: 522494111}
   m_Layer: 0
@@ -583,25 +583,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &522494109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522494105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3932eac21a33947ace083d0af5002b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocitat: 10
-  move2: {fileID: -6070361135746245362, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  attack2: {fileID: 6538341273052018607, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  animator: {fileID: 0}
-  weaponMesh: {fileID: 0}
-  attackCooldown: 0.5
-  weaponActiveTime: 0.3
 --- !u!114 &522494110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,6 +612,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f24a51873648648b36878a475840cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &522494112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522494105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c78d612ed09b76499b50bdd33315b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocitat: 10
+  move: {fileID: -6070361135746245362, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
 --- !u!1 &563647733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,8 +1036,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 930704117}
-  - component: {fileID: 930704120}
   - component: {fileID: 930704121}
+  - component: {fileID: 930704120}
   - component: {fileID: 930704123}
   - component: {fileID: 930704124}
   m_Layer: 0
@@ -1086,11 +1081,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocitat: 10
   move: {fileID: 698821300252711660, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  attack: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  animator: {fileID: 0}
-  weaponMesh: {fileID: 0}
-  attackCooldown: 0.5
-  weaponActiveTime: 0.3
 --- !u!54 &930704121
 Rigidbody:
   m_ObjectHideFlags: 0
