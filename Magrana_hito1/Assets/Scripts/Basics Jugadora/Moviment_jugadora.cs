@@ -7,7 +7,7 @@ public class Moviment_jugadora : MonoBehaviour
     public float velocitat = 5f;
     public InputActionReference move;
     
-    [SerializeField] private Transform modelTransform; // arrossega el Model
+    [SerializeField] private Transform modelTransform; // arrossega el empty object que contengui els objectes player
     [SerializeField] private float rotationSpeed = 8f; // velocitat de gir
     
     private Vector2 moveDirection;
