@@ -31,17 +31,21 @@ public class Colpejar : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision)
+{
+    Debug.Log("HA ENTRAT AL COLISION");
+    if (collision.gameObject.CompareTag("Monja"))
     {
-        Debug.Log("HA ENTRAT AL COLISION");
-        if (collision.gameObject.CompareTag("Monja"))
-        {
-            Destroy(collision.gameObject);
-            Instantiate(Dragg, collision.transform.position, Quaternion.identity);
-        }
-        else if (collision.gameObject.CompareTag("Cafeteria"))
-        {
-            Destroy(collision.gameObject);
-            Instantiate(Verduleria, collision.transform.position, Quaternion.identity);
-        }
+        Vector3 pos = collision.transform.position; //guarda la posicio
+        Quaternion rot = collision.transform.rotation;  // Guardem la rotació original
+        Destroy(collision.gameObject);
+        Instantiate(Dragg, pos, rot);
     }
+    else if (collision.gameObject.CompareTag("Cafeteria"))
+    {
+        Vector3 pos = collision.transform.position;
+        Quaternion rot = collision.transform.rotation;
+        Destroy(collision.gameObject);
+        Instantiate(Verduleria, pos, rot);
+    }
+}
 }
