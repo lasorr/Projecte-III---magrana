@@ -6,8 +6,9 @@ public class Colpejar : MonoBehaviour
     public BoxCollider Arma;
     public InputActionReference cop;
     public Animator animator;
+    public GameObject EdificiCapitalista;
     public GameObject Dragg;
-    public GameObject Verduleria;
+    public GameObject EdificiBo;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class Colpejar : MonoBehaviour
         Destroy(collision.gameObject);
         Instantiate(Dragg, pos, rot);
     }
-    else if (collision.gameObject.CompareTag("Cafeteria"))
+    else if (collision.gameObject.CompareTag("Especial"))
     {
         Vector3 pos = collision.transform.position;
         Quaternion rot = collision.transform.rotation;
