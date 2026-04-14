@@ -5,46 +5,44 @@ public class Colpejar : MonoBehaviour
 {
     public BoxCollider Arma;
     public InputActionReference cop;
-    public Animator animator; 
-
-    public prefab Dragg;
-    public prefab Verduleria; 
-
+    public Animator animator;
+    public GameObject Dragg;
+    public GameObject Verduleria;
 
     void Start()
     {
-        Arma = GetComponent<BoxCollider>();
+        Arma.enabled = false;
     }
 
-    public void FixedUpdate()
+    void Update()
     {
-        //quan desde el input action detecta que selecciona la tecla amb el nom attack
-        //activa la animacio amb nom colpejar que es un parametre bool llavors, l'activa - es desactiva 
-        //quan esta activat crida a la void control_collider
-    }
-
-    public void control_collider( /*cal posar parametre¿¿*/ )
-    {
-        //BoxCollider - Arma s'activa 
-        //s'espera 1,30 segon que tarda l'animacio
-        //desactiva el BoxCollider
-    }
-    public void OnCollision (Collider other)
-    {
-        if (other tag == Monja)
+        if (cop.action.WasPressedThisFrame())
         {
-            transform = other.position.transfrom;
-            destroy.other;
-
-            // agafar transform del other
-            //destroy other 
-            //institate object name prefab DragQueen
+            animator.SetBool("Colpejar", true);
+            Arma.enabled = true;
+            Invoke("DesactivarArma", 1.0f); // 1 segon (ajusta si l'animació és més llarga)
         }
-        else if (other tag == Cafeteria)
+    }
+
+    void DesactivarArma()
+    {
+        Arma.enabled = false;
+        animator.SetBool("Colpejar", false);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!Arma.enabled) return; // només fa mal si l'arma està activa
+
+        if (collision.gameObject.CompareTag("Monja"))
         {
-            // agafar transform del other
-            //destroy other 
-            //institate object name prefab Fruiteria
+            Destroy(collision.gameObject);
+            Instantiate(Dragg, collision.transform.position, Quaternion.identity);
+        }
+        else if (collision.gameObject.CompareTag("Cafeteria"))
+        {
+            Destroy(collision.gameObject);
+            Instantiate(Verduleria, collision.transform.position, Quaternion.identity);
         }
     }
 }
