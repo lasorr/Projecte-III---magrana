@@ -3,44 +3,48 @@ using UnityEngine.InputSystem;
 
 public class Colpejar : MonoBehaviour
 {
-    public BoxCollider Jugadora;
-    public BoxCollider ObjecteEspecial;
-    public GameObject Edifici;
-    public GameObject Monja;
-    public Material colorVerd;
-    
-        private Renderer rendererEdifici;
-    private Renderer rendererMonja;
+    public BoxCollider Arma;
+    public InputActionReference cop;
+    public Animator animator; 
+
+    public prefab Dragg;
+    public prefab Verduleria; 
+
 
     void Start()
     {
-        if (Edifici != null)
-            rendererEdifici = Edifici.GetComponent<Renderer>();
-            
-        if (Monja != null)
-            rendererMonja = Monja.GetComponent<Renderer>();
+        Arma = GetComponent<BoxCollider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void FixedUpdate()
     {
-        // Si colisiona con ObjecteEspecial, cambiar color del Edifici
-        if (ObjecteEspecial != null && other == ObjecteEspecial)
-        {
-            Debug.Log("¡Golpeado ObjecteEspecial!");
-            if (rendererEdifici != null && colorVerd != null)
-                rendererEdifici.material = colorVerd;
-        }
+        //quan desde el input action detecta que selecciona la tecla amb el nom attack
+        //activa la animacio amb nom colpejar que es un parametre bool llavors, l'activa - es desactiva 
+        //quan esta activat crida a la void control_collider
+    }
 
-        // Si colisiona con Monja, cambiar color de la Monja
-        if (Monja != null)
+    public void control_collider( /*cal posar parametre¿¿*/ )
+    {
+        //BoxCollider - Arma s'activa 
+        //s'espera 1,30 segon que tarda l'animacio
+        //desactiva el BoxCollider
+    }
+    public void OnCollision (Collider other)
+    {
+        if (other tag == Monja)
         {
-            Collider colliderMonja = Monja.GetComponent<Collider>();
-            if (other == colliderMonja)
-            {
-                Debug.Log("¡Yassificada!");
-                if (rendererMonja != null && colorVerd != null)
-                    rendererMonja.material = colorVerd;
-            }
+            transform = other.position.transfrom;
+            destroy.other;
+
+            // agafar transform del other
+            //destroy other 
+            //institate object name prefab DragQueen
+        }
+        else if (other tag == Cafeteria)
+        {
+            // agafar transform del other
+            //destroy other 
+            //institate object name prefab Fruiteria
         }
     }
 }
