@@ -47,4 +47,5 @@ public class Moviment_jugadora : MonoBehaviour
             modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, desti, rotationSpeed * Time.fixedDeltaTime);
         }
     }
+    
 }

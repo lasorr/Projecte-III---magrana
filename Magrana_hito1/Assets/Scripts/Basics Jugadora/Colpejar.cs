@@ -32,8 +32,7 @@ public class Colpejar : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (!Arma.enabled) return; // només fa mal si l'arma està activa
-
+        Debug.Log("HA ENTRAT AL COLISION");
         if (collision.gameObject.CompareTag("Monja"))
         {
             Destroy(collision.gameObject);
