@@ -43,10 +43,11 @@ public class Colpejar : MonoBehaviour
     }
     else if (collision.gameObject.CompareTag("Especial"))
     {
-        Vector3 pos = collision.transform.position;
-        Quaternion rot = collision.transform.rotation;
+        Vector3 pos = EdificiCapitalista.transform.position;
+        Quaternion rot = EdificiCapitalista.transform.rotation;
+        Destroy(EdificiCapitalista);
         Destroy(collision.gameObject);
-        Instantiate(Verduleria, pos, rot);
+        Instantiate(EdificiBo, pos, rot);
     }
 }
 }
