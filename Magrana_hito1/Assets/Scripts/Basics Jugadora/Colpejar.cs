@@ -9,6 +9,10 @@ public class Colpejar : MonoBehaviour
     public GameObject EdificiCapitalista;
     public GameObject Dragg;
     public GameObject EdificiBo;
+    //private int contador = 0; 
+    //private bool superstar = false; 
+    //public GameObject Star;
+    //public GameObject Jugadora;
 
     void Start()
     {
@@ -34,20 +38,25 @@ public class Colpejar : MonoBehaviour
     void OnCollisionEnter(Collision collision)
 {
     Debug.Log("HA ENTRAT AL COLISION");
-    if (collision.gameObject.CompareTag("Monja"))
-    {
-        Vector3 pos = collision.transform.position; //guarda la posicio
-        Quaternion rot = collision.transform.rotation;  // Guardem la rotació original
-        Destroy(collision.gameObject);
-        Instantiate(Dragg, pos, rot);
-    }
-    else if (collision.gameObject.CompareTag("Especial"))
-    {
-        Vector3 pos = EdificiCapitalista.transform.position;
-        Quaternion rot = EdificiCapitalista.transform.rotation;
-        Destroy(EdificiCapitalista);
-        Destroy(collision.gameObject);
-        Instantiate(EdificiBo, pos, rot);
-    }
+
+    //if(contador = 3 || superstar = true)
+    //{
+        if (collision.gameObject.CompareTag("Monja"))
+        {
+            Vector3 pos = collision.transform.position; //guarda la posicio
+            Quaternion rot = collision.transform.rotation;  // Guardem la rotació original
+            Destroy(collision.gameObject);
+            Instantiate(Dragg, pos, rot);
+        }
+        else if (collision.gameObject.CompareTag("Especial"))
+        {
+            Vector3 pos = EdificiCapitalista.transform.position;
+            Quaternion rot = EdificiCapitalista.transform.rotation;
+            Destroy(EdificiCapitalista);
+            Destroy(collision.gameObject);
+            Instantiate(EdificiBo, pos, rot);
+        }
+    //}
+    
 }
 }
