@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
@@ -22,4 +22,4 @@ public class PowerUp : MonoBehaviour
             }
         }
     }
-}*/
+}
