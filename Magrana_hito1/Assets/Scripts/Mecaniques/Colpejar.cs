@@ -6,11 +6,6 @@ public class Colpejar : MonoBehaviour
     public BoxCollider Arma;
     public InputActionReference cop;
     public Animator animator;
-    public GameObject EdificiCapitalista;
-    public GameObject Dragg;
-    public GameObject EdificiBo;
-    private int contador = 0; 
-    private bool superstar = false;
 
     void Start()
     {
@@ -23,7 +18,7 @@ public class Colpejar : MonoBehaviour
         {
             animator.SetBool("Colpejar", true);
             Arma.enabled = true;
-            Invoke("DesactivarArma", 1.0f); // 1 segon (ajusta si l'animació és més llarga)
+            Invoke("DesactivarArma", 1.0f);
         }
     }
 
@@ -33,45 +28,42 @@ public class Colpejar : MonoBehaviour
         animator.SetBool("Colpejar", false);
     }
 
-    public void ActivarPowerUp ()
+    // Funció amb parametres de ContadorCops
+    public void ColpejarObjecte(GameObject objecteColpejat, GameObject edificiCapitalista, GameObject edificiBo, GameObject dragg)
     {
-        superstar = true;
-        Debug.Log("Superstar activado!");
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-    Debug.Log("ha entrat al collisionador");
-
-    if (collision.gameObject.CompareTag("Monja") || collision.gameObject.CompareTag("Especial"))
-    {
-        Debug.Log("contador +1");
-        contador ++;     
-    }
-    
-
-    if(contador == 3 || superstar == true)
-    {
-        if (collision.gameObject.CompareTag("Monja"))
+        Debug.Log("Colpejant: " + objecteColpejat.name);
+        
+        // Cas MONJA
+        if (objecteColpejat.CompareTag("Monja"))
         {
-            Vector3 pos = collision.transform.position; //guarda la posicio
-            Quaternion rot = collision.transform.rotation;  // Guardem la rotació original
-            Destroy(collision.gameObject);
-            Instantiate(Dragg, pos, rot);
-            contador = 0;
-            superstar = false;
+            if (dragg != null)
+            {
+                Vector3 pos = objecteColpejat.transform.position;
+                Quaternion rot = objecteColpejat.transform.rotation;
+                Destroy(objecteColpejat);
+                Instantiate(dragg, pos, rot);
+            }
+            else
+            {
+                Debug.LogError("La monja no té Dragg assignat!");
+            }
         }
-        else if (collision.gameObject.CompareTag("Especial"))
+        
+        // Cas ESPECIAL
+        else if (objecteColpejat.CompareTag("Especial"))
         {
-            Vector3 pos = EdificiCapitalista.transform.position;
-            Quaternion rot = EdificiCapitalista.transform.rotation;
-            Destroy(EdificiCapitalista);
-            Destroy(collision.gameObject);
-            Instantiate(EdificiBo, pos, rot);
-            contador = 0;
-            superstar = false;
+            if (edificiCapitalista != null && edificiBo != null)
+            {
+                Vector3 pos = edificiCapitalista.transform.position;
+                Quaternion rot = edificiCapitalista.transform.rotation;
+                Destroy(edificiCapitalista);
+                Destroy(objecteColpejat);
+                Instantiate(edificiBo, pos, rot);
+            }
+            else
+            {
+                Debug.LogError("L'objecte especial no té edificis assignats!");
+            }
         }
     }
-    }
-
 }

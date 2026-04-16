@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 614232918}
   m_Layer: 0
   m_Name: Palo
-  m_TagString: Untagged
+  m_TagString: Arma_1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,9 +836,6 @@ MonoBehaviour:
   Arma: {fileID: 614232914}
   cop: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
   animator: {fileID: 1928406735}
-  EdificiCapitalista: {fileID: 4703085833427506202}
-  Dragg: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
-  EdificiBo: {fileID: 6191710328417862463, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
 --- !u!1 &634530198
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +937,7 @@ GameObject:
   - component: {fileID: 687248452}
   m_Layer: 0
   m_Name: Jugadora 2
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1285,6 +1282,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a726d268112df57429f3e73a4dae6e26, type: 2}
+    - target: {fileID: 6632795089204431734, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
+      propertyPath: draggAlTransformar
+      value: 
+      objectReference: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
     - target: {fileID: 6700425917365764307, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 12.37
@@ -1361,7 +1362,7 @@ GameObject:
   - component: {fileID: 930704125}
   m_Layer: 0
   m_Name: Jugadora 1
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1924,7 +1925,7 @@ GameObject:
   - component: {fileID: 1262119599}
   m_Layer: 0
   m_Name: Palo 2
-  m_TagString: Untagged
+  m_TagString: Arma_2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1959,9 +1960,6 @@ MonoBehaviour:
   Arma: {fileID: 1262119601}
   cop: {fileID: 6538341273052018607, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
   animator: {fileID: 973352828}
-  EdificiCapitalista: {fileID: 4703085833427506202}
-  Dragg: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
-  EdificiBo: {fileID: 6191710328417862463, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
 --- !u!54 &1262119600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2786,6 +2784,14 @@ PrefabInstance:
       propertyPath: m_DynamicOccludee
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1281231456308664205, guid: 4717051689a81b64982fa79497a628d7, type: 3}
+      propertyPath: edificiBoAssociat
+      value: 
+      objectReference: {fileID: 6191710328417862463, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
+    - target: {fileID: 1281231456308664205, guid: 4717051689a81b64982fa79497a628d7, type: 3}
+      propertyPath: edificiCapitalistaAssociat
+      value: 
+      objectReference: {fileID: 4703085833427506202}
     - target: {fileID: 4295128044865345792, guid: 4717051689a81b64982fa79497a628d7, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0

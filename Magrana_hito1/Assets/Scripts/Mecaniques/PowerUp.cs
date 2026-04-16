@@ -4,22 +4,25 @@ public class PowerUp : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        // Si la jugadora toca el objeto con tag "Star"
-        if (collision.gameObject.CompareTag("Player"))
+        // Comprovar quina jugadora toca el power-up
+        if (collision.gameObject.CompareTag("Player1"))
         {
-            // Buscar el script Colpejar en la jugadora (o en el padre)
-            Colpejar colpejarScript = collision.gameObject.GetComponentInChildren<Colpejar>();
-            
-            // Si encuentra el script, activar el power-up
-            if (colpejarScript != null)
+            // Activar superstar a TOTS els objectes 
+            ContadorCops[] totsElsContadors = FindObjectsByType<ContadorCops>(FindObjectsSortMode.None);
+            foreach (ContadorCops contador in totsElsContadors)
             {
-                colpejarScript.ActivarPowerUp();
-                Destroy(collision.gameObject); // Destruir el power-up
+                contador.ActivarSuperstarJug1();
             }
-            else
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Player2"))
+        {
+            ContadorCops[] totsElsContadors = FindObjectsByType<ContadorCops>(FindObjectsSortMode.None);
+            foreach (ContadorCops contador in totsElsContadors)
             {
-                Debug.LogWarning("No se encontró el script Colpejar en la jugadora");
+                contador.ActivarSuperstarJug2();
             }
+            Destroy(this.gameObject);
         }
     }
 }
