@@ -10,9 +10,7 @@ public class Colpejar : MonoBehaviour
     public GameObject Dragg;
     public GameObject EdificiBo;
     //private int contador = 0; 
-    //private bool superstar = false; 
-    //public GameObject Star;
-    //public GameObject Jugadora;
+    //private bool superstar = false;
 
     void Start()
     {
@@ -35,9 +33,16 @@ public class Colpejar : MonoBehaviour
         animator.SetBool("Colpejar", false);
     }
 
+    /*void ActivarPowerUp ()
+    {
+        superstar = true;
+        Debug.Log("Superstar activado!");
+    }*/
+
     void OnCollisionEnter(Collision collision)
-{
+    {
     Debug.Log("HA ENTRAT AL COLISION");
+    //contador ++; 
 
     //if(contador = 3 || superstar = true)
     //{
@@ -47,6 +52,8 @@ public class Colpejar : MonoBehaviour
             Quaternion rot = collision.transform.rotation;  // Guardem la rotació original
             Destroy(collision.gameObject);
             Instantiate(Dragg, pos, rot);
+            //contador = 0;
+            //superstar = false;
         }
         else if (collision.gameObject.CompareTag("Especial"))
         {
@@ -55,8 +62,10 @@ public class Colpejar : MonoBehaviour
             Destroy(EdificiCapitalista);
             Destroy(collision.gameObject);
             Instantiate(EdificiBo, pos, rot);
+            //contador = 0;
+            //superstar = false;
         }
+    }
     //}
-    
-}
+
 }
