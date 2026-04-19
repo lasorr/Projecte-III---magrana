@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Colpejar : MonoBehaviour
 {
     public BoxCollider Arma;
+    public BoxCollider JugaBox; 
     public InputActionReference cop;
     public Animator animator;
 
@@ -18,6 +19,7 @@ public class Colpejar : MonoBehaviour
         {
             animator.SetBool("Colpejar", true);
             Arma.enabled = true;
+            JugaBox.enabled = false;
             Invoke("DesactivarArma", 1.0f);
         }
     }
@@ -26,6 +28,7 @@ public class Colpejar : MonoBehaviour
     {
         Arma.enabled = false;
         animator.SetBool("Colpejar", false);
+        JugaBox.enabled = true;
     }
 
     // Funció amb parametres de ContadorCops

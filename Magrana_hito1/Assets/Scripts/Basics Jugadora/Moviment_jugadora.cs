@@ -7,6 +7,7 @@ public class Moviment_jugadora : MonoBehaviour
     public float velocitat = 5f;
     public InputActionReference move;
     public Animator animator;
+    private bool potMoure = true;
     
     [SerializeField] private Transform modelTransform; // arrossega el empty object que contengui els objectes player
     [SerializeField] private float rotationSpeed = 8f; // velocitat de gir
@@ -21,7 +22,7 @@ public class Moviment_jugadora : MonoBehaviour
 
     void Update()
     {
-        if (move != null)
+        if (potMoure && move != null)
         {
             moveDirection = move.action.ReadValue<Vector2>();
         }
@@ -46,6 +47,22 @@ public class Moviment_jugadora : MonoBehaviour
             Quaternion desti = Quaternion.LookRotation(direccio);
             modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, desti, rotationSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Arma_1") || collision.gameObject.CompareTag("Arma_2"))
+        {
+            potMoure = false;
+            animator.SetBool("Emputjar", true);
+            Invoke("DesactivarEmputjar", 1.5f);
+        }
+    }
+
+    void DesactivarEmputjar()
+    {
+        animator.SetBool("Emputjar", false);
+        potMoure = true;
     }
     
 }

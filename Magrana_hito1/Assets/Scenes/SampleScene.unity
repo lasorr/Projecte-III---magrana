@@ -834,6 +834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arma: {fileID: 614232914}
+  JugaBox: {fileID: 930704125}
   cop: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
   animator: {fileID: 1928406735}
 --- !u!1 &634530198
@@ -863,7 +864,7 @@ Transform:
   m_GameObject: {fileID: 634530198}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0015001297, y: 0.30260754, z: 0}
+  m_LocalPosition: {x: 0.00150013, y: 0.30260754, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1664,7 +1665,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: fe26ebe159a9f674aa3ce472ff564e14, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -1958,6 +1959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arma: {fileID: 1262119601}
+  JugaBox: {fileID: 687248457}
   cop: {fileID: 6538341273052018607, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
   animator: {fileID: 973352828}
 --- !u!54 &1262119600
@@ -2437,7 +2439,7 @@ Transform:
   m_GameObject: {fileID: 1668079036}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0015001297, y: 0.30260754, z: 0}
+  m_LocalPosition: {x: 0.00150013, y: 0.30260754, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2665,7 +2667,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 03650778e60a90a4d95d87d6e5ffe367, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
