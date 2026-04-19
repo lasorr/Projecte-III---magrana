@@ -7,7 +7,7 @@ public class Moviment_jugadora : MonoBehaviour
     public float velocitat = 5f;
     public InputActionReference move;
     public Animator animator;
-    private bool potMoure = true;
+    public bool potMoure = true;
     
     [SerializeField] private Transform modelTransform; // arrossega el empty object que contengui els objectes player
     [SerializeField] private float rotationSpeed = 8f; // velocitat de gir
@@ -63,6 +63,5 @@ public class Moviment_jugadora : MonoBehaviour
     {
         animator.SetBool("Emputjar", false);
         potMoure = true;
-    }
-    
+    } 
 }

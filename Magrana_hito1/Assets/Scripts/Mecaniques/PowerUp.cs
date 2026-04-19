@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    public GameObject Power;
     void OnCollisionEnter(Collision collision)
     {
         // Comprovar quina jugadora toca el power-up
@@ -22,7 +23,7 @@ public class PowerUp : MonoBehaviour
             {
                 contador.ActivarSuperstarJug2();
             }
-            Destroy(this.gameObject);
+            Destroy(Power);
         }
     }
 }
