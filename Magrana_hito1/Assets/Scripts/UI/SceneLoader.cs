@@ -1,16 +1,28 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private string sceneToLoad = "SampleScene";
+    private int sceneIndex = 1;
+    private bool useIndexInsteadOfName = false;
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            LoadNextScene();
+        }
+    }
+    private void LoadNextScene()
+    {
+        // Puedes añadir un efecto de sonido aquí si quieres
+        // AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
+
+        if (useIndexInsteadOfName)
+            SceneManager.LoadScene(sceneIndex);
+        else
+            SceneManager.LoadScene(sceneToLoad);
     }
 }
