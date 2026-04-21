@@ -14,6 +14,11 @@ public class SceneLoader : MonoBehaviour
         {
             LoadNextScene(); // Executa la funció
         }
+
+        if (Input.GetKeyDown(KeyCode.Space)) // Alternativament, podem utilitzar la barra espaciadora per a continuar
+        {
+            LoadNextScene();
+        }
     }
     private void LoadNextScene()
     {
