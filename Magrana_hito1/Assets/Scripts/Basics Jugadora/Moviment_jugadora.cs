@@ -55,13 +55,15 @@ public class Moviment_jugadora : MonoBehaviour
         {
             potMoure = false;
             animator.SetBool("Emputjar", true);
-            Invoke("DesactivarEmputjar", 1.5f);
+            Invoke("DesactivarEmputjar", 2f);
         }
     }
 
     void DesactivarEmputjar()
     {
+        Debug.Log("Entrar void desactivar emputjar");
         animator.SetBool("Emputjar", false);
         potMoure = true;
     } 
+
 }

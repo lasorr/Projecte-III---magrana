@@ -14,7 +14,7 @@ public class PowerUp : MonoBehaviour
             {
                 contador.ActivarSuperstarJug1();
             }
-            Destroy(this.gameObject);
+            Destroy(Power);
         }
         else if (collision.gameObject.CompareTag("Player2"))
         {

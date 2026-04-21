@@ -42,7 +42,7 @@ public class ContadorCops : MonoBehaviour
             {
                 ActivarTransformacio(collision); 
                 copsJug2 = 0;
-                superstarJug2 = false;
+                superstarJug2 = false; // es gasta el superstar
             }
         }
     }
@@ -59,6 +59,10 @@ public class ContadorCops : MonoBehaviour
                 edificiBoAssociat,
                 draggAlTransformar
             );
+        }
+        else
+        {
+            Debug.Log("Desde contadors cops no reb colpejar script");
         }
     }
 

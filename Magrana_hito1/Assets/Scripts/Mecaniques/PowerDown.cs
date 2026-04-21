@@ -30,6 +30,7 @@ public class PowerDown : MonoBehaviour
     {
         if (moviment != null) 
         {
+            Debug.Log("Entra al void activar moviment");
             moviment.potMoure = true;
         }
         else
