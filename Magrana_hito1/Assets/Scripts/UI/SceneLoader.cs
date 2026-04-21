@@ -5,7 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     private string sceneToLoad = "SampleScene"; // Nom de l'escena a carregar
     private int sceneIndex = 1; // Índex d'aquesta (Apareix a la Scene List del Build Profile)
-    private bool useIndexInsteadOfName = false;
+    [SerializeField] private bool useIndexInsteadOfName = false; // Escollim si treballar amb el nom o amb l'índex
 
 
     void Update()
@@ -13,6 +13,11 @@ public class SceneLoader : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // Detectar el clic esquerre (0) del ratolí
         {
             LoadNextScene(); // Executa la funció
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) // Alternativament, podem utilitzar la barra espaciadora per a continuar
+        {
+            LoadNextScene();
         }
     }
     private void LoadNextScene()
