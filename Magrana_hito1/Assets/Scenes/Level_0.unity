@@ -811,6 +811,7 @@ GameObject:
   - component: {fileID: 869089856}
   - component: {fileID: 869089857}
   - component: {fileID: 869089854}
+  - component: {fileID: 869089859}
   m_Layer: 0
   m_Name: Jugadora 1
   m_TagString: Untagged
@@ -912,6 +913,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f24a51873648648b36878a475840cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &869089859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869089852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02bd5616b932d941b3650a09302865e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arma: {fileID: 869089854}
+  JugaBox: {fileID: 869089854}
+  cop: {fileID: 0}
+  animator: {fileID: 1907904508}
 --- !u!1 &1179106411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,10 +2060,10 @@ Animator:
   m_GameObject: {fileID: 1907904507}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 572ee590b837678419a03c09e7164981, type: 2}
+  m_Controller: {fileID: 9100000, guid: f4eabb846df4e834f8e1bbd739de031c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
