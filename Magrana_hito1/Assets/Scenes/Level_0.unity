@@ -186,8 +186,8 @@ GameObject:
   m_Component:
   - component: {fileID: 35097318}
   - component: {fileID: 35097322}
-  - component: {fileID: 35097321}
   - component: {fileID: 35097320}
+  - component: {fileID: 35097321}
   - component: {fileID: 35097319}
   m_Layer: 0
   m_Name: Jugadora 2
@@ -245,12 +245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c78d612ed09b76499b50bdd33315b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocitat: 5
+  velocitat: 15
   move: {fileID: 698821300252711660, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  animator: {fileID: 0}
+  animator: {fileID: 1907904508}
   potMoure: 1
   modelTransform: {fileID: 0}
-  rotationSpeed: 8
+  rotationSpeed: 10
 --- !u!54 &35097321
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -396,9 +396,8 @@ GameObject:
   m_Component:
   - component: {fileID: 869089853}
   - component: {fileID: 869089858}
-  - component: {fileID: 869089857}
   - component: {fileID: 869089856}
-  - component: {fileID: 869089855}
+  - component: {fileID: 869089857}
   - component: {fileID: 869089854}
   m_Layer: 0
   m_Name: Jugadora 1
@@ -444,18 +443,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4221497, y: 5.800927, z: 1.3980942}
   m_Center: {x: 0.00077056885, y: 0.59136534, z: 1.76231}
---- !u!114 &869089855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869089852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f24a51873648648b36878a475840cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &869089856
 MonoBehaviour:
   m_ObjectHideFlags: 0
