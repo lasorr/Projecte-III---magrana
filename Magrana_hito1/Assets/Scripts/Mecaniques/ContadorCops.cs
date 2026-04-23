@@ -20,7 +20,7 @@ public class ContadorCops : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("HI ha collisio");
+        Debug.Log("Hi ha collisio a contador");
         // Comprovar quina jugadora ha colpejat
         if (collision.gameObject.CompareTag("Arma_1"))
         {
