@@ -50,6 +50,7 @@ public class ContadorCops : MonoBehaviour
     
     void ActivarTransformacio(Collision collision)
     {
+        Debug.Log("Entra en activar transfromacio");
         Colpejar colpejarScript = collision.gameObject.GetComponentInParent<Colpejar>();
         
         if (colpejarScript != null)
