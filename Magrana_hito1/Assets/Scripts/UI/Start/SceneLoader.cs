@@ -3,10 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private string sceneToLoad = "LevelSelect"; // Nom de l'escena a carregar
-    private int sceneIndex = 1; // Índex d'aquesta (Apareix a la Scene List del Build Profile)
-    [SerializeField] private bool useIndexInsteadOfName = false; // Escollim si treballar amb el nom o amb l'índex
-
+    private int sceneIndex = 1; // Índex escena (Escena nivells)
 
     void Update()
     {
@@ -26,9 +23,6 @@ public class SceneLoader : MonoBehaviour
         // AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
 
         /* Es carrega la següent escena, per índex o títol */
-        if (useIndexInsteadOfName)
-            SceneManager.LoadScene(sceneIndex);
-        else
-            SceneManager.LoadScene(sceneToLoad);
+         SceneManager.LoadScene(sceneIndex);
     }
 }
