@@ -747,7 +747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413.75, y: -223}
+  m_AnchoredPosition: {x: -245.1, y: -223}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466133059
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   potMoure: 1
   modelTransform: {fileID: 973352827}
   rotationSpeed: 10
-  canMove: 1
+  potMourePerTimer: 1
 --- !u!54 &687248455
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   potMoure: 1
   modelTransform: {fileID: 1928406734}
   rotationSpeed: 10
-  canMove: 1
+  potMourePerTimer: 1
 --- !u!54 &930704121
 Rigidbody:
   m_ObjectHideFlags: 0
