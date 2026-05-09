@@ -9,11 +9,12 @@ public class Moviment_jugadora : MonoBehaviour
     public Animator animator;
     public bool potMoure = true;
     
-    [SerializeField] private Transform modelTransform; // arrossega el empty object que contengui els objectes player
-    [SerializeField] private float rotationSpeed = 8f; // velocitat de gir
+    [SerializeField] private Transform modelTransform;
+    [SerializeField] private float rotationSpeed = 8f;
     
     private Vector2 moveDirection;
     private float currentSpeed;
+    public bool potMourePerTimer = true;  // ← NOVA VARIABLE
 
     void Start()
     {
@@ -22,30 +23,34 @@ public class Moviment_jugadora : MonoBehaviour
 
     void Update()
     {
-        if (potMoure && move != null)
+        if (potMoure && potMourePerTimer && move != null)  // ← CANVIAT
         {
             moveDirection = move.action.ReadValue<Vector2>();
         }
+        else
+        {
+            moveDirection = Vector2.zero;
+        }
 
         Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-        currentSpeed = horizontalVelocity.magnitude / velocitat; // Normalizado entre 0 y 1
+        currentSpeed = horizontalVelocity.magnitude / velocitat;
         animator.SetFloat("Moviment", currentSpeed);
-            
     }
 
     private void FixedUpdate()
     {
-        // Moviment
-        Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
-        moviment.y = rb.linearVelocity.y;
-        rb.linearVelocity = moviment;
-
-        // Gir visual progressiu (només el model)
-        if (moveDirection.magnitude > 0.1f)
+        if (potMoure && potMourePerTimer)  // ← CANVIAT
         {
-            Vector3 direccio = new Vector3(moveDirection.x, 0, moveDirection.y);
-            Quaternion desti = Quaternion.LookRotation(direccio);
-            modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, desti, rotationSpeed * Time.fixedDeltaTime);
+            Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
+            moviment.y = rb.linearVelocity.y;
+            rb.linearVelocity = moviment;
+
+            if (moveDirection.magnitude > 0.1f)
+            {
+                Vector3 direccio = new Vector3(moveDirection.x, 0, moveDirection.y);
+                Quaternion desti = Quaternion.LookRotation(direccio);
+                modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, desti, rotationSpeed * Time.fixedDeltaTime);
+            }
         }
     }
 
@@ -64,6 +69,12 @@ public class Moviment_jugadora : MonoBehaviour
         Debug.Log("Entrar void desactivar emputjar");
         animator.SetBool("Emputjar", false);
         potMoure = true;
-    } 
-
+    }
+    
+    // ← AFEGEIX AIXÒ
+    public void SetMovimentPerTimer(bool value)
+    {
+        potMourePerTimer = value;
+        Debug.Log($"Timer: potMourePerTimer = {potMourePerTimer}");
+    }
 }
