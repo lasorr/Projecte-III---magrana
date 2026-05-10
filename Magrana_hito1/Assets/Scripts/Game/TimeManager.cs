@@ -9,19 +9,21 @@ public class TimeManager : MonoBehaviour
     [Header("UI References")]
     public TMP_Text countdownText;
     public TMP_Text gameTimerText;
+    public TMP_Text winner;
     
     [Header("Player Settings")]
     public List<string> playerTags;
     
     [Header("Timer Settings")]
-    private float initialCountdown = 3f;
-    private float gameDuration = 150f;
+    public float initialCountdown = 3f;
+    public float gameDuration = 150f;
     
     private bool isGameActive = false;
     private float currentGameTime;
     
     // CANVIAT: Moviment_jugadora en lloc de PlayerMovementController
     private List<Moviment_jugadora> playerScripts = new List<Moviment_jugadora>();
+    public ContadorCops ScriptContador;
     
     void Start()
     {
@@ -36,7 +38,7 @@ public class TimeManager : MonoBehaviour
         
         if (playerTags == null || playerTags.Count == 0)
         {
-            Debug.LogError("No hi ha tags definits a la llista playerTags!");
+            Debug.LogError("No hi ha tags definits a la llista playerTags");
             return;
         }
         
@@ -139,6 +141,16 @@ public class TimeManager : MonoBehaviour
         if (gameTimerText != null)
         {
             gameTimerText.text = "00:00";
+
+            if(ScriptContador.edificiTransformatJug2<ScriptContador.edificiTransformatJug1){
+                winner.text="GUANYADORA: JUGADORA 1";
+                Debug.Log($"GUANYADORA: JUGADORA 1");  
+            }
+
+            else if(ScriptContador.edificiTransformatJug2>ScriptContador.edificiTransformatJug1){
+                winner.text="GUANYADORA: JUGADORA 2";
+                Debug.Log($"GUANYADORA: JUGADORA 2");            
+            }
         }
     }
 }
