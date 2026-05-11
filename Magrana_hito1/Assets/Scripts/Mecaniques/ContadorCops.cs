@@ -17,10 +17,6 @@ public class ContadorCops : MonoBehaviour
     // Paràmetres per ESPECIAL
     public GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;
-
-    //Paràmetres edificis transformat per jugadora
-    public int edificiTransformatJug1=0;
-    public int edificiTransformatJug2=0;
     
     void OnCollisionEnter(Collision collision)
     {
@@ -33,12 +29,12 @@ public class ContadorCops : MonoBehaviour
             
             if (superstarJug1 || copsJug1 >= copsNecessaris)
             {
-                ActivarTransformacio(collision); 
-                edificiTransformatJug1++; // Incrementar el comptador d'edificis transformats per J1
+                ActivarTransformacio(collision);
                 copsJug1 = 0;
                 superstarJug1 = false; // Es gasta el superstar
             }
         }
+
         else if (collision.gameObject.CompareTag("Arma_2"))
         {
             copsJug2++;
@@ -46,8 +42,7 @@ public class ContadorCops : MonoBehaviour
             
             if (superstarJug2 || copsJug2 >= copsNecessaris)
             {
-                ActivarTransformacio(collision); 
-                edificiTransformatJug2++; // Incrementar el comptador d'edificis transformats per J2
+                ActivarTransformacio(collision);
                 copsJug2 = 0;
                 superstarJug2 = false; // es gasta el superstar
             }

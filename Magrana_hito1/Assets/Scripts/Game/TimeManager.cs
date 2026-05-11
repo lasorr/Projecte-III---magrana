@@ -10,6 +10,8 @@ public class TimeManager : MonoBehaviour
     public TMP_Text countdownText;
     public TMP_Text gameTimerText;
     public TMP_Text winner;
+    public TMP_Text PointsJ1;
+    public TMP_Text PointsJ2;
     
     [Header("Player Settings")]
     public List<string> playerTags;
@@ -23,7 +25,9 @@ public class TimeManager : MonoBehaviour
     
     // CANVIAT: Moviment_jugadora en lloc de PlayerMovementController
     private List<Moviment_jugadora> playerScripts = new List<Moviment_jugadora>();
-    public ContadorCops ScriptContador;
+    
+    public Colpejar ScriptCop1;
+    public Colpejar ScriptCop2;
     
     void Start()
     {
@@ -31,7 +35,13 @@ public class TimeManager : MonoBehaviour
         SetAllPlayersMovement(false);
         StartCoroutine(InitialCountdownCoroutine());
     }
-    
+
+    void Update()
+    {
+            PointsJ1.text = ScriptCop1.edificisTransformatJug1.ToString();
+            PointsJ2.text = ScriptCop2.edificisTransformatJug2.ToString();
+    }
+
     void FindAllPlayers()
     {
         playerScripts.Clear();
@@ -142,14 +152,19 @@ public class TimeManager : MonoBehaviour
         {
             gameTimerText.text = "00:00";
 
-            if(ScriptContador.edificiTransformatJug2<ScriptContador.edificiTransformatJug1){
+            if(ScriptCop1.edificisTransformatJug1>ScriptCop2.edificisTransformatJug2){
                 winner.text="GUANYADORA: JUGADORA 1";
                 Debug.Log($"GUANYADORA: JUGADORA 1");  
             }
 
-            else if(ScriptContador.edificiTransformatJug2>ScriptContador.edificiTransformatJug1){
+            else if(ScriptCop1.edificisTransformatJug1<ScriptCop2.edificisTransformatJug2){
                 winner.text="GUANYADORA: JUGADORA 2";
                 Debug.Log($"GUANYADORA: JUGADORA 2");            
+            }
+
+            else if(ScriptCop1.edificisTransformatJug1==ScriptCop2.edificisTransformatJug2){
+                winner.text="EMPAT";
+                Debug.Log($"EMPAT");            
             }
         }
     }

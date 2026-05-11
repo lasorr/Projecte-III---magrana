@@ -8,6 +8,9 @@ public class Colpejar : MonoBehaviour
     public InputActionReference cop;
     public Animator animator;
 
+    public int edificisTransformatJug1 = 0;
+    public int edificisTransformatJug2 = 0;
+
     void Start()
     {
         Arma.enabled = false;
@@ -62,6 +65,16 @@ public class Colpejar : MonoBehaviour
                 Destroy(edificiCapitalista);
                 Destroy(objecteColpejat);
                 Instantiate(edificiBo, pos, rot);
+
+                // Incrementar el comptador d'edificis transformats
+                if (gameObject.CompareTag("Arma_1"))
+                {
+                    edificisTransformatJug1++;
+                }
+                else if (gameObject.CompareTag("Arma_2"))
+                {
+                    edificisTransformatJug2++;
+                }
             }
             else
             {
