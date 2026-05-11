@@ -17,15 +17,11 @@ public class PowerDown : MonoBehaviour
         {
             moviment = Jug2.GetComponent<Moviment_jugadora>();
         }
-        
-        if (moviment != null)
-        {
+
             moviment.potMoure = false;  // Accedeix directament al bool
-            Invoke("ActivarMoviment", 3f);
-        }
-        
-        
+            Invoke("ActivarMoviment", 3f);        
     }
+
     void ActivarMoviment()
     {
         if (moviment != null) 
@@ -39,5 +35,4 @@ public class PowerDown : MonoBehaviour
         }
         Destroy(Power);
     }
-    
 }
