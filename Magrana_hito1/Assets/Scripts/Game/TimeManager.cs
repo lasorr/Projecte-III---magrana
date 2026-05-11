@@ -13,8 +13,8 @@ public class TimeManager : MonoBehaviour
     public TMP_Text PointsJ1;
     public TMP_Text PointsJ2;
     
-    [Header("Player Settings")]
-    public List<string> playerTags;
+    //[Header("Player Settings")]
+    //public List<string> playerTags;
     
     [Header("Timer Settings")]
     public float initialCountdown = 3f;
@@ -28,61 +28,22 @@ public class TimeManager : MonoBehaviour
     
     public Colpejar ScriptCop1;
     public Colpejar ScriptCop2;
+
+    public Moviment_jugadora ScriptMoviment1;
+    public Moviment_jugadora ScriptMoviment2;
     
     void Start()
     {
-        FindAllPlayers();
-        SetAllPlayersMovement(false);
+        ScriptMoviment1.potMoure = false;
+        ScriptMoviment2.potMoure = false;
+
         StartCoroutine(InitialCountdownCoroutine());
     }
 
     void Update()
     {
-            PointsJ1.text = ScriptCop1.edificisTransformatJug1.ToString();
-            PointsJ2.text = ScriptCop2.edificisTransformatJug2.ToString();
-    }
-
-    void FindAllPlayers()
-    {
-        playerScripts.Clear();
-        
-        if (playerTags == null || playerTags.Count == 0)
-        {
-            Debug.LogError("No hi ha tags definits a la llista playerTags");
-            return;
-        }
-        
-        foreach (string tag in playerTags)
-        {
-            GameObject[] playersWithThisTag = GameObject.FindGameObjectsWithTag(tag);
-            
-            foreach (GameObject player in playersWithThisTag)
-            {
-                // CANVIAT: Moviment_jugadora en lloc de PlayerMovementController
-                Moviment_jugadora movement = player.GetComponent<Moviment_jugadora>();
-                if (movement != null)
-                {
-                    playerScripts.Add(movement);
-                    Debug.Log($"✓ Trobada jugadora: {player.name} (tag: {tag})");
-                }
-                else
-                {
-                    Debug.LogWarning($"La jugadora {player.name} no té el component Moviment_jugadora!");
-                }
-            }
-        }
-        
-        Debug.Log($"Total jugadores controlades: {playerScripts.Count}");
-    }
-    
-    void SetAllPlayersMovement(bool enabled)
-    {
-        foreach (Moviment_jugadora player in playerScripts)
-        {
-            player.SetMovimentPerTimer(enabled);
-        }
-        
-        Debug.Log($"Moviment de {playerScripts.Count} jugadores: {(enabled ? "ACTIVAT" : "BLOQUEJAT")}");
+        PointsJ1.text = ScriptCop1.edificisTransformatJug1.ToString();
+        PointsJ2.text = ScriptCop2.edificisTransformatJug2.ToString();
     }
     
     IEnumerator InitialCountdownCoroutine()
@@ -111,9 +72,11 @@ public class TimeManager : MonoBehaviour
     
     void StartGame()
     {
+        ScriptMoviment1.potMoure = true;
+        ScriptMoviment2.potMoure = true;
         isGameActive = true;
+
         currentGameTime = gameDuration;
-        SetAllPlayersMovement(true);
         StartCoroutine(GameTimerCoroutine());
     }
     
@@ -121,7 +84,12 @@ public class TimeManager : MonoBehaviour
     {
         while (isGameActive && currentGameTime > 0)
         {
-            UpdateGameTimerDisplay();
+            if (gameTimerText != null)
+            {
+                int minutes = Mathf.FloorToInt(currentGameTime / 60);
+                int seconds = Mathf.FloorToInt(currentGameTime % 60);
+                gameTimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            }
             yield return new WaitForSeconds(1f);
             currentGameTime--;
         }
@@ -132,20 +100,12 @@ public class TimeManager : MonoBehaviour
         }
     }
     
-    void UpdateGameTimerDisplay()
-    {
-        if (gameTimerText != null)
-        {
-            int minutes = Mathf.FloorToInt(currentGameTime / 60);
-            int seconds = Mathf.FloorToInt(currentGameTime % 60);
-            gameTimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        }
-    }
-    
     void EndGame()
     {
+        ScriptMoviment1.potMoure = false;
+        ScriptMoviment2.potMoure = false;        
         isGameActive = false;
-        SetAllPlayersMovement(false);
+
         Debug.Log("Partida finalitzada! Temps esgotat.");
         
         if (gameTimerText != null)

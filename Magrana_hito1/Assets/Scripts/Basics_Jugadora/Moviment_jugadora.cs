@@ -14,7 +14,6 @@ public class Moviment_jugadora : MonoBehaviour
     
     private Vector2 moveDirection;
     private float currentSpeed;
-    public bool potMourePerTimer = true;  // ← NOVA VARIABLE
 
     void Start()
     {
@@ -23,7 +22,7 @@ public class Moviment_jugadora : MonoBehaviour
 
     void Update()
     {
-        if (potMoure && potMourePerTimer && move != null)  // ← CANVIAT
+        if (potMoure && move != null)
         {
             moveDirection = move.action.ReadValue<Vector2>();
         }
@@ -39,7 +38,7 @@ public class Moviment_jugadora : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (potMoure && potMourePerTimer)  // ← CANVIAT
+        if (potMoure)
         {
             Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
             moviment.y = rb.linearVelocity.y;
@@ -51,6 +50,11 @@ public class Moviment_jugadora : MonoBehaviour
                 Quaternion desti = Quaternion.LookRotation(direccio);
                 modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, desti, rotationSpeed * Time.fixedDeltaTime);
             }
+        }
+
+        else
+        {
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
     }
 
@@ -69,12 +73,5 @@ public class Moviment_jugadora : MonoBehaviour
         Debug.Log("Entrar void desactivar emputjar");
         animator.SetBool("Emputjar", false);
         potMoure = true;
-    }
-    
-    // ← AFEGEIX AIXÒ
-    public void SetMovimentPerTimer(bool value)
-    {
-        potMourePerTimer = value;
-        Debug.Log($"Timer: potMourePerTimer = {potMourePerTimer}");
     }
 }
