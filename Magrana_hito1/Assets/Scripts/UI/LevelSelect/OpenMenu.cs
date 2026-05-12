@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class OpenMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject pausePanel; // Panell que controlem
     void Start()
     {
-        
+        // Assegurem que el menú està tancat per default
+        if (pausePanel != null)
+            pausePanel.SetActive(false); // Deshabilita el panell del menú
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenMainMenu()
     {
-        
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(true); // Habilita el menú
+        }
     }
 }
