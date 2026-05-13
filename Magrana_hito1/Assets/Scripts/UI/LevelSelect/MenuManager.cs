@@ -2,16 +2,17 @@
 using UnityEngine;
 using System.Collections;
 
-public class OpenMenu : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public GameObject mainMenuPanel; // Panell que controlem
+    public GameObject[] mainMenuUI;
     void Start()
     {
         Debug.Log("Menu Tancat");
         // Assegurem que el menú està tancat per default
         if (mainMenuPanel != null)
             mainMenuPanel.SetActive(false); // Deshabilita el panell del menú
-            Debug.Log("Menu Tancat");
+        mainMenuUI = GameObject.FindGameObjectsWithTag("MenuUI");
     }
     void Update()
     {
@@ -49,5 +50,10 @@ public class OpenMenu : MonoBehaviour
             Debug.Log("Menú tancat");
 
         }
+    }
+
+    public void ShowOptions()
+    {
+
     }
 }
