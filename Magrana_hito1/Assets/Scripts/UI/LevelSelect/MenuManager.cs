@@ -1,18 +1,17 @@
-
 using UnityEngine;
 using System.Collections;
 
 public class MenuManager : MonoBehaviour
 {
     public GameObject mainMenuPanel; // Panell que controlem
-    public GameObject[] mainMenuUI;
+    public GameObject mainMenuUI; // Botons del manú principal
+    public GameObject optionsUI; // Botons de les opcions
     void Start()
     {
         Debug.Log("Menu Tancat");
         // Assegurem que el menú està tancat per default
         if (mainMenuPanel != null)
             mainMenuPanel.SetActive(false); // Deshabilita el panell del menú
-        mainMenuUI = GameObject.FindGameObjectsWithTag("MenuUI");
     }
     void Update()
     {
@@ -21,6 +20,7 @@ public class MenuManager : MonoBehaviour
             if(mainMenuPanel.activeSelf) // Detectar si el menú ja està obert
             {
                 CloseMainMenu();
+                HideOptions(); // Si les opcions estan obertes, al tornar a obrir el menú no cal que tornin a obrir-se
                 Debug.Log("Menu Tancat");
             }
             else
@@ -54,6 +54,15 @@ public class MenuManager : MonoBehaviour
 
     public void ShowOptions()
     {
+        mainMenuUI.SetActive(false);
+        optionsUI.SetActive(true);
 
+        Debug.Log("Opcions obertes");
+    }
+    public void HideOptions()
+    {
+        mainMenuUI.SetActive(true);
+        optionsUI.SetActive(false);
+        Debug.Log("Opcions tancades, menú principal obert");
     }
 }
