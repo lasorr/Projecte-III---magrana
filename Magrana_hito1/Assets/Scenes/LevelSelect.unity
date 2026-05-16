@@ -358,6 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullScreenButton: {fileID: 1140486630}
   windowedButton: {fileID: 434510536}
+  selectedColor: {r: 242, g: 238, b: 139, a: 1}
+  colorNoSeleccionado: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &254264877
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2219,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ceaa396cd90b78542937ba5f17e1c4e4, type: 3}
     - target: {fileID: 485668550109004508, guid: b737db38855068040b137cb1fd87c299, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 602478007543754678, guid: b737db38855068040b137cb1fd87c299, type: 3}
       propertyPath: m_text
@@ -2329,15 +2331,15 @@ PrefabInstance:
       objectReference: {fileID: 331583036}
     - target: {fileID: 2189229656801855162, guid: b737db38855068040b137cb1fd87c299, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2653187719533144811, guid: b737db38855068040b137cb1fd87c299, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3032647978479609417, guid: b737db38855068040b137cb1fd87c299, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3375528433857027979, guid: b737db38855068040b137cb1fd87c299, type: 3}
       propertyPath: m_Pivot.x
@@ -2399,6 +2401,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ceaa396cd90b78542937ba5f17e1c4e4, type: 3}
+    - target: {fileID: 7296230675769725040, guid: b737db38855068040b137cb1fd87c299, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296230675769725040, guid: b737db38855068040b137cb1fd87c299, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296230675769725040, guid: b737db38855068040b137cb1fd87c299, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.9333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296230675769725040, guid: b737db38855068040b137cb1fd87c299, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9490197
+      objectReference: {fileID: 0}
     - target: {fileID: 7812027365633158849, guid: b737db38855068040b137cb1fd87c299, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
