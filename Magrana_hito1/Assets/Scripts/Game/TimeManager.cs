@@ -12,10 +12,11 @@ public class TimeManager : MonoBehaviour
     public TMP_Text winner;
     public TMP_Text PointsJ1;
     public TMP_Text PointsJ2;
-    
+    public GameObject[] inGameUIElements; // NOU: UI ingame, que es mostra només quan s'inicia el joc
+
     //[Header("Player Settings")]
     //public List<string> playerTags;
-    
+
     [Header("Timer Settings")]
     public float initialCountdown = 3f;
     public float gameDuration = 150f;
@@ -36,6 +37,8 @@ public class TimeManager : MonoBehaviour
     {
         ScriptMoviment1.potMoure = false;
         ScriptMoviment2.potMoure = false;
+
+        SetUIElementsActive(false); // NOU
 
         StartCoroutine(InitialCountdownCoroutine());
     }
@@ -75,6 +78,8 @@ public class TimeManager : MonoBehaviour
         ScriptMoviment1.potMoure = true;
         ScriptMoviment2.potMoure = true;
         isGameActive = true;
+
+        SetUIElementsActive(true); // NOU
 
         currentGameTime = gameDuration;
         StartCoroutine(GameTimerCoroutine());
@@ -125,6 +130,21 @@ public class TimeManager : MonoBehaviour
             else if(ScriptCop1.edificisTransformatJug1==ScriptCop2.edificisTransformatJug2){
                 winner.text="EMPAT";
                 Debug.Log($"EMPAT");            
+            }
+        }
+    }
+
+    // NOVA FUNCIÓ:
+    private void SetUIElementsActive(bool active)
+    {
+        if (inGameUIElements != null)
+        {
+            foreach (GameObject uiElement in inGameUIElements)
+            {
+                if (uiElement != null)
+                {
+                    uiElement.SetActive(active);
+                }
             }
         }
     }
