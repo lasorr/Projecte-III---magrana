@@ -12,7 +12,7 @@ public class TimeManager : MonoBehaviour
     public TMP_Text winner;
     public TMP_Text PointsJ1;
     public TMP_Text PointsJ2;
-    public GameObject[] inGameUIElements; // NOU: UI ingame, que es mostra només quan s'inicia el joc
+    public GameObject[] inGameUIElements; // NOU: UI ingame, que es mostra nomï¿½s quan s'inicia el joc
 
     //[Header("Player Settings")]
     //public List<string> playerTags;
@@ -134,7 +134,7 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    // NOVA FUNCIÓ:
+    // NOVA FUNCIï¿½:
     private void SetUIElementsActive(bool active)
     {
         if (inGameUIElements != null)

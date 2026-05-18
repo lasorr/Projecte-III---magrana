@@ -23,6 +23,8 @@ public class ContadorCops : MonoBehaviour
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
 
+    public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
+
     void Awake()
     {
         Transform t = transform;
@@ -51,6 +53,7 @@ public class ContadorCops : MonoBehaviour
                 ActivarTransformacio(collision);
                 copsJug1 = 0;
                 superstarJug1 = false; // Es gasta el superstar
+                DeQuiEsAquestEdifici.Propietaria = 1; // L'edifici ara és de J1
             }
         }
 
@@ -66,6 +69,7 @@ public class ContadorCops : MonoBehaviour
                 ActivarTransformacio(collision);
                 copsJug2 = 0;
                 superstarJug2 = false; // es gasta el superstar
+                DeQuiEsAquestEdifici.Propietaria = 2; // L'edifici ara és de J2
             }
         }
     }

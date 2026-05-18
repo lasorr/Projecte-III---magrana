@@ -478,8 +478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggAlTransformar: {fileID: 0}
-  edificiCapitalistaAssociat: {fileID: 1270857192}
   edificiBoAssociat: {fileID: 6191710328417862463, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
+  cadenesBloqueig: {fileID: 0}
   imatge1CopPrefab: {fileID: 0}
   imatge2CopPrefab: {fileID: 0}
   imatge3CopPrefab: {fileID: 0}
@@ -3779,11 +3779,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269313379}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1270857192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1049486561384310162, guid: f2b5d22d7129d4f87bbf28b09c48b606, type: 3}
-  m_PrefabInstance: {fileID: 470031063}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1304803460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4814,6 +4809,22 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 930704117}
+    - target: {fileID: 5229839793765010366, guid: dd5caffd493653b4388952ed223c53cc, type: 3}
+      propertyPath: orthographic size
+      value: 0.96333337
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229839793765010366, guid: dd5caffd493653b4388952ed223c53cc, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229839793765010366, guid: dd5caffd493653b4388952ed223c53cc, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229839793765010366, guid: dd5caffd493653b4388952ed223c53cc, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5292006910856116827, guid: dd5caffd493653b4388952ed223c53cc, type: 3}
       propertyPath: m_Name
       value: Camara1
@@ -4941,6 +4952,22 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 687248456}
+    - target: {fileID: 5769373315435129571, guid: 4db308dc4fc34904093d548e7b95258c, type: 3}
+      propertyPath: orthographic size
+      value: 0.9633333
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769373315435129571, guid: 4db308dc4fc34904093d548e7b95258c, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769373315435129571, guid: 4db308dc4fc34904093d548e7b95258c, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769373315435129571, guid: 4db308dc4fc34904093d548e7b95258c, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7432110792294683960, guid: 4db308dc4fc34904093d548e7b95258c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 36
