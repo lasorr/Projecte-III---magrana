@@ -30,8 +30,14 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public GameObject draggAlTransformar;
 
-    public GameObject edificiCapitalistaAssociat;
+    private GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;
+    public GameObject cadenesBloqueig;
+
+    public GameObject imatge1CopPrefab;
+    public GameObject imatge2CopPrefab;
+    public GameObject imatge3CopPrefab;
+    public GameObject imatgeStarCopPrefab;
 
     // IMPORTANT:
     // Marca això a TRUE a les monjes
@@ -40,6 +46,25 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     // Per evitar sumar dues vegades
     private bool monjaJaDerrotada = false;
+
+    void Awake()
+    {
+        Transform t = transform;
+
+        while (t.parent != null)
+        {
+            t = t.parent;
+        }
+
+        edificiCapitalistaAssociat = t.gameObject;
+    }
+
+    void Update(){
+        if (monjesDerrotades >= 4)
+        {
+            Destroy(cadenesBloqueig);
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -59,8 +84,6 @@ public class EdificiEspecialTrans : MonoBehaviour
 
                     monjesDerrotades++;
 
-                    Debug.Log("Monja derrotada! Total: " + monjesDerrotades + "/4");
-
                     // Transformar immediatament amb 1 cop
                     ActivarTransformacio(collision);
                 }
@@ -73,43 +96,42 @@ public class EdificiEspecialTrans : MonoBehaviour
         // EDIFICI ESPECIAL
         // =========================
 
-        if (monjesDerrotades < 4)
+        else if (monjesDerrotades >= 4)
         {
-            Debug.Log("Encara no s'han derrotat les 4 monjes!");
-            return;
-        }
+            // =========================
+            // COPS EDIFICI
+            // =========================
 
-        // =========================
-        // COPS EDIFICI
-        // =========================
-
-        if (collision.gameObject.CompareTag("Arma_1"))
-        {
-            copsJug1++;
-
-            Debug.Log(gameObject.name + " rebut cop de J1: " + copsJug1 + "/" + copsNecessaris);
-
-            if (superstarJug1 || copsJug1 >= copsNecessaris)
+            if (collision.gameObject.CompareTag("Arma_1"))
             {
-                ActivarTransformacio(collision);
+                copsJug1++;
+                MostrarImatgeCop();
 
-                copsJug1 = 0;
-                superstarJug1 = false;
+                Debug.Log(gameObject.name + " rebut cop de J1: " + copsJug1 + "/" + copsNecessaris);
+
+                if ( superstarJug1 ||copsJug1 >= copsNecessaris)
+                {
+                    ActivarTransformacio(collision);
+                    copsJug1 = 0;
+                    monjesDerrotades = 0;
+                    superstarJug1 = false; // Es gasta el superstar
+                }
             }
-        }
 
-        else if (collision.gameObject.CompareTag("Arma_2"))
-        {
-            copsJug2++;
-
-            Debug.Log(gameObject.name + " rebut cop de J2: " + copsJug2 + "/" + copsNecessaris);
-
-            if (superstarJug2 || copsJug2 >= copsNecessaris)
+            else if (collision.gameObject.CompareTag("Arma_2"))
             {
-                ActivarTransformacio(collision);
+                copsJug2++;
+                MostrarImatgeCop();
 
-                copsJug2 = 0;
-                superstarJug2 = false;
+                Debug.Log(gameObject.name + " rebut cop de J2: " + copsJug2 + "/" + copsNecessaris);
+                
+                if (superstarJug2 || copsJug2 >= copsNecessaris)
+                {
+                    ActivarTransformacio(collision);
+                    copsJug2 = 0;
+                    monjesDerrotades = 0;
+                    superstarJug2 = false; // es gasta el superstar
+                }
             }
         }
     }
@@ -165,5 +187,82 @@ public class EdificiEspecialTrans : MonoBehaviour
     void DesactivarSuperstarJug2()
     {
         superstarJug2 = false;
+    }
+
+    void MostrarImatgeStar()
+    {
+        Debug.Log("Mostrar imatge cop star");
+
+        Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+
+        // Crear la imatge
+        GameObject img = UnityEngine.Object.Instantiate(
+            imatgeStarCopPrefab,
+            posicio,
+            Quaternion.identity
+        );
+
+        // Destruir-la després de 1 segon
+        Destroy(img, 1f);
+    }
+
+    void MostrarImatgeCop()
+    {
+        if(superstarJug1 || superstarJug2){
+            MostrarImatgeStar();
+            return;
+        }
+        else if(copsJug1 == 1 || copsJug2 == 1){
+            Debug.Log("Mostrar imatge cop 1");
+
+            // Posició una mica per sobre de l'objecte                
+            Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+
+            // Crear la imatge
+            GameObject img = UnityEngine.Object.Instantiate(
+                imatge1CopPrefab,
+                posicio,
+                Quaternion.identity
+            );
+
+            // Destruir-la després de 1 segon
+            Destroy(img, 1f);
+
+        }
+
+        else if(copsJug1 == 2 || copsJug2 == 2){
+            Debug.Log("Mostrar imatge cop 2");
+
+            // Posició una mica per sobre de l'objecte
+            Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+
+            // Crear la imatge
+            GameObject img = UnityEngine.Object.Instantiate(
+                imatge2CopPrefab,
+                posicio,
+                Quaternion.identity
+            );
+
+            // Destruir-la després de 1 segon
+            Destroy(img, 1f);
+
+        }
+
+        else if(copsJug1 == 3 || copsJug2 == 3){
+            Debug.Log("Mostrar imatge cop 3");
+
+            // Posició una mica per sobre de l'objecte
+            Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+
+            // Crear la imatge
+            GameObject img = UnityEngine.Object.Instantiate(
+                imatge3CopPrefab,
+                posicio,
+                Quaternion.identity
+            );
+
+            // Destruir-la després de 1 segon
+            Destroy(img, 1f);
+        }
     }
 }

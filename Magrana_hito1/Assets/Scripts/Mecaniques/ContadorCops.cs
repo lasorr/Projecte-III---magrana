@@ -15,13 +15,25 @@ public class ContadorCops : MonoBehaviour
     public GameObject draggAlTransformar;
     
     // Paràmetres per ESPECIAL
-    public GameObject edificiCapitalistaAssociat;
+    private GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;
 
     public GameObject imatge1CopPrefab;
     public GameObject imatge2CopPrefab;
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
+
+    void Awake()
+    {
+        Transform t = transform;
+
+        while (t.parent != null)
+        {
+            t = t.parent;
+        }
+
+        edificiCapitalistaAssociat = t.gameObject;
+    }
 
     void OnCollisionEnter(Collision collision)
     {
