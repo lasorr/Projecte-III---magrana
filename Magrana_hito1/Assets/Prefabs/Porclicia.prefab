@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2837595363517326975}
   - component: {fileID: 3290397364377104108}
+  - component: {fileID: 1124631396721876744}
   m_Layer: 0
   m_Name: Porclicia
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 427678024494304887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6745672, y: 0.85546637, z: 0.8638828}
+  m_LocalPosition: {x: -3.6745672, y: 0.85546637, z: -1.169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55,6 +56,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1124631396721876744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427678024494304887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f24a51873648648b36878a475840cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1531936121933598861
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +80,7 @@ GameObject:
   - component: {fileID: 8748086200265666773}
   - component: {fileID: 7289926442491536851}
   - component: {fileID: 710048806171836950}
+  - component: {fileID: 1197167960989965177}
   m_Layer: 0
   m_Name: PorcliciaEnemic
   m_TagString: Untagged
@@ -120,7 +134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 098d5defb04a6314a90dc551468fc38a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,3 +179,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1197167960989965177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531936121933598861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eef53c115e3147229095f22752535dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thinkRate: 2
+  ScriptPropietaria: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
+  QuantsCopsHanFetJug1: {fileID: 0}
+  QuantsCopsHanFetJug2: {fileID: 0}

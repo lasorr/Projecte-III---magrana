@@ -39,6 +39,8 @@ public class EdificiEspecialTrans : MonoBehaviour
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
 
+    public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
+
     // IMPORTANT:
     // Marca això a TRUE a les monjes
     // i deixa-ho FALSE a l'edifici especial
@@ -85,7 +87,7 @@ public class EdificiEspecialTrans : MonoBehaviour
                     monjesDerrotades++;
 
                     // Transformar immediatament amb 1 cop
-                    ActivarTransformacio(collision);
+                    ActivarTransformacio(collision, 0);
                 }
             }
 
@@ -111,7 +113,7 @@ public class EdificiEspecialTrans : MonoBehaviour
 
                 if ( superstarJug1 ||copsJug1 >= copsNecessaris)
                 {
-                    ActivarTransformacio(collision);
+                    ActivarTransformacio(collision, 1);
                     copsJug1 = 0;
                     monjesDerrotades = 0;
                     superstarJug1 = false; // Es gasta el superstar
@@ -127,7 +129,7 @@ public class EdificiEspecialTrans : MonoBehaviour
                 
                 if (superstarJug2 || copsJug2 >= copsNecessaris)
                 {
-                    ActivarTransformacio(collision);
+                    ActivarTransformacio(collision, 2);
                     copsJug2 = 0;
                     monjesDerrotades = 0;
                     superstarJug2 = false; // es gasta el superstar
@@ -136,7 +138,7 @@ public class EdificiEspecialTrans : MonoBehaviour
         }
     }
 
-    void ActivarTransformacio(Collision collision)
+    void ActivarTransformacio(Collision collision, int propietaria)
     {
         Debug.Log("Entra en activar transformacio");
 
@@ -148,7 +150,8 @@ public class EdificiEspecialTrans : MonoBehaviour
                 this.gameObject,
                 edificiCapitalistaAssociat,
                 edificiBoAssociat,
-                draggAlTransformar
+                draggAlTransformar,
+                DeQuiEsAquestEdifici.Propietaria = propietaria
             );
         }
         else

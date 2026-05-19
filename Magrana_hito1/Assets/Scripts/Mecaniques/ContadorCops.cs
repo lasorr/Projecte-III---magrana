@@ -50,10 +50,9 @@ public class ContadorCops : MonoBehaviour
 
             if ( superstarJug1 ||copsJug1 >= copsNecessaris)
             {
-                ActivarTransformacio(collision);
+                ActivarTransformacio(collision, 1);
                 copsJug1 = 0;
                 superstarJug1 = false; // Es gasta el superstar
-                DeQuiEsAquestEdifici.Propietaria = 1; // L'edifici ara és de J1
             }
         }
 
@@ -66,15 +65,14 @@ public class ContadorCops : MonoBehaviour
             
             if (superstarJug2 || copsJug2 >= copsNecessaris)
             {
-                ActivarTransformacio(collision);
+                ActivarTransformacio(collision, 2);
                 copsJug2 = 0;
                 superstarJug2 = false; // es gasta el superstar
-                DeQuiEsAquestEdifici.Propietaria = 2; // L'edifici ara és de J2
             }
         }
     }
     
-    void ActivarTransformacio(Collision collision)
+    void ActivarTransformacio(Collision collision, int propietaria)
     {
         Debug.Log("Entra en activar transfromacio");
         Colpejar colpejarScript = collision.gameObject.GetComponentInParent<Colpejar>();
@@ -85,8 +83,10 @@ public class ContadorCops : MonoBehaviour
                 this.gameObject,
                 edificiCapitalistaAssociat,
                 edificiBoAssociat,
-                draggAlTransformar
+                draggAlTransformar,
+                DeQuiEsAquestEdifici.Propietaria = propietaria
             );
+            Debug.Log("propietaria al colpejar objecte: " + propietaria);
         }
         else
         {

@@ -11,6 +11,8 @@ public class Colpejar : MonoBehaviour
     public int edificisTransformatJug1 = 0;
     public int edificisTransformatJug2 = 0;
 
+    public PropietariaEdifici ScriptPropietaria;
+
     void Start()
     {
         Arma.enabled = false;
@@ -23,7 +25,7 @@ public class Colpejar : MonoBehaviour
             animator.SetBool("Colpejar", true);
             Arma.enabled = true;
             JugaBox.enabled = false;
-            Invoke("DesactivarArma", 1.0f);
+            Invoke("DesactivarArma", 3.0f);
         }
     }
 
@@ -35,7 +37,7 @@ public class Colpejar : MonoBehaviour
     }
 
     // Funció amb parametres de ContadorCops
-    public void ColpejarObjecte(GameObject objecteColpejat, GameObject edificiCapitalista, GameObject edificiBo, GameObject dragg)
+    public void ColpejarObjecte(GameObject objecteColpejat, GameObject edificiCapitalista, GameObject edificiBo, GameObject dragg, int propietaria)
     {
         Debug.Log("Colpejant: " + objecteColpejat.name);
         
@@ -64,9 +66,8 @@ public class Colpejar : MonoBehaviour
                 Quaternion rot = edificiCapitalista.transform.rotation;
                 Destroy(edificiCapitalista);
                 Destroy(objecteColpejat);
-                Instantiate(edificiBo, pos, rot);
+                GameObject nouEdifici = Instantiate(edificiBo, pos, rot);
 
-                // Incrementar el comptador d'edificis transformats
                 if (gameObject.CompareTag("Arma_1"))
                 {
                     edificisTransformatJug1++;
@@ -76,6 +77,7 @@ public class Colpejar : MonoBehaviour
                     edificisTransformatJug2++;
                 }
             }
+            
             else
             {
                 Debug.LogError("L'objecte especial no té edificis assignats!");
