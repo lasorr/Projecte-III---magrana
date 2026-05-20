@@ -28,6 +28,14 @@ public class Colpejar : MonoBehaviour
             Invoke("DesactivarArma", 3.0f);
         }
     }
+    
+    //void Update()
+    //{
+    //    if (cop.action.WasPressedThisFrame() && JugaBox.gameObject.GetComponentInParent<Colpejar>()==objecteColpejat)
+    //    {
+    //        return; // No hacer nada si el objeto colpeado es el mismo que el que tiene este script
+    //    }
+    //}
 
     void DesactivarArma()
     {
