@@ -8,6 +8,8 @@ public class Moviment_jugadora : MonoBehaviour
     public InputActionReference move;
     public Animator animator;
     public bool potMoure = true;
+
+    public bool stunJug = false;
     
     [SerializeField] private Transform modelTransform;
     [SerializeField] private float rotationSpeed = 8f;
@@ -38,7 +40,12 @@ public class Moviment_jugadora : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (potMoure)
+        if (stunJug)
+        {
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+        }
+
+        else if (potMoure)
         {
             Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
             moviment.y = rb.linearVelocity.y;
@@ -51,27 +58,5 @@ public class Moviment_jugadora : MonoBehaviour
                 modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, desti, rotationSpeed * Time.fixedDeltaTime);
             }
         }
-
-        else
-        {
-            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
-        }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Arma_1") || collision.gameObject.CompareTag("Arma_2"))
-        {
-            potMoure = false;
-            animator.SetBool("Emputjar", true);
-            Invoke("DesactivarEmputjar", 2f);
-        }
-    }
-
-    void DesactivarEmputjar()
-    {
-        Debug.Log("Entrar void desactivar emputjar");
-        animator.SetBool("Emputjar", false);
-        potMoure = true;
     }
 }

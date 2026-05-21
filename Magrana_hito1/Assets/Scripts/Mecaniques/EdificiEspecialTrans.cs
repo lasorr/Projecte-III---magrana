@@ -41,6 +41,9 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
 
+    public Colpejar ScriptCop1;
+    public Colpejar ScriptCop2;
+
     // IMPORTANT:
     // Marca això a TRUE a les monjes
     // i deixa-ho FALSE a l'edifici especial
@@ -117,6 +120,7 @@ public class EdificiEspecialTrans : MonoBehaviour
                     copsJug1 = 0;
                     monjesDerrotades = 0;
                     superstarJug1 = false; // Es gasta el superstar
+                    ScriptCop1.edificisTransformatJug1++;
                 }
             }
 
@@ -133,6 +137,7 @@ public class EdificiEspecialTrans : MonoBehaviour
                     copsJug2 = 0;
                     monjesDerrotades = 0;
                     superstarJug2 = false; // es gasta el superstar
+                    ScriptCop2.edificisTransformatJug2++;
                 }
             }
         }

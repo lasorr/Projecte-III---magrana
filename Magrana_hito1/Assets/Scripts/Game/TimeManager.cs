@@ -38,7 +38,7 @@ public class TimeManager : MonoBehaviour
         ScriptMoviment1.potMoure = false;
         ScriptMoviment2.potMoure = false;
 
-        SetUIElementsActive(false); // NOU
+        SetUIElementsActive(false);
 
         StartCoroutine(InitialCountdownCoroutine());
     }
