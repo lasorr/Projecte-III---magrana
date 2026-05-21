@@ -204,7 +204,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8342585515249991086}
-  - component: {fileID: 4123592485022379434}
   m_Layer: 0
   m_Name: cole_catolic
   m_TagString: EdificiCapitalista
@@ -240,18 +239,6 @@ Transform:
   - {fileID: 6863718502302137255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &4123592485022379434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049486561384310162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f24a51873648648b36878a475840cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1349476320308975661
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +533,6 @@ GameObject:
   - component: {fileID: 33685814174436399}
   - component: {fileID: 5351715695524046176}
   - component: {fileID: 3978329966675446779}
-  - component: {fileID: 2006552644906399566}
   m_Layer: 0
   m_Name: CadenesBloqueig
   m_TagString: Untagged
@@ -645,18 +631,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: -0.00000089407, y: 0, z: 0.0000037252917}
---- !u!114 &2006552644906399566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5385729549025104827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f24a51873648648b36878a475840cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5396131483316335365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,9 +1017,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6143934691281165584, guid: 73160ff56847d2843900f60c860c7904, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5999944587149119363}
-    - targetCorrespondingSourceObject: {fileID: 6143934691281165584, guid: 73160ff56847d2843900f60c860c7904, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3767671335671903839}
   m_SourcePrefab: {fileID: 100100000, guid: 73160ff56847d2843900f60c860c7904, type: 3}
 --- !u!4 &1895018105417801135 stripped
 Transform:
@@ -1078,18 +1049,6 @@ MonoBehaviour:
   imatgeStarCopPrefab: {fileID: 6643838936281837724}
   DeQuiEsAquestEdifici: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
   esMonja: 0
---- !u!114 &3767671335671903839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5980674855885597579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f24a51873648648b36878a475840cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5111758144052243490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1156,6 +1115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6632795089204431734, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
+    - {fileID: 6235299027189810164, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1260,6 +1220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6632795089204431734, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
+    - {fileID: 6235299027189810164, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1364,6 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6632795089204431734, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
+    - {fileID: 6235299027189810164, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1468,6 +1430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6632795089204431734, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
+    - {fileID: 6235299027189810164, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
