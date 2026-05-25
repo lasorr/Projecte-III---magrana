@@ -3,13 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private int sceneIndex = 1; // Índex escena (Escena nivells)
+    private int sceneIndex = 1; // ï¿½ndex escena (Escena nivells)
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Detectar el clic esquerre (0) del ratolí
+        if (Input.GetMouseButtonDown(0)) // Detectar el clic esquerre (0) del ratolï¿½
         {
-            LoadNextScene(); // Executa la funció
+            LoadNextScene();
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) // Alternativament, podem utilitzar la barra espaciadora per a continuar
@@ -19,10 +19,10 @@ public class SceneLoader : MonoBehaviour
     }
     private void LoadNextScene()
     {
-        // Puedes añadir un efecto de sonido aquí si quieres
+        // Puedes aï¿½adir un efecto de sonido aquï¿½ si quieres
         // AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
 
-        /* Es carrega la següent escena, per índex o títol */
+        /* Es carrega la segï¿½ent escena, per ï¿½ndex o tï¿½tol */
          SceneManager.LoadScene(sceneIndex);
     }
 }
