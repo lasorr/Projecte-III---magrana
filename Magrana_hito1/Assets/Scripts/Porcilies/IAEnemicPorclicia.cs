@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
-public class NeutralEnemy : MonoBehaviour
+public class IAEnemicPorclicia : MonoBehaviour
 {
     public NavMeshAgent agent;
     private GameObject edificiObjectiu;
@@ -10,17 +10,22 @@ public class NeutralEnemy : MonoBehaviour
     private float thinkTimer;
     public float thinkRate = 2f;
 
-    public float velocitat = 3.5f;
+    [Header("Velocitats")]
+    public float velocitatLenta = 2f;
+    public float velocitatMitjana = 3.5f;
+    public float velocitatRapida = 5f;
 
     private float tempsSobreEdifici = 0f;
     public float tempsNecessari = 6f;
 
+    public int copsRebuts = 0;
+
     void Start()
     {
-        agent.speed = velocitat;
+        agent.speed = velocitatLenta;
 
         transform.position += new Vector3(0, 0.5f, 0);
-     
+
         if (agent.isOnNavMesh)
             Debug.Log("ESTÀ al NavMesh");
         else
@@ -34,30 +39,39 @@ public class NeutralEnemy : MonoBehaviour
         if (thinkTimer >= thinkRate)
         {
             thinkTimer = 0f;
+        }
+    }
 
-            if (edificiObjectiu == null)
-            {
-                BuscarEdificiJug1();
-            }
+    void FixedUpdate(){
+        if (edificiObjectiu == null)
+        {
+            BuscarEdificiJug1();
         }
 
-        if (edificiObjectiu != null)
+        else if (edificiObjectiu != null)
         {
             agent.SetDestination(edificiObjectiu.transform.position);
 
             float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
 
-            Debug.Log("Distància a l'edifici: " + dist);
-
-            if (dist < 6.04f) // distància de contacte
+            if (dist < 6.04f)
             {
                 tempsSobreEdifici += Time.deltaTime;
 
-                Debug.Log("Sobre l'edifici! Temps: " + tempsSobreEdifici);
+                if (copsRebuts >= 3)
+                {
+                    BuscarEdificiJug1();
+                    copsRebuts = 0;
+                    Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
+                }
 
                 if (tempsSobreEdifici >= tempsNecessari)
                 {
                     ConvertirEdificiACapitalista();
+
+                    tempsSobreEdifici = 0f;
+
+                    edificiObjectiu = null;
                 }
             }
             else
@@ -86,27 +100,56 @@ public class NeutralEnemy : MonoBehaviour
             }
         }
 
-        Debug.Log("Edificis jug1: " + edificisJug1.Count);
+        int quantitatEdificis = TimeManager.Instance.edificisTransformatJug1;
 
+        if (quantitatEdificis <= 4)
+        {
+            edificiObjectiu = null;
+
+            Vector3 puntAleatori = transform.position + Random.insideUnitSphere * 30f;
+
+            NavMeshHit hit;
+
+            if (NavMesh.SamplePosition(puntAleatori, out hit, 30f, NavMesh.AllAreas))
+            {
+                agent.speed = velocitatLenta;
+                agent.SetDestination(hit.position);
+            }
+
+            return;
+        }
+        
+        else if (quantitatEdificis >= 5 && quantitatEdificis <= 8)
+        {
+            agent.speed = velocitatLenta;
+            tempsNecessari = 6f;
+        }
+
+        else if (quantitatEdificis >= 9 && quantitatEdificis <= 11)
+        {
+            agent.speed = velocitatMitjana;
+            tempsNecessari = 5f;
+        }
+
+        else if (quantitatEdificis >= 12)
+        {
+            agent.speed = velocitatRapida;
+            tempsNecessari = 4f;
+        }
+
+        // Escollir edifici random
         if (edificisJug1.Count > 0)
         {
             edificiObjectiu = edificisJug1[Random.Range(0, edificisJug1.Count)];
+
             Debug.Log("Nou objectiu: " + edificiObjectiu.name);
         }
     }
 
     void ConvertirEdificiACapitalista()
     {
-        if (edificiObjectiu == null) 
-        {
-            return;
-        }
+        PropietariaEdifici prop = edificiObjectiu.GetComponent<PropietariaEdifici>();
 
-        else
-        {
-            PropietariaEdifici prop = edificiObjectiu.GetComponent<PropietariaEdifici>();
-
-            prop.edificiTransformat = true;
-        }
+        prop.edificiTransformat = true;
     }
 }

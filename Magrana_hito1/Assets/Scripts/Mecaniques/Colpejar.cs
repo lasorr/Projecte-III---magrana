@@ -21,6 +21,7 @@ public class Colpejar : MonoBehaviour
 
     public EdificiEspecialTrans EdificiDragg;
     public EdificiEspecialDesnon EdificiCalvo;
+    public IAEnemicPorclicia IAporcilia;
 
     void Start()
     {
@@ -136,6 +137,15 @@ public class Colpejar : MonoBehaviour
             Destroy(other.gameObject);
 
             EdificiCalvo.polisDerrotats++;
+        }
+
+        else if (other.gameObject.CompareTag("Porclicia"))
+        {
+            jaHaColpejat = true;
+
+            IAporcilia.copsRebuts++;
+
+            Debug.Log("Porcilia ha rebut un cop! Cops rebuts: " + IAporcilia.copsRebuts);
         }
 
         else if (other.CompareTag("Player1"))

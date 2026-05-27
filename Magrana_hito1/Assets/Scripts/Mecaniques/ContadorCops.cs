@@ -52,7 +52,7 @@ public class ContadorCops : MonoBehaviour
                 copsJug1 = 0;
                 superstarJug1 = false;
                 
-                TimeManager.edificisTransformatJug1++;
+                TimeManager.Instance.edificisTransformatJug1++;
             }
         }
 
@@ -68,7 +68,7 @@ public class ContadorCops : MonoBehaviour
                 copsJug2 = 0;
                 superstarJug2 = false;
                 
-                TimeManager.edificisTransformatJug2++;
+                TimeManager.Instance.edificisTransformatJug2++;
             }
         }
     }
