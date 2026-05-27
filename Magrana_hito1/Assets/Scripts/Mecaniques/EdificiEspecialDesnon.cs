@@ -1,19 +1,18 @@
 using UnityEngine;
 
-public class ContadorCops : MonoBehaviour
+public class EdificiEspecialDesnon : MonoBehaviour
 {
-    // Contadors separats per cada jugadora
     private int copsJug1 = 0;
     private int copsJug2 = 0;
+
     private const int copsNecessaris = 3;
 
-    // SUPERSTAR per cada jugadora (ARA AQUÍ!)
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
-    
-    // Paràmetres per ESPECIAL
+
     private GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;
+    public GameObject cadenesBloqueig;
 
     public GameObject imatge1CopPrefab;
     public GameObject imatge2CopPrefab;
@@ -23,6 +22,8 @@ public class ContadorCops : MonoBehaviour
     public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
 
     public TimeManager TimeManager;
+
+    public int polisDerrotats = 0;
 
     void Awake()
     {
@@ -36,46 +37,58 @@ public class ContadorCops : MonoBehaviour
         edificiCapitalistaAssociat = t.gameObject;
     }
 
-    public void RebreCopEdifici(int propietariaArma)
-    {
-        Debug.Log("L'edifici ha rebut un cop");
-
-        if (propietariaArma == 1)
+    void Update(){
+        if (polisDerrotats >= 4)
         {
-            copsJug1++;
-            MostrarImatgeCop();
-
-            if (superstarJug1 || copsJug1 >= copsNecessaris)
-            {
-                ActivarTransformacio(propietariaArma);
-
-                copsJug1 = 0;
-                superstarJug1 = false;
-                
-                TimeManager.edificisTransformatJug1++;
-            }
+            Destroy(cadenesBloqueig);
         }
+    }
 
-        else if (propietariaArma == 2)
+    public void RebreCopEdificiEspecial(int propietariaArma)
+    {
+        if (polisDerrotats >= 4)
         {
-            copsJug2++;
-            MostrarImatgeCop();
-
-            if (superstarJug2 || copsJug2 >= copsNecessaris)
+            if (propietariaArma == 1)
             {
-                ActivarTransformacio(propietariaArma);
+                copsJug1++;
+                MostrarImatgeCop();
 
-                copsJug2 = 0;
-                superstarJug2 = false;
+                Debug.Log(gameObject.name + " rebut cop de J1: " + copsJug1 + "/" + copsNecessaris);
+
+                if ( superstarJug1 ||copsJug1 >= copsNecessaris)
+                {
+                    ActivarTransformacio(1);
+                    copsJug1 = 0;
+                    polisDerrotats = 0;
+                    superstarJug1 = false; // Es gasta el superstar
+
+                    TimeManager.edificisTransformatJug1+=3;
+                }
+            }
+
+            else if (propietariaArma == 2)
+            {
+                copsJug2++;
+                MostrarImatgeCop();
+
+                Debug.Log(gameObject.name + " rebut cop de J2: " + copsJug2 + "/" + copsNecessaris);
                 
-                TimeManager.edificisTransformatJug2++;
+                if (superstarJug2 || copsJug2 >= copsNecessaris)
+                {
+                    ActivarTransformacio(2);
+                    copsJug2 = 0;
+                    polisDerrotats = 0;
+                    superstarJug2 = false; // es gasta el superstar
+                    
+                    TimeManager.edificisTransformatJug2+=3;
+                }
             }
         }
     }
-    
+
     void ActivarTransformacio(int propietaria)
     {
-        Debug.Log("Transformant edifici");
+        Debug.Log("Entra en activar transformacio edifici especial");
 
         Vector3 pos = edificiCapitalistaAssociat.transform.position;
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
@@ -95,21 +108,24 @@ public class ContadorCops : MonoBehaviour
     {
         superstarJug1 = true;
         Debug.Log("SUPERSTAR activat per J1 a " + gameObject.name);
-        Invoke("DesactivarSuperstarJug", 10f);
+        Invoke("DesactivarSuperstarJug1", 10f);
     }
-    
+
     public void ActivarSuperstarJug2()
     {
         superstarJug2 = true;
         Debug.Log("SUPERSTAR activat per J2 a " + gameObject.name);
-        Invoke("DesactivarSuperstarJug", 10f);
+        Invoke("DesactivarSuperstarJug2", 10f);
     }
-    
-    void DesactivarSuperstarJug()
+
+    void DesactivarSuperstarJug1()
     {
         superstarJug1 = false;
+    }
+
+    void DesactivarSuperstarJug2()
+    {
         superstarJug2 = false;
-        Debug.Log("SUPERSTAR desactivat a " + gameObject.name);
     }
 
     void MostrarImatgeStar()
@@ -186,7 +202,6 @@ public class ContadorCops : MonoBehaviour
 
             // Destruir-la després de 1 segon
             Destroy(img, 1f);
-
         }
     }
 }

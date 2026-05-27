@@ -1971,6 +1971,7 @@ MonoBehaviour:
   edificisTransformatJug1: 0
   edificisTransformatJug2: 0
   ScriptPropietaria: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
+  dragg: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
   propietariaArma: 0
 --- !u!1 &634530198
 GameObject:
@@ -2407,7 +2408,7 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a726d268112df57429f3e73a4dae6e26, type: 2}
-    - target: {fileID: 6632795089204431734, guid: 2683e2349936a81469194dfe8cf7790e, type: 3}
+    - target: {fileID: 0}
       propertyPath: draggAlTransformar
       value: 
       objectReference: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
@@ -3539,6 +3540,7 @@ MonoBehaviour:
   edificisTransformatJug1: 0
   edificisTransformatJug2: 0
   ScriptPropietaria: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
+  dragg: {fileID: 0}
   propietariaArma: 0
 --- !u!54 &1262119600
 Rigidbody:

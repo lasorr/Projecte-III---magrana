@@ -2,33 +2,13 @@ using UnityEngine;
 
 public class EdificiEspecialTrans : MonoBehaviour
 {
-    // =========================
-    // MONJES DERROTADES
-    // =========================
-
-    public static int monjesDerrotades = 0;
-
-    // =========================
-    // COPS EDIFICI
-    // =========================
-
     private int copsJug1 = 0;
     private int copsJug2 = 0;
 
     private const int copsNecessaris = 3;
 
-    // =========================
-    // SUPERSTAR
-    // =========================
-
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
-
-    // =========================
-    // REFERÈNCIES
-    // =========================
-
-    public GameObject draggAlTransformar;
 
     private GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;
@@ -41,16 +21,9 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
 
-    public Colpejar ScriptCop1;
-    public Colpejar ScriptCop2;
+    public TimeManager TimeManager;
 
-    // IMPORTANT:
-    // Marca això a TRUE a les monjes
-    // i deixa-ho FALSE a l'edifici especial
-    public bool esMonja = false;
-
-    // Per evitar sumar dues vegades
-    private bool monjaJaDerrotada = false;
+    public int monjesDerrotades = 0;
 
     void Awake()
     {
@@ -71,43 +44,11 @@ public class EdificiEspecialTrans : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    public void RebreCopEdificiEspecial(int propietariaArma)
     {
-        // =========================
-        // MONJES
-        // =========================
-
-        if (esMonja)
+        if (monjesDerrotades >= 4)
         {
-            if (collision.gameObject.CompareTag("Arma_1") ||
-                collision.gameObject.CompareTag("Arma_2"))
-            {
-                // Només sumar una vegada
-                if (!monjaJaDerrotada)
-                {
-                    monjaJaDerrotada = true;
-
-                    monjesDerrotades++;
-
-                    // Transformar immediatament amb 1 cop
-                    ActivarTransformacio(collision, 0);
-                }
-            }
-
-            return;
-        }
-
-        // =========================
-        // EDIFICI ESPECIAL
-        // =========================
-
-        else if (monjesDerrotades >= 4)
-        {
-            // =========================
-            // COPS EDIFICI
-            // =========================
-
-            if (collision.gameObject.CompareTag("Arma_1"))
+            if (propietariaArma == 1)
             {
                 copsJug1++;
                 MostrarImatgeCop();
@@ -116,15 +57,16 @@ public class EdificiEspecialTrans : MonoBehaviour
 
                 if ( superstarJug1 ||copsJug1 >= copsNecessaris)
                 {
-                    ActivarTransformacio(collision, 1);
+                    ActivarTransformacio(1);
                     copsJug1 = 0;
                     monjesDerrotades = 0;
                     superstarJug1 = false; // Es gasta el superstar
-                    ScriptCop1.edificisTransformatJug1++;
+
+                    TimeManager.edificisTransformatJug1+=3;
                 }
             }
 
-            else if (collision.gameObject.CompareTag("Arma_2"))
+            else if (propietariaArma == 2)
             {
                 copsJug2++;
                 MostrarImatgeCop();
@@ -133,57 +75,46 @@ public class EdificiEspecialTrans : MonoBehaviour
                 
                 if (superstarJug2 || copsJug2 >= copsNecessaris)
                 {
-                    ActivarTransformacio(collision, 2);
+                    ActivarTransformacio(2);
                     copsJug2 = 0;
                     monjesDerrotades = 0;
                     superstarJug2 = false; // es gasta el superstar
-                    ScriptCop2.edificisTransformatJug2++;
+                    
+                    TimeManager.edificisTransformatJug2+=3;
                 }
             }
         }
     }
 
-    void ActivarTransformacio(Collision collision, int propietaria)
+    void ActivarTransformacio(int propietaria)
     {
-        Debug.Log("Entra en activar transformacio");
+        Debug.Log("Entra en activar transformacio edifici especial");
 
-        Colpejar colpejarScript = collision.gameObject.GetComponentInParent<Colpejar>();
+        Vector3 pos = edificiCapitalistaAssociat.transform.position;
+        Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
 
-        if (colpejarScript != null)
-        {
-            colpejarScript.ColpejarObjecte(
-                this.gameObject,
-                edificiCapitalistaAssociat,
-                edificiBoAssociat,
-                draggAlTransformar,
-                DeQuiEsAquestEdifici.Propietaria = propietaria
-            );
-        }
-        else
-        {
-            Debug.Log("Desde contadors cops no reb colpejar script");
-        }
+        Destroy(edificiCapitalistaAssociat);
+
+        GameObject nouEdifici = Instantiate(
+            edificiBoAssociat,
+            pos,
+            rot
+        );
+
+        DeQuiEsAquestEdifici.Propietaria = propietaria;
     }
-
-    // =========================
-    // SUPERSTAR
-    // =========================
 
     public void ActivarSuperstarJug1()
     {
         superstarJug1 = true;
-
         Debug.Log("SUPERSTAR activat per J1 a " + gameObject.name);
-
         Invoke("DesactivarSuperstarJug1", 10f);
     }
 
     public void ActivarSuperstarJug2()
     {
         superstarJug2 = true;
-
         Debug.Log("SUPERSTAR activat per J2 a " + gameObject.name);
-
         Invoke("DesactivarSuperstarJug2", 10f);
     }
 

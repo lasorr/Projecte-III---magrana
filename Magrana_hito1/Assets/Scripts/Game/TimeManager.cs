@@ -12,7 +12,7 @@ public class TimeManager : MonoBehaviour
     public TMP_Text winner;
     public TMP_Text PointsJ1;
     public TMP_Text PointsJ2;
-    public GameObject[] inGameUIElements; // NOU: UI ingame, que es mostra nom�s quan s'inicia el joc
+    public GameObject[] inGameUIElements; // NOU: UI ingame, que es mostra nomes quan s'inicia el joc
 
     //[Header("Player Settings")]
     //public List<string> playerTags;
@@ -26,9 +26,9 @@ public class TimeManager : MonoBehaviour
     
     // CANVIAT: Moviment_jugadora en lloc de PlayerMovementController
     private List<Moviment_jugadora> playerScripts = new List<Moviment_jugadora>();
-    
-    public Colpejar ScriptCop1;
-    public Colpejar ScriptCop2;
+
+    public int edificisTransformatJug1 = 0;
+    public int edificisTransformatJug2 = 0;
 
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
@@ -45,8 +45,8 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        PointsJ1.text = ScriptCop1.edificisTransformatJug1.ToString();
-        PointsJ2.text = ScriptCop2.edificisTransformatJug2.ToString();
+        PointsJ1.text = edificisTransformatJug1.ToString();
+        PointsJ2.text = edificisTransformatJug2.ToString();
     }
     
     IEnumerator InitialCountdownCoroutine()
@@ -117,17 +117,17 @@ public class TimeManager : MonoBehaviour
         {
             gameTimerText.text = "00:00";
 
-            if(ScriptCop1.edificisTransformatJug1>ScriptCop2.edificisTransformatJug2){
+            if(edificisTransformatJug1>edificisTransformatJug2){
                 winner.text="GUANYADORA: JUGADORA 1";
                 Debug.Log($"GUANYADORA: JUGADORA 1");  
             }
 
-            else if(ScriptCop1.edificisTransformatJug1<ScriptCop2.edificisTransformatJug2){
+            else if(edificisTransformatJug1<edificisTransformatJug2){
                 winner.text="GUANYADORA: JUGADORA 2";
                 Debug.Log($"GUANYADORA: JUGADORA 2");            
             }
 
-            else if(ScriptCop1.edificisTransformatJug1==ScriptCop2.edificisTransformatJug2){
+            else if(edificisTransformatJug1==edificisTransformatJug2){
                 winner.text="EMPAT";
                 Debug.Log($"EMPAT");            
             }

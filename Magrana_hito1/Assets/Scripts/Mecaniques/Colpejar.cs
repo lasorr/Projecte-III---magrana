@@ -8,16 +8,19 @@ public class Colpejar : MonoBehaviour
     public InputActionReference cop;
     public Animator animator;
 
-    public Moviment_jugadora ScriptMovimentJug1;
-    public Moviment_jugadora ScriptMovimentJug2;
-    public int edificisTransformatJug1 = 0;
-    public int edificisTransformatJug2 = 0;
-
     public PropietariaEdifici ScriptPropietaria;
+
+    public GameObject dragg;
     
     private bool jaHaColpejat = false;
 
     public  int propietariaArma;
+
+    public Moviment_jugadora ScriptMoviment1;
+    public Moviment_jugadora ScriptMoviment2;
+
+    public EdificiEspecialTrans EdificiDragg;
+    public EdificiEspecialDesnon EdificiCalvo;
 
     void Start()
     {
@@ -67,16 +70,48 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            // EXEMPLE SIMPLE: agafem components del mateix objecte
-            GameObject obj = other.gameObject;
+            ContadorCops contadorScript = other.GetComponent<ContadorCops>();
 
-            ColpejarObjecte(
-                obj,
-                obj,   // edificiCapitalista (mateix objecte si no tens jerarquia separada)
-                null,
-                null,
-                0
-            );
+            if (contadorScript != null)
+            {
+                contadorScript.RebreCopEdifici(propietariaArma);
+            }
+            else
+            {
+                Debug.Log("Desde colpejar no reb contador cops script");
+            }
+        }
+
+        else if (other.CompareTag("EspecialDesnon"))
+        {
+            jaHaColpejat = true;
+
+            ContadorCops contadorScript = other.GetComponent<ContadorCops>();
+
+            if (EdificiCalvo != null)
+            {
+                EdificiCalvo.RebreCopEdificiEspecial(propietariaArma);
+            }
+            else
+            {
+                Debug.Log("Desde colpejar no reb contador cops script");
+            }
+        }
+
+        else if (other.CompareTag("EspecialMonja"))
+        {
+            jaHaColpejat = true;
+
+            ContadorCops contadorScript = other.GetComponent<ContadorCops>();
+
+            if (EdificiDragg != null)
+            {
+                EdificiDragg.RebreCopEdificiEspecial(propietariaArma);
+            }
+            else
+            {
+                Debug.Log("Desde colpejar no reb contador cops script");
+            }
         }
 
         else if (other.CompareTag("Monja"))
@@ -87,9 +122,20 @@ public class Colpejar : MonoBehaviour
                 other.gameObject,
                 null,
                 null,
-                null,
+                dragg,
                 0
             );
+
+            EdificiDragg.monjesDerrotades++;
+        }
+
+        else if (other.CompareTag("porclicia_desnon"))
+        {
+            jaHaColpejat = true;
+
+            Destroy(other.gameObject);
+
+            EdificiCalvo.polisDerrotats++;
         }
 
         else if (other.CompareTag("Player1"))
@@ -133,44 +179,22 @@ public class Colpejar : MonoBehaviour
         // Cas MONJA
         if (objecteColpejat.CompareTag("Monja"))
         {
-            if (dragg != null)
-            {
-                Vector3 pos = objecteColpejat.transform.position;
-                Quaternion rot = objecteColpejat.transform.rotation;
-                Destroy(objecteColpejat);
-                Instantiate(dragg, pos, rot);
-            }
-            else
-            {
-                Debug.LogError("La monja no té Dragg assignat!");
-            }
+            Vector3 pos = objecteColpejat.transform.position;
+            Quaternion rot = objecteColpejat.transform.rotation;
+
+            Destroy(objecteColpejat);
+
+            Instantiate(dragg, pos, rot);
         }
         
         // Cas ESPECIAL
         else if (objecteColpejat.CompareTag("Especial"))
         {
-            if (edificiCapitalista != null && edificiBo != null)
-            {
-                Vector3 pos = edificiCapitalista.transform.position;
-                Quaternion rot = edificiCapitalista.transform.rotation;
-                Destroy(edificiCapitalista);
-                Destroy(objecteColpejat);
-                GameObject nouEdifici = Instantiate(edificiBo, pos, rot);
-
-                if (gameObject.CompareTag("Arma_1"))
-                {
-                    edificisTransformatJug1++;
-                }
-                else if (gameObject.CompareTag("Arma_2"))
-                {
-                    edificisTransformatJug2++;
-                }
-            }
-            
-            else
-            {
-                Debug.LogError("L'objecte especial no té edificis assignats!");
-            }
+            Vector3 pos = edificiCapitalista.transform.position;
+            Quaternion rot = edificiCapitalista.transform.rotation;
+            Destroy(edificiCapitalista);
+            Destroy(objecteColpejat);
+            GameObject nouEdifici = Instantiate(edificiBo, pos, rot);
         }
 
         else if (objecteColpejat.name == "Jugadora 1")
@@ -178,12 +202,12 @@ public class Colpejar : MonoBehaviour
             Debug.Log("Find player 1");
             if (propietariaArma == 2)
             {
-                ScriptMovimentJug1.stunJug = true;
+                ScriptMoviment1.stunJug = true;
 
                 Debug.Log("Stun player 1");
                 
                 Invoke("DesactivarStun", 2f);
-                ScriptMovimentJug1.animator.SetBool("Emputjar", true);
+                ScriptMoviment1.animator.SetBool("Emputjar", true);
             }
         }
 
@@ -192,34 +216,34 @@ public class Colpejar : MonoBehaviour
             Debug.Log("Find player 2");
             if (propietariaArma == 1)
             {
-                ScriptMovimentJug2.stunJug = true;
+                ScriptMoviment2.stunJug = true;
 
                 Debug.Log("Stun player 2");
             
                 Invoke("DesactivarStun", 2f);
-                ScriptMovimentJug2.animator.SetBool("Emputjar", true);
+                ScriptMoviment2.animator.SetBool("Emputjar", true);
             }
         }
     }
 
     public void DesactivarStun()
     {
-        if (ScriptMovimentJug1.stunJug)
+        if (ScriptMoviment1.stunJug)
         {
-            ScriptMovimentJug1.stunJug = false;
+            ScriptMoviment1.stunJug = false;
             Debug.Log("Desactivar stun player 1");
 
             Debug.Log("Entrar void desactivar emputjar (animacio)");
-            ScriptMovimentJug1.animator.SetBool("Emputjar", false);
+            ScriptMoviment1.animator.SetBool("Emputjar", false);
         }
 
-        if (ScriptMovimentJug2.stunJug)        
+        if (ScriptMoviment2.stunJug)        
         {
-            ScriptMovimentJug2.stunJug = false;
+            ScriptMoviment2.stunJug = false;
             Debug.Log("Desactivar stun player 2");
 
             Debug.Log("Entrar void desactivar emputjar (animacio)");
-            ScriptMovimentJug2.animator.SetBool("Emputjar", false);
+            ScriptMoviment2.animator.SetBool("Emputjar", false);
         }
 
         Debug.Log("Desactivar stun");
