@@ -488,6 +488,7 @@ MonoBehaviour:
   move: {fileID: -6070361135746245362, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
   animator: {fileID: 434753204}
   potMoure: 0
+  stunJug: 0
   modelTransform: {fileID: 434753203}
   rotationSpeed: 10
 --- !u!114 &1164770025
@@ -1055,7 +1056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1019518904767430923, guid: 53b044ab9ca72bc4f99dfc02f45af823, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 1019518904767430923, guid: 53b044ab9ca72bc4f99dfc02f45af823, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1084,6 +1085,14 @@ PrefabInstance:
     - target: {fileID: 1019518904767430923, guid: 53b044ab9ca72bc4f99dfc02f45af823, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760064272244397275, guid: 53b044ab9ca72bc4f99dfc02f45af823, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007993728109263750, guid: 53b044ab9ca72bc4f99dfc02f45af823, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6634739271521029231, guid: 53b044ab9ca72bc4f99dfc02f45af823, type: 3}
       propertyPath: m_Name
