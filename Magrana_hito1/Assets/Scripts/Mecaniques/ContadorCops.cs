@@ -36,7 +36,7 @@ public class ContadorCops : MonoBehaviour
         edificiCapitalistaAssociat = t.gameObject;
     }
 
-    public void RebreCopEdifici(int propietariaArma)
+    public void RebreCopEdifici(int propietariaArma, int punts)
     {
         Debug.Log("L'edifici ha rebut un cop");
 
@@ -47,7 +47,7 @@ public class ContadorCops : MonoBehaviour
 
             if (superstarJug1 || copsJug1 >= copsNecessaris)
             {
-                ActivarTransformacio(propietariaArma);
+                ActivarTransformacio(1, 1);
 
                 copsJug1 = 0;
                 superstarJug1 = false;
@@ -63,7 +63,7 @@ public class ContadorCops : MonoBehaviour
 
             if (superstarJug2 || copsJug2 >= copsNecessaris)
             {
-                ActivarTransformacio(propietariaArma);
+                ActivarTransformacio(2, 1);
 
                 copsJug2 = 0;
                 superstarJug2 = false;
@@ -73,9 +73,9 @@ public class ContadorCops : MonoBehaviour
         }
     }
     
-    void ActivarTransformacio(int propietaria)
+    void ActivarTransformacio(int propietaria, int punts)
     {
-        Debug.Log("Transformant edifici");
+        Debug.Log("Transformant edifici a comunista");
 
         Vector3 pos = edificiCapitalistaAssociat.transform.position;
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
@@ -88,7 +88,7 @@ public class ContadorCops : MonoBehaviour
             rot
         );
 
-        nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria);
+        nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
     }
 
     public void ActivarSuperstarJug1()

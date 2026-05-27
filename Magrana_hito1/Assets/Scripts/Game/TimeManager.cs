@@ -32,6 +32,13 @@ public class TimeManager : MonoBehaviour
 
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
+
+    public static TimeManager Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
     
     void Start()
     {
@@ -102,6 +109,18 @@ public class TimeManager : MonoBehaviour
         if (currentGameTime <= 0)
         {
             EndGame();
+        }
+    }
+
+    public void RestaPunts(int jugadora, int punts)
+    {
+        if (jugadora == 1)
+        {
+            edificisTransformatJug1-= punts;
+        }
+        else if (jugadora == 2)
+        {
+            edificisTransformatJug2-= punts;
         }
     }
     

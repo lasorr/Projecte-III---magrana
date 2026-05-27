@@ -74,7 +74,7 @@ public class Colpejar : MonoBehaviour
 
             if (contadorScript != null)
             {
-                contadorScript.RebreCopEdifici(propietariaArma);
+                contadorScript.RebreCopEdifici(propietariaArma, 1);
             }
             else
             {
@@ -90,7 +90,7 @@ public class Colpejar : MonoBehaviour
 
             if (EdificiCalvo != null)
             {
-                EdificiCalvo.RebreCopEdificiEspecial(propietariaArma);
+                EdificiCalvo.RebreCopEdificiEspecial(propietariaArma, 3);
             }
             else
             {
@@ -106,7 +106,7 @@ public class Colpejar : MonoBehaviour
 
             if (EdificiDragg != null)
             {
-                EdificiDragg.RebreCopEdificiEspecial(propietariaArma);
+                EdificiDragg.RebreCopEdificiEspecial(propietariaArma, 3);
             }
             else
             {

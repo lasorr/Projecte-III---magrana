@@ -44,7 +44,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
         }
     }
 
-    public void RebreCopEdificiEspecial(int propietariaArma)
+    public void RebreCopEdificiEspecial(int propietariaArma, int punts)
     {
         if (polisDerrotats >= 4)
         {
@@ -57,7 +57,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
                 if ( superstarJug1 ||copsJug1 >= copsNecessaris)
                 {
-                    ActivarTransformacio(1);
+                    ActivarTransformacio(1, 3);
                     copsJug1 = 0;
                     polisDerrotats = 0;
                     superstarJug1 = false; // Es gasta el superstar
@@ -75,7 +75,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
                 
                 if (superstarJug2 || copsJug2 >= copsNecessaris)
                 {
-                    ActivarTransformacio(2);
+                    ActivarTransformacio(2, 3);
                     copsJug2 = 0;
                     polisDerrotats = 0;
                     superstarJug2 = false; // es gasta el superstar
@@ -86,7 +86,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
         }
     }
 
-    void ActivarTransformacio(int propietaria)
+    void ActivarTransformacio(int propietaria, int punts)
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
@@ -101,7 +101,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
             rot
         );
 
-        DeQuiEsAquestEdifici.Propietaria = propietaria;
+        nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
     }
 
     public void ActivarSuperstarJug1()
