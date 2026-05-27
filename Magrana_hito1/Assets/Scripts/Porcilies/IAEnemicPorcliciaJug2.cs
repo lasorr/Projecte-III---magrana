@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
-public class IAEnemicPorclicia : MonoBehaviour
+public class IAEnemicPorcliciaJug2 : MonoBehaviour
 {
     public NavMeshAgent agent;
     private GameObject edificiObjectiu;
@@ -45,7 +45,7 @@ public class IAEnemicPorclicia : MonoBehaviour
     void FixedUpdate(){
         if (edificiObjectiu == null)
         {
-            BuscarEdificiJug1();
+            BuscarEdificiJug2();
         }
 
         else if (edificiObjectiu != null)
@@ -59,11 +59,11 @@ public class IAEnemicPorclicia : MonoBehaviour
                 copsRebuts = 0;
             }
 
-            else if (dist <= 7f)
+            else if (dist < 7f)
             {
                 if (copsRebuts >= 3)
                 {
-                    BuscarEdificiJug1();
+                    BuscarEdificiJug2();
                     copsRebuts = 0;
                     Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
                 }
@@ -72,8 +72,18 @@ public class IAEnemicPorclicia : MonoBehaviour
                 {
                     tempsSobreEdifici += Time.deltaTime;
                 }
+                
             }
-            
+
+            if (tempsSobreEdifici >= tempsNecessari)
+            {
+                ConvertirEdificiACapitalista();
+
+                tempsSobreEdifici = 0f;
+
+                edificiObjectiu = null;
+            }
+
             else
             {
                 tempsSobreEdifici = 0f;
@@ -81,11 +91,11 @@ public class IAEnemicPorclicia : MonoBehaviour
         }
     }
 
-    void BuscarEdificiJug1()
+    void BuscarEdificiJug2()
     {
         GameObject[] edificis = GameObject.FindGameObjectsWithTag("EdificiComunista");
 
-        List<GameObject> edificisJug1 = new List<GameObject>();
+        List<GameObject> edificisJug2 = new List<GameObject>();
 
         foreach (GameObject edifici in edificis)
         {
@@ -93,14 +103,14 @@ public class IAEnemicPorclicia : MonoBehaviour
 
             if (prop != null)
             {
-                if (prop.Propietaria == 1)
+                if (prop.Propietaria == 2)
                 {
-                    edificisJug1.Add(edifici);
+                    edificisJug2.Add(edifici);
                 }
             }
         }
 
-        int quantitatEdificis = TimeManager.Instance.edificisTransformatJug1;
+        int quantitatEdificis = TimeManager.Instance.edificisTransformatJug2;
 
         if (quantitatEdificis <= 4)
         {
@@ -138,9 +148,9 @@ public class IAEnemicPorclicia : MonoBehaviour
         }
 
         // Escollir edifici random
-        if (edificisJug1.Count > 0)
+        if (edificisJug2.Count > 0)
         {
-            edificiObjectiu = edificisJug1[Random.Range(0, edificisJug1.Count)];
+            edificiObjectiu = edificisJug2[Random.Range(0, edificisJug2.Count)];
 
             Debug.Log("Nou objectiu: " + edificiObjectiu.name);
         }

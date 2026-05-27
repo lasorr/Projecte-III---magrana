@@ -24,12 +24,12 @@ public class PropietariaEdifici : MonoBehaviour
             
             if (Propietaria == 1)
             {
-                TimeManager.Instance.RestaPunts(Propietaria, punts);
+                TimeManager.Instance.RestaPunts(1, punts);
                 Debug.Log("Edifici de J1 transformat a capitalista");
             }
             else if (Propietaria == 2)
             {
-                TimeManager.Instance.RestaPunts(Propietaria, punts);
+                TimeManager.Instance.RestaPunts(2, punts);
                 Debug.Log("Edifici de J2 transformat a capitalista");
             }
 

@@ -139,7 +139,7 @@ public class Colpejar : MonoBehaviour
             EdificiCalvo.polisDerrotats++;
         }
 
-        else if (other.gameObject.CompareTag("Porclicia"))
+        else if (other.CompareTag("Porclicia"))
         {
             jaHaColpejat = true;
 
