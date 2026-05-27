@@ -59,7 +59,7 @@ public class IAEnemicPorcliciaJug2 : MonoBehaviour
                 copsRebuts = 0;
             }
 
-            else if (dist < 7f)
+            else if (dist <= 7f)
             {
                 if (copsRebuts >= 3)
                 {
