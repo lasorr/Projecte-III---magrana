@@ -73,7 +73,16 @@ public class IAEnemicPorclicia : MonoBehaviour
                     tempsSobreEdifici += Time.deltaTime;
                 }
             }
-            
+
+            if (tempsSobreEdifici >= tempsNecessari)
+            {
+                ConvertirEdificiACapitalista();
+
+                tempsSobreEdifici = 0f;
+
+                edificiObjectiu = null;
+            }
+
             else
             {
                 tempsSobreEdifici = 0f;
