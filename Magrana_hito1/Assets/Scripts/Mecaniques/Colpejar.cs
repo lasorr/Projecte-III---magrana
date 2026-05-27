@@ -142,26 +142,34 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            ColpejarObjecte(
-                other.gameObject,
-                null,
-                null,
-                null,
-                0
-            );
+            Debug.Log("Collision player 1");
+
+            if (propietariaArma == 2)
+            {
+                ScriptMoviment1.stunJug = true;
+
+                Debug.Log("Stun player 1");
+                
+                Invoke("DesactivarStun", 2f);
+                ScriptMoviment1.animator.SetBool("Emputjar", true);
+            }
         }
 
         else if (other.CompareTag("Player2"))
         {
             jaHaColpejat = true;
 
-            ColpejarObjecte(
-                other.gameObject,
-                null,
-                null,
-                null,
-                0
-            );
+
+            Debug.Log("Collision player 2");
+            if (propietariaArma == 1)
+            {
+                ScriptMoviment2.stunJug = true;
+
+                Debug.Log("Stun player 2");
+            
+                Invoke("DesactivarStun", 2f);
+                ScriptMoviment2.animator.SetBool("Emputjar", true);
+            }
         }
     }
 
@@ -195,34 +203,6 @@ public class Colpejar : MonoBehaviour
             Destroy(edificiCapitalista);
             Destroy(objecteColpejat);
             GameObject nouEdifici = Instantiate(edificiBo, pos, rot);
-        }
-
-        else if (objecteColpejat.name == "Jugadora 1")
-        {
-            Debug.Log("Find player 1");
-            if (propietariaArma == 2)
-            {
-                ScriptMoviment1.stunJug = true;
-
-                Debug.Log("Stun player 1");
-                
-                Invoke("DesactivarStun", 2f);
-                ScriptMoviment1.animator.SetBool("Emputjar", true);
-            }
-        }
-
-        else if (objecteColpejat.name == "Jugadora 2")
-        {
-            Debug.Log("Find player 2");
-            if (propietariaArma == 1)
-            {
-                ScriptMoviment2.stunJug = true;
-
-                Debug.Log("Stun player 2");
-            
-                Invoke("DesactivarStun", 2f);
-                ScriptMoviment2.animator.SetBool("Emputjar", true);
-            }
         }
     }
 

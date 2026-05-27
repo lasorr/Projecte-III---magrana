@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2837595363517326975}
   - component: {fileID: 3290397364377104108}
+  - component: {fileID: 2544195883848141151}
   m_Layer: 0
-  m_Name: Porclicia
+  m_Name: PorcliciaJug1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +56,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2544195883848141151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427678024494304887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eef53c115e3147229095f22752535dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 3290397364377104108}
+  edificiObjectiu: {fileID: 0}
+  thinkRate: 2
+  ScriptPropietaria: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
 --- !u!1 &1531936121933598861
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,5 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eef53c115e3147229095f22752535dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  edificiObjectiu: {fileID: 0}
   thinkRate: 2
   ScriptPropietaria: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}

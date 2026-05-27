@@ -88,7 +88,7 @@ public class ContadorCops : MonoBehaviour
             rot
         );
 
-        DeQuiEsAquestEdifici.Propietaria = propietaria;
+        nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria);
     }
 
     public void ActivarSuperstarJug1()

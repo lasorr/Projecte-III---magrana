@@ -4,23 +4,24 @@ using System.Collections.Generic;
 
 public class NeutralEnemy : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     private GameObject edificiObjectiu;
 
     private float thinkTimer;
     public float thinkRate = 2f;
 
-    private float velocitat = 3.5f; // Afegeix aquesta variable
-
-    public PropietariaEdifici ScriptPropietaria;
+    public float velocitat = 3.5f;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent.speed = velocitat;
 
-        // Buscar per nom si no tens tags específics
-        GameObject jugadora1 = GameObject.Find("Arma_1"); // O el nom exacte del GameObject
-        GameObject jugadora2 = GameObject.Find("Arma_2"); // O el nom exacte del GameObject
+        transform.position += new Vector3(0, 0.5f, 0);
+     
+        if (agent.isOnNavMesh)
+            Debug.Log("ESTÀ al NavMesh");
+        else
+            Debug.Log("NO està al NavMesh");
     }
 
     void Update()
@@ -30,28 +31,48 @@ public class NeutralEnemy : MonoBehaviour
         if (thinkTimer >= thinkRate)
         {
             thinkTimer = 0f;
+
+            if (edificiObjectiu == null)
+            {
+                BuscarEdificiJug1();
+            }
         }
 
         if (edificiObjectiu != null)
         {
-            // Moure's cap a l'edifici
-            float step = velocitat * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, edificiObjectiu.transform.position, step);
+            agent.SetDestination(edificiObjectiu.transform.position);
         }
     }
 
-    void DestruirEdificisJug()
+    void BuscarEdificiJug1()
     {
         GameObject[] edificis = GameObject.FindGameObjectsWithTag("EdificiComunista");
 
-        if (ScriptPropietaria.Propietaria == 1)
+        Debug.Log("Edificis trobats: " + edificis.Length);
+
+        List<GameObject> edificisJug1 = new List<GameObject>();
+
+        foreach (GameObject edifici in edificis)
         {
-            
+            PropietariaEdifici prop = edifici.GetComponent<PropietariaEdifici>();
+
+            if (prop != null)
+            {
+                Debug.Log("Propietari: " + prop.Propietaria);
+
+                if (prop.Propietaria == 1)
+                {
+                    edificisJug1.Add(edifici);
+                }
+            }
         }
 
-        else if (ScriptPropietaria.Propietaria == 2)
+        Debug.Log("Edificis jug1: " + edificisJug1.Count);
+
+        if (edificisJug1.Count > 0)
         {
-            
+            edificiObjectiu = edificisJug1[Random.Range(0, edificisJug1.Count)];
+            Debug.Log("Nou objectiu: " + edificiObjectiu.name);
         }
     }
 }
