@@ -13,7 +13,7 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject quitConfirmUI; // Missatge de confirmació sortir
     public TMP_Text countdownText; // Referència al text del compte enrere
 
-     public float initialCountdown = 3f; // Durada del compte enrere en segons
+    public float initialCountdown = 3f; // Durada del compte enrere en segons
 
      void Awake()
     {
@@ -119,7 +119,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         exitConfirmUI.SetActive(false);
 
-        Debug.Log("No vol sortir");
+        Debug.Log("HideQuitConfirm EJECUTADO");
     }
     public void QuitConfirmed()
     {
@@ -140,7 +140,8 @@ public class PauseMenuManager : MonoBehaviour
     }
     public void HideExitConfirm()
     {
-        quitConfirmUI.SetActive(false);
+        exitConfirmUI.SetActive(false);
+        Debug.Log("HideExitConfirm EJECUTADO");
     }
     IEnumerator ResumeCountdownCoroutine()
         {
