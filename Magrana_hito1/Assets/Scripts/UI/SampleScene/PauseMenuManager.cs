@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
 
@@ -8,6 +9,7 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject mainMenuUI; // Botons del manú principal
     public GameObject optionsUI; // Botons de les opcions
     public GameObject controlsUI; // Esquema dels controls
+    public GameObject exitConfirmUI; // Missatge de confirmació sortir
     public GameObject quitConfirmUI; // Missatge de confirmació sortir
     public TMP_Text countdownText; // Referència al text del compte enrere
 
@@ -115,7 +117,7 @@ public class PauseMenuManager : MonoBehaviour
     }
     public void HideQuitConfirm()
     {
-        quitConfirmUI.SetActive(false);
+        exitConfirmUI.SetActive(false);
 
         Debug.Log("No vol sortir");
     }
@@ -126,6 +128,19 @@ public class PauseMenuManager : MonoBehaviour
         #else
         Application.Quit();  // Para la build final
         #endif
+    }
+    public void ShowExitConfirm()
+    {
+        exitConfirmUI.SetActive(true);
+    }
+    public void ExitToMainMenu()
+    {
+        Time.timeScale = 1f; // Assegura que el temps està normal abans de canviar d'escena
+        SceneManager.LoadScene("Start"); // Carrega l'escena del menú principal
+    }
+    public void HideExitConfirm()
+    {
+        quitConfirmUI.SetActive(false);
     }
     IEnumerator ResumeCountdownCoroutine()
         {
