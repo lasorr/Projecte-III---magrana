@@ -12,6 +12,8 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject exitConfirmUI; // Missatge de confirmació sortir
     public GameObject quitConfirmUI; // Missatge de confirmació sortir
     public TMP_Text countdownText; // Referència al text del compte enrere
+    public GameObject ingameUI;
+    public GameObject GameTime;
 
     public float initialCountdown = 3f; // Durada del compte enrere en segons
 
@@ -76,6 +78,8 @@ public class PauseMenuManager : MonoBehaviour
         {
             mainMenuPanel.SetActive(false); // Deshabilita el menú
             Debug.Log("Menú tancat");
+            ingameUI.SetActive(false);
+            GameTime.SetActive(false);
             StartCoroutine(ResumeCountdownCoroutine());
         }
     }
@@ -162,6 +166,8 @@ public class PauseMenuManager : MonoBehaviour
             if (countdownText != null)
             {
                 countdownText.gameObject.SetActive(false);
+                ingameUI.SetActive(true);
+                GameTime.SetActive(true);
             }
         
             Time.timeScale = 1f; // Continua el joc
