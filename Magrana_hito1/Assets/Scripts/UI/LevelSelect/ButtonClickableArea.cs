@@ -7,6 +7,6 @@ public class ButtonClickableArea : MonoBehaviour
     {
         // Obtiene el componente Image y asigna el umbral
         Image image = GetComponent<Image>();
-        image.alphaHitTestMinimumThreshold = 1.0f;
+        image.alphaHitTestMinimumThreshold = 0.3f;
     }
 }
