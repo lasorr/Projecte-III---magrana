@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -8,6 +9,20 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject optionsUI; // Botons de les opcions
     public GameObject controlsUI; // Esquema dels controls
     public GameObject quitConfirmUI; // Missatge de confirmació sortir
+    public TMP_Text countdownText; // Referència al text del compte enrere
+
+     public float initialCountdown = 3f; // Durada del compte enrere en segons
+
+     void Awake()
+    {
+        // Assegurem que el menú està tancat per default
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.SetActive(false); // Deshabilita el panell del menú
+            optionsUI.SetActive(false);
+            controlsUI.SetActive(false);
+        }
+    }
 
     void Start()
     {
@@ -59,7 +74,7 @@ public class PauseMenuManager : MonoBehaviour
         {
             mainMenuPanel.SetActive(false); // Deshabilita el menú
             Debug.Log("Menú tancat");
-            Time.timeScale = 1f; // Continua el joc
+            StartCoroutine(ResumeCountdownCoroutine());
         }
     }
 
@@ -112,4 +127,27 @@ public class PauseMenuManager : MonoBehaviour
         Application.Quit();  // Para la build final
         #endif
     }
+    IEnumerator ResumeCountdownCoroutine()
+        {
+            float remainingTime = initialCountdown;
+        
+            while (remainingTime > 0)
+            {
+                if (countdownText != null)
+                    {
+                        countdownText.text = Mathf.CeilToInt(remainingTime).ToString();
+                        countdownText.gameObject.SetActive(true);
+                    }
+            
+                    yield return new WaitForSecondsRealtime(1f);
+                    remainingTime--;
+            }
+        
+            if (countdownText != null)
+            {
+                countdownText.gameObject.SetActive(false);
+            }
+        
+            Time.timeScale = 1f; // Continua el joc
+        }
 }
