@@ -54,7 +54,7 @@ public class Colpejar : MonoBehaviour
         Arma.enabled = true;
 
         // temps real d’impacte (AJUSTA A L’ANIMACIÓ)
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(2f);
 
         Arma.enabled = false;
 
