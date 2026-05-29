@@ -22,6 +22,7 @@ public class TimeManager : MonoBehaviour
     [Header("Timer Settings")]
     public float initialCountdown = 3f;
     public float gameDuration = 150f;
+    public float winnerScreenDuration = 5f;
     
     private bool isGameActive = false;
     private float currentGameTime;
@@ -162,6 +163,13 @@ public class TimeManager : MonoBehaviour
                 Debug.Log($"EMPAT");            
             }
         }
+        StartCoroutine(waitAndReturnToLevelSelect(winnerScreenDuration));
+    }
+
+    IEnumerator waitAndReturnToLevelSelect(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        ScriptNivellCompletat.DesbloquejarSeguent();
     }
 
     // NOVA FUNCI�:
