@@ -12,7 +12,9 @@ public class TimeManager : MonoBehaviour
     public TMP_Text winner;
     public TMP_Text PointsJ1;
     public TMP_Text PointsJ2;
+    public GameObject PointsContainer;
     public GameObject[] inGameUIElements; // NOU: UI ingame, que es mostra nomes quan s'inicia el joc
+    public GameObject winnerScreen;
 
     //[Header("Player Settings")]
     //public List<string> playerTags;
@@ -23,6 +25,7 @@ public class TimeManager : MonoBehaviour
     
     private bool isGameActive = false;
     private float currentGameTime;
+    private float scoreFinalPosY = 35f;
     
     // CANVIAT: Moviment_jugadora en lloc de PlayerMovementController
     private List<Moviment_jugadora> playerScripts = new List<Moviment_jugadora>();
@@ -34,6 +37,7 @@ public class TimeManager : MonoBehaviour
     public Moviment_jugadora ScriptMoviment2;
 
     public static TimeManager Instance;
+    private RectTransform rect;
 
     void Awake()
     {
@@ -45,7 +49,10 @@ public class TimeManager : MonoBehaviour
         ScriptMoviment1.potMoure = false;
         ScriptMoviment2.potMoure = false;
 
+        rect = PointsContainer.GetComponent<RectTransform>();
+
         SetUIElementsActive(false);
+         winnerScreen.SetActive(false);
 
         StartCoroutine(InitialCountdownCoroutine());
     }
@@ -129,6 +136,9 @@ public class TimeManager : MonoBehaviour
         ScriptMoviment1.potMoure = false;
         ScriptMoviment2.potMoure = false;        
         isGameActive = false;
+        winnerScreen.SetActive(true);
+
+        rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, scoreFinalPosY);
 
         Debug.Log("Partida finalitzada! Temps esgotat.");
         
@@ -137,12 +147,12 @@ public class TimeManager : MonoBehaviour
             gameTimerText.text = "00:00";
 
             if(edificisTransformatJug1>edificisTransformatJug2){
-                winner.text="GUANYADORA: JUGADORA 1";
+                winner.text="GUANYA J1";
                 Debug.Log($"GUANYADORA: JUGADORA 1");  
             }
 
             else if(edificisTransformatJug1<edificisTransformatJug2){
-                winner.text="GUANYADORA: JUGADORA 2";
+                winner.text="GUANYA J2";
                 Debug.Log($"GUANYADORA: JUGADORA 2");            
             }
 
