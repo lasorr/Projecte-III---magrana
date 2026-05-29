@@ -71,5 +71,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 92dc00247e8a0434ab5a622f96b265cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5445798940904525927}
+    - targetCorrespondingSourceObject: {fileID: 2414822743332838917, guid: 92dc00247e8a0434ab5a622f96b265cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 100948737104379917}
   m_SourcePrefab: {fileID: 100100000, guid: 92dc00247e8a0434ab5a622f96b265cd, type: 3}
+--- !u!1 &6001724538744888466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2414822743332838917, guid: 92dc00247e8a0434ab5a622f96b265cd, type: 3}
+  m_PrefabInstance: {fileID: 8271217879781802647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &100948737104379917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001724538744888466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca5b72b4b1074f9eb6d689161fa74bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Propietaria: 0
+  punts: 0
+  edificiCapitalistaAssociat: {fileID: 3188646167965516388, guid: 8839e82c29ba3b94c87558b34cf91cbb, type: 3}
+  edificiBoAssociat: {fileID: 9081558157289603014}
+  edificiTransformat: 0
+  TimeManager: {fileID: 0}
+--- !u!1 &9081558157289603014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 92dc00247e8a0434ab5a622f96b265cd, type: 3}
+  m_PrefabInstance: {fileID: 8271217879781802647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5445798940904525927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081558157289603014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca5b72b4b1074f9eb6d689161fa74bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Propietaria: 0
+  punts: 0
+  edificiCapitalistaAssociat: {fileID: 0}
+  edificiBoAssociat: {fileID: 0}
+  edificiTransformat: 0
+  TimeManager: {fileID: 0}
