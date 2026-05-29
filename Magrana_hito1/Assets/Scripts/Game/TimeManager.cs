@@ -35,6 +35,7 @@ public class TimeManager : MonoBehaviour
 
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
+    public NivellCompletat ScriptNivellCompletat;
 
     public static TimeManager Instance;
     private RectTransform rect;

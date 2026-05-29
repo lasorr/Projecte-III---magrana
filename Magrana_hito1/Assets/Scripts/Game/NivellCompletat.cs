@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CompletarNivel : MonoBehaviour
+public class NivellCompletat : MonoBehaviour
 {
     public string nivellActual; // Escribe aquí: "Tutorial", "Nivel1" o "Nivel2"
 
     // Llama a este método cuando el jugador complete el nivel
-    public void NivellCompletat()
+    public void DesbloquejarSeguent()
     {
         if (nivellActual == "Tutorial")
             PlayerPrefs.SetInt("TutorialComplet", 1);
