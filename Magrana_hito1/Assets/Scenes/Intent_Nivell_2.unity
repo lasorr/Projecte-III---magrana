@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eef53c115e3147229095f22752535dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 1517284538}
   thinkRate: 2
   velocitatLenta: 2
   velocitatMitjana: 3.5
@@ -1812,6 +1812,11 @@ MonoBehaviour:
   tempsNecessari: 6
   copsRebuts: 0
   jugadora: 2
+--- !u!195 &1517284538 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 914627372271221129, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+  m_PrefabInstance: {fileID: 1517284531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1620095395
 PrefabInstance:
   m_ObjectHideFlags: 0
