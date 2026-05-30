@@ -399,6 +399,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4961452747505522583, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 460801768}
     - target: {fileID: 5072972650345915958, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
       propertyPath: m_Name
       value: PorclicIA_Jug1
@@ -473,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eef53c115e3147229095f22752535dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 460801768}
   agent: {fileID: 460801763}
   thinkRate: 2
   velocitatLenta: 2
@@ -482,6 +486,11 @@ MonoBehaviour:
   tempsNecessari: 6
   copsRebuts: 0
   jugadora: 1
+--- !u!95 &460801768 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4411855330407632075, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+  m_PrefabInstance: {fileID: 460801761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &462750818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1271,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4961452747505522583, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1517284542}
     - target: {fileID: 5072972650345915958, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
       propertyPath: m_Name
       value: PorclicIA_Jug2
@@ -1331,7 +1344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eef53c115e3147229095f22752535dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1517284542}
   agent: {fileID: 1517284538}
   thinkRate: 2
   velocitatLenta: 2
@@ -1343,6 +1356,11 @@ MonoBehaviour:
 --- !u!195 &1517284538 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 914627372271221129, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+  m_PrefabInstance: {fileID: 1517284531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1517284542 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4411855330407632075, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
   m_PrefabInstance: {fileID: 1517284531}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1620095395
