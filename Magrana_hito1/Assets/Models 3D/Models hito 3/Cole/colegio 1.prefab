@@ -5444,7 +5444,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &3920693715499695143
 GameObject:
@@ -8460,7 +8460,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &5706753950079248553
 GameObject:
@@ -8781,7 +8781,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &5881240005542405179
 GameObject:
@@ -12696,7 +12696,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &8455824540602182302
 GameObject:
@@ -13584,6 +13584,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4627214585038584507, guid: eafc6e9636a969b41a00bc0adce1c453, type: 3}
+      propertyPath: monjesDerrotades
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627214585038584507, guid: eafc6e9636a969b41a00bc0adce1c453, type: 3}
+      propertyPath: edificiBoAssociat
+      value: 
+      objectReference: {fileID: 3806361775438998568, guid: 732b98a1784a11146abbd62b85351279, type: 3}
+    - target: {fileID: 4627214585038584507, guid: eafc6e9636a969b41a00bc0adce1c453, type: 3}
+      propertyPath: DeQuiEsAquestEdifici
+      value: 
+      objectReference: {fileID: 1529887577572795846, guid: 732b98a1784a11146abbd62b85351279, type: 3}
     - target: {fileID: 6749498824399242883, guid: eafc6e9636a969b41a00bc0adce1c453, type: 3}
       propertyPath: m_Name
       value: Obj_especial_monjes
