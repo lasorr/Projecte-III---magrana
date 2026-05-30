@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3587441425564106907}
   - component: {fileID: 1901084046776979891}
+  - component: {fileID: 1919663989561335606}
   m_Layer: 0
   m_Name: Poli_rigg 1
   m_TagString: Untagged
@@ -537,6 +538,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1919663989561335606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257978164495470329}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.210123, y: 20.165459, z: 3.0737643}
+  m_Center: {x: 0.10448551, y: 9.582729, z: 0.027398348}
 --- !u!1 &3424962526170213811
 GameObject:
   m_ObjectHideFlags: 0
