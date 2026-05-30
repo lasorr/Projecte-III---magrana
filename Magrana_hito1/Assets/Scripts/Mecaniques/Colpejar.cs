@@ -23,6 +23,8 @@ public class Colpejar : MonoBehaviour
     public EdificiEspecialDesnon EdificiCalvo;
     public IAEnemicPorclicia IAporcilia;
 
+    [SerializeField] private AudioClip bonkSound;
+
     void Start()
     {
         Arma.enabled = false;
@@ -72,6 +74,8 @@ public class Colpejar : MonoBehaviour
             jaHaColpejat = true;
 
             ContadorCops contadorScript = other.GetComponent<ContadorCops>();
+
+            GestioSo.instance.PlaySound(bonkSound, transform, 1f);
 
             if (contadorScript != null)
             {
