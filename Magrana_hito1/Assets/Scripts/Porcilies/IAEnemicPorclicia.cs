@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class IAEnemicPorclicia : MonoBehaviour
 {
+    //animator.SetBool("Run", true);
+    //animator.SetBool("Transformar", true);
+    public Animator animator; 
     public NavMeshAgent agent;
     private GameObject edificiObjectiu;
 
@@ -25,7 +28,6 @@ public class IAEnemicPorclicia : MonoBehaviour
     void Start()
     {
         agent.speed = velocitatLenta;
-
         transform.position += new Vector3(0, 0.5f, 0);
 
         if (agent.isOnNavMesh)
@@ -50,6 +52,8 @@ public class IAEnemicPorclicia : MonoBehaviour
             if (edificiObjectiu == null)
             {
                 BuscarEdificiJug1();
+                animator.SetBool("Transformar", false);
+                animator.SetBool("Run", true);
             }
 
             else if (edificiObjectiu != null)
@@ -67,6 +71,7 @@ public class IAEnemicPorclicia : MonoBehaviour
                 {
                     if (copsRebuts >= 3)
                     {
+                        animator.SetBool("Run", false);
                         BuscarEdificiJug1();
                         copsRebuts = 0;
                         Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
@@ -277,6 +282,7 @@ public class IAEnemicPorclicia : MonoBehaviour
 
     void ConvertirEdificiACapitalista()
     {
+        animator.SetBool("Transformar", true);
         PropietariaEdifici prop = edificiObjectiu.GetComponent<PropietariaEdifici>();
 
         prop.edificiTransformat = true;
