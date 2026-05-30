@@ -92,7 +92,7 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            ContadorCops contadorScript = other.GetComponent<ContadorCops>();
+            EdificiEspecialDesnon desnonScript = other.GetComponent<EdificiEspecialDesnon>();
 
             if (EdificiCalvo != null)
             {
@@ -108,7 +108,7 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            ContadorCops contadorScript = other.GetComponent<ContadorCops>();
+            EdificiEspecialTrans transScript = other.GetComponent<EdificiEspecialTrans>();
 
             if (EdificiDragg != null)
             {
@@ -116,7 +116,7 @@ public class Colpejar : MonoBehaviour
             }
             else
             {
-                Debug.Log("Desde colpejar no reb contador cops script");
+                Debug.Log("Desde colpejar no reb contador cops script MONJAX");
             }
         }
 
@@ -124,7 +124,7 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            monjaScript.Morir();
+            other.GetComponent<Monjes>().Morir();
         }
 
         else if (other.CompareTag("porclicia_desnon"))
