@@ -22,7 +22,6 @@ public class TimeManager : MonoBehaviour
     [Header("Timer Settings")]
     public float initialCountdown = 3f;
     public float gameDuration = 150f;
-    public float winnerScreenDuration = 5f;
     
     private bool isGameActive = false;
     private float currentGameTime;
