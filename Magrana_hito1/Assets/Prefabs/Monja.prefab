@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8696927483617351091}
   - component: {fileID: 6289634346380080560}
   - component: {fileID: 406608322147061405}
+  - component: {fileID: 3149480393540134403}
   m_Layer: 0
   m_Name: Monja
   m_TagString: Monja
@@ -173,6 +174,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7164764, y: 7.997865, z: 2.796873}
   m_Center: {x: -40.03624, y: 9.996667, z: 8.835483}
+--- !u!114 &3149480393540134403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712191241789822504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d7cf4cc2bae4172ad78c0a0f5fc98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragg: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
+  monja: {fileID: 712191241789822504}
 --- !u!1 &2477374203653622017
 GameObject:
   m_ObjectHideFlags: 0

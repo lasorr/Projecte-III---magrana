@@ -25,14 +25,11 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public int monjesDerrotades = 0;
 
+    private GameObject edificiCap;
+
     void Awake()
     {
-        Transform t = transform;
-
-        while (t.parent != null)
-        {
-            t = t.parent;
-        }
+        GameObject pare = transform.parent.gameObject;
     }
 
     public void RegistrarMonjaDerrotada()
@@ -58,7 +55,7 @@ public class EdificiEspecialTrans : MonoBehaviour
 
             if ( superstarJug1 ||copsJug1 >= copsNecessaris)
             {
-                ActivarTransformacio(1, 3);
+                ActivarTransformacio(1, punts);
                 copsJug1 = 0;
                 monjesDerrotades = 0;
                 superstarJug1 = false; // Es gasta el superstar
@@ -90,10 +87,8 @@ public class EdificiEspecialTrans : MonoBehaviour
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
-        Vector3 pos = edificiCapitalistaAssociat.transform.position;
-        Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
-
-        Destroy(edificiCapitalistaAssociat);
+        Vector3 pos = edificiCap.transform.position;
+        Quaternion rot = edificiCap.transform.rotation;
 
         GameObject nouEdifici = Instantiate(
             edificiBoAssociat,
@@ -102,6 +97,8 @@ public class EdificiEspecialTrans : MonoBehaviour
         );
 
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
+
+        Destroy(edificiCap.gameObject);
     }
 
     public void ActivarSuperstarJug1()
