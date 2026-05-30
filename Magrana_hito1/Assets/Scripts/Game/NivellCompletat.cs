@@ -16,6 +16,6 @@ public class NivellCompletat : MonoBehaviour
             PlayerPrefs.SetInt("Nivell2Complet", 1);
         
         PlayerPrefs.Save();
-        SceneManager.LoadScene("LevelSelect"); // Cambia al nombre de tu escena
+        SceneManager.LoadScene("LevelSelect");
     }
 }
