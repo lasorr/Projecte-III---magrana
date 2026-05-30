@@ -105,6 +105,7 @@ public class MenuManager : MonoBehaviour
     }
     public void QuitConfirmed()
     {
+        PlayerPrefs.DeleteAll();
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;  // Para pruebas en el Editor
         #else
