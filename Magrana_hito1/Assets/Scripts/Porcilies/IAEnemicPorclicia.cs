@@ -20,6 +20,8 @@ public class IAEnemicPorclicia : MonoBehaviour
 
     public int copsRebuts = 0;
 
+    public int jugadora = 0;
+
     void Start()
     {
         agent.speed = velocitatLenta;
@@ -43,51 +45,104 @@ public class IAEnemicPorclicia : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if (edificiObjectiu == null)
+        if (jugadora == 1)
         {
-            BuscarEdificiJug1();
-        }
-
-        else if (edificiObjectiu != null)
-        {
-            agent.SetDestination(edificiObjectiu.transform.position);
-
-            float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
-
-            if (dist > 7f)
+            if (edificiObjectiu == null)
             {
-                copsRebuts = 0;
+                BuscarEdificiJug1();
             }
 
-            else if (dist <= 7f)
+            else if (edificiObjectiu != null)
             {
-                if (copsRebuts >= 3)
+                agent.SetDestination(edificiObjectiu.transform.position);
+
+                float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
+
+                if (dist > 7f)
                 {
-                    BuscarEdificiJug1();
                     copsRebuts = 0;
-                    Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
                 }
 
-                if (dist < 6.04f)
+                else if (dist <= 7f)
                 {
-                    tempsSobreEdifici += Time.deltaTime;
+                    if (copsRebuts >= 3)
+                    {
+                        BuscarEdificiJug1();
+                        copsRebuts = 0;
+                        Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
+                    }
+
+                    if (dist < 6.04f)
+                    {
+                        tempsSobreEdifici += Time.deltaTime;
+                    }
                 }
-            }
 
-            if (tempsSobreEdifici >= tempsNecessari)
-            {
-                ConvertirEdificiACapitalista();
+                if (tempsSobreEdifici >= tempsNecessari)
+                {
+                    ConvertirEdificiACapitalista();
 
-                tempsSobreEdifici = 0f;
+                    tempsSobreEdifici = 0f;
 
-                edificiObjectiu = null;
-            }
+                    edificiObjectiu = null;
+                }
 
-            else
-            {
-                tempsSobreEdifici = 0f;
+                else
+                {
+                    tempsSobreEdifici = 0f;
+                }
             }
         }
+
+        else if (jugadora == 2)
+        {
+            if (edificiObjectiu == null)
+            {
+                BuscarEdificiJug2();
+            }
+
+            else if (edificiObjectiu != null)
+            {
+                agent.SetDestination(edificiObjectiu.transform.position);
+
+                float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
+
+                if (dist > 7f)
+                {
+                    copsRebuts = 0;
+                }
+
+                else if (dist <= 7f)
+                {
+                    if (copsRebuts >= 3)
+                    {
+                        BuscarEdificiJug2();
+                        copsRebuts = 0;
+                        Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
+                    }
+
+                    if (dist < 6.04f)
+                    {
+                        tempsSobreEdifici += Time.deltaTime;
+                    }
+                }
+
+                if (tempsSobreEdifici >= tempsNecessari)
+                {
+                    ConvertirEdificiACapitalista();
+
+                    tempsSobreEdifici = 0f;
+
+                    edificiObjectiu = null;
+                }
+
+                else
+                {
+                    tempsSobreEdifici = 0f;
+                }
+            }
+        }
+        
     }
 
     void BuscarEdificiJug1()
@@ -150,6 +205,71 @@ public class IAEnemicPorclicia : MonoBehaviour
         if (edificisJug1.Count > 0)
         {
             edificiObjectiu = edificisJug1[Random.Range(0, edificisJug1.Count)];
+
+            Debug.Log("Nou objectiu: " + edificiObjectiu.name);
+        }
+    }
+
+    void BuscarEdificiJug2()
+    {
+        GameObject[] edificis = GameObject.FindGameObjectsWithTag("EdificiComunista");
+
+        List<GameObject> edificisJug2 = new List<GameObject>();
+
+        foreach (GameObject edifici in edificis)
+        {
+            PropietariaEdifici prop = edifici.GetComponent<PropietariaEdifici>();
+
+            if (prop != null)
+            {
+                if (prop.Propietaria == 2)
+                {
+                    edificisJug2.Add(edifici);
+                }
+            }
+        }
+
+        int quantitatEdificis = TimeManager.Instance.edificisTransformatJug2;
+
+        if (quantitatEdificis <= 4)
+        {
+            edificiObjectiu = null;
+
+            Vector3 puntAleatori = transform.position + Random.insideUnitSphere * 30f;
+
+            NavMeshHit hit;
+
+            if (NavMesh.SamplePosition(puntAleatori, out hit, 30f, NavMesh.AllAreas))
+            {
+                agent.speed = velocitatLenta;
+                agent.SetDestination(hit.position);
+            }
+
+            return;
+        }
+        
+        else if (quantitatEdificis >= 5 && quantitatEdificis <= 8)
+        {
+            agent.speed = velocitatLenta;
+            tempsNecessari = 6f;
+        }
+
+        else if (quantitatEdificis >= 9 && quantitatEdificis <= 11)
+        {
+            agent.speed = velocitatMitjana;
+            tempsNecessari = 5f;
+        }
+
+        else if (quantitatEdificis >= 12)
+        {
+            agent.speed = velocitatRapida;
+            tempsNecessari = 4f;
+        }
+
+        // Escollir edifici random
+        if (edificisJug2.Count > 0)
+        {
+            edificiObjectiu = edificisJug2[Random.Range(0, edificisJug2.Count)];
 
             Debug.Log("Nou objectiu: " + edificiObjectiu.name);
         }

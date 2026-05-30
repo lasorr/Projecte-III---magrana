@@ -91,70 +91,7 @@ public class IAEnemicPorcliciaJug2 : MonoBehaviour
         }
     }
 
-    void BuscarEdificiJug2()
-    {
-        GameObject[] edificis = GameObject.FindGameObjectsWithTag("EdificiComunista");
-
-        List<GameObject> edificisJug2 = new List<GameObject>();
-
-        foreach (GameObject edifici in edificis)
-        {
-            PropietariaEdifici prop = edifici.GetComponent<PropietariaEdifici>();
-
-            if (prop != null)
-            {
-                if (prop.Propietaria == 2)
-                {
-                    edificisJug2.Add(edifici);
-                }
-            }
-        }
-
-        int quantitatEdificis = TimeManager.Instance.edificisTransformatJug2;
-
-        if (quantitatEdificis <= 4)
-        {
-            edificiObjectiu = null;
-
-            Vector3 puntAleatori = transform.position + Random.insideUnitSphere * 30f;
-
-            NavMeshHit hit;
-
-            if (NavMesh.SamplePosition(puntAleatori, out hit, 30f, NavMesh.AllAreas))
-            {
-                agent.speed = velocitatLenta;
-                agent.SetDestination(hit.position);
-            }
-
-            return;
-        }
-        
-        else if (quantitatEdificis >= 5 && quantitatEdificis <= 8)
-        {
-            agent.speed = velocitatLenta;
-            tempsNecessari = 6f;
-        }
-
-        else if (quantitatEdificis >= 9 && quantitatEdificis <= 11)
-        {
-            agent.speed = velocitatMitjana;
-            tempsNecessari = 5f;
-        }
-
-        else if (quantitatEdificis >= 12)
-        {
-            agent.speed = velocitatRapida;
-            tempsNecessari = 4f;
-        }
-
-        // Escollir edifici random
-        if (edificisJug2.Count > 0)
-        {
-            edificiObjectiu = edificisJug2[Random.Range(0, edificisJug2.Count)];
-
-            Debug.Log("Nou objectiu: " + edificiObjectiu.name);
-        }
-    }
+    
 
     void ConvertirEdificiACapitalista()
     {
