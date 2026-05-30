@@ -2257,6 +2257,14 @@ PrefabInstance:
       propertyPath: TimeManager
       value: 
       objectReference: {fileID: 2088424842}
+    - target: {fileID: 1965438723948173496, guid: be608270f79eb4f9f9f169bea8b16d70, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bade2f011a3694e7482a8bf0ec639b00, type: 3}
+    - target: {fileID: 3387023401682750129, guid: be608270f79eb4f9f9f169bea8b16d70, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dd7c4d3ccb6da472e8cb4a319b154cac, type: 3}
     - target: {fileID: 6509407957468159252, guid: be608270f79eb4f9f9f169bea8b16d70, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.083435
@@ -2297,6 +2305,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6824834561643755896, guid: be608270f79eb4f9f9f169bea8b16d70, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ebcf292480ba46019ff3d1bd8fdeff7, type: 3}
     - target: {fileID: 6977677111490776053, guid: be608270f79eb4f9f9f169bea8b16d70, type: 3}
       propertyPath: m_TagString
       value: EspecialDesnon
@@ -2470,6 +2482,7 @@ MonoBehaviour:
   EdificiDragg: {fileID: 1967376591}
   EdificiCalvo: {fileID: 2138198141}
   IAporcilia: {fileID: 1456048072}
+  bonkSound: {fileID: 0}
 --- !u!1 &622857233
 GameObject:
   m_ObjectHideFlags: 0
@@ -4837,6 +4850,7 @@ MonoBehaviour:
   EdificiDragg: {fileID: 1967376591}
   EdificiCalvo: {fileID: 2138198141}
   IAporcilia: {fileID: 1002594113}
+  bonkSound: {fileID: 0}
 --- !u!54 &1262119600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6980,7 +6994,7 @@ PrefabInstance:
       objectReference: {fileID: 1972454192}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: gameDuration
-      value: 30
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: winnerScreen
