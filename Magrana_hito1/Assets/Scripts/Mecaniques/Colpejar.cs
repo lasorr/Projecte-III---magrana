@@ -22,6 +22,7 @@ public class Colpejar : MonoBehaviour
     public EdificiEspecialTrans EdificiDragg;
     public EdificiEspecialDesnon EdificiCalvo;
     public IAEnemicPorclicia IAporcilia;
+    public Monjes monjaScript;
 
     [SerializeField] private AudioClip bonkSound;
 
@@ -123,20 +124,7 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            if (other.transform.IsChildOf(EdificiDragg.transform))
-            {
-                EdificiDragg.monjesDerrotades++;
-                
-                Debug.Log("Monja derrotada del edifici especial");
-            }
-
-            ColpejarObjecte(
-                other.gameObject,
-                null,
-                null,
-                dragg,
-                0
-            );
+            monjaScript.Morir();
         }
 
         else if (other.CompareTag("porclicia_desnon"))
@@ -203,19 +191,8 @@ public class Colpejar : MonoBehaviour
     {
         Debug.Log("Colpejant: " + objecteColpejat.name);
         
-        // Cas MONJA
-        if (objecteColpejat.CompareTag("Monja"))
-        {
-            Vector3 pos = objecteColpejat.transform.position;
-            Quaternion rot = objecteColpejat.transform.rotation;
-
-            Destroy(objecteColpejat);
-
-            Instantiate(dragg, pos, rot);
-        }
-        
         // Cas ESPECIAL
-        else if (objecteColpejat.CompareTag("Especial"))
+        if (objecteColpejat.CompareTag("Especial"))
         {
             Vector3 pos = edificiCapitalista.transform.position;
             Quaternion rot = edificiCapitalista.transform.rotation;

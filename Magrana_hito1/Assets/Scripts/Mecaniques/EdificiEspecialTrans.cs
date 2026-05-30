@@ -35,7 +35,12 @@ public class EdificiEspecialTrans : MonoBehaviour
         }
     }
 
-    void Update(){
+    public void RegistrarMonjaDerrotada()
+    {
+        monjesDerrotades++;
+
+        Debug.Log("Monjes derrotades: " + monjesDerrotades);
+
         if (monjesDerrotades >= 4)
         {
             Destroy(cadenesBloqueig);

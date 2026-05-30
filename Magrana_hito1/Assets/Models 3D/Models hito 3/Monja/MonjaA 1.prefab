@@ -1193,6 +1193,7 @@ GameObject:
   - component: {fileID: 2761633384491934621}
   - component: {fileID: 2392345781876066250}
   - component: {fileID: 5343453577798837816}
+  - component: {fileID: 1132492870506794621}
   m_Layer: 0
   m_Name: MonjaA 1
   m_TagString: Monja
@@ -1209,7 +1210,7 @@ Transform:
   m_GameObject: {fileID: 5959362604300710419}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9242746, z: -0, w: 0.38172823}
-  m_LocalPosition: {x: -185.26, y: 0.61, z: 25.02}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1289,6 +1290,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1132492870506794621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959362604300710419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d7cf4cc2bae4172ad78c0a0f5fc98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragg: {fileID: 4465392546376565657, guid: ec770fdf908d2744d93b3a3ac9e9706c, type: 3}
 --- !u!1 &6160707962645496582
 GameObject:
   m_ObjectHideFlags: 0
