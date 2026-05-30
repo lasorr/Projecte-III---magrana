@@ -1191,6 +1191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5569144909667563885}
   - component: {fileID: 2761633384491934621}
+  - component: {fileID: 2392345781876066250}
   m_Layer: 0
   m_Name: MonjaA 1
   m_TagString: Monja
@@ -1238,6 +1239,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4205737, y: 5.4422708, z: 2.1348407}
   m_Center: {x: -0.120896205, y: 3.1654427, z: -0.10792903}
+--- !u!95 &2392345781876066250
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959362604300710419}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d259704eece8e9248a3dd2f0767b93ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6160707962645496582
 GameObject:
   m_ObjectHideFlags: 0
