@@ -26,8 +26,6 @@ public class TimeManager : MonoBehaviour
     
     private bool isGameActive = false;
     private float currentGameTime;
-
-    [Header("Altres")]
     private float scoreFinalPosY = 35f;
     
     // CANVIAT: Moviment_jugadora en lloc de PlayerMovementController
@@ -35,8 +33,7 @@ public class TimeManager : MonoBehaviour
 
     public int edificisTransformatJug1 = 0;
     public int edificisTransformatJug2 = 0;
-    
-    [Header("Referencies a altres scripts")]
+
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
     public NivellCompletat ScriptNivellCompletat;
@@ -57,7 +54,7 @@ public class TimeManager : MonoBehaviour
         rect = PointsContainer.GetComponent<RectTransform>();
 
         SetUIElementsActive(false);
-        winnerScreen.SetActive(false);
+         winnerScreen.SetActive(false);
 
         StartCoroutine(InitialCountdownCoroutine());
     }
@@ -98,7 +95,7 @@ public class TimeManager : MonoBehaviour
         ScriptMoviment2.potMoure = true;
         isGameActive = true;
 
-        SetUIElementsActive(true);
+        SetUIElementsActive(true); // NOU
 
         currentGameTime = gameDuration;
         StartCoroutine(GameTimerCoroutine());
@@ -142,7 +139,7 @@ public class TimeManager : MonoBehaviour
         ScriptMoviment2.potMoure = false;        
         isGameActive = false;
         winnerScreen.SetActive(true);
-        /* Posició de la puntuació final: */
+
         rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, scoreFinalPosY);
 
         Debug.Log("Partida finalitzada! Temps esgotat.");
@@ -166,18 +163,16 @@ public class TimeManager : MonoBehaviour
                 Debug.Log($"EMPAT");            
             }
         }
-        /* Esperar abans de tornar al menú de selecció de nivell: */
         StartCoroutine(waitAndReturnToLevelSelect(winnerScreenDuration));
     }
 
     IEnumerator waitAndReturnToLevelSelect(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        /* Desbloqeujar següent nivell: */
-        ScriptNivellCompletat.DesbloquejarSeguent(); 
+        ScriptNivellCompletat.DesbloquejarSeguent();
     }
 
-    // Activar la UI ingame al finalitzar el countdown
+    // NOVA FUNCI�:
     private void SetUIElementsActive(bool active)
     {
         if (inGameUIElements != null)
