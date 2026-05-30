@@ -10,7 +10,7 @@ public class EdificiEspecialTrans : MonoBehaviour
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
 
-    private GameObject edificiCapitalistaAssociat;
+    public GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;
     public GameObject cadenesBloqueig;
 
@@ -33,8 +33,6 @@ public class EdificiEspecialTrans : MonoBehaviour
         {
             t = t.parent;
         }
-
-        edificiCapitalistaAssociat = t.gameObject;
     }
 
     void Update(){
