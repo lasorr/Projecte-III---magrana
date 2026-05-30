@@ -46,8 +46,10 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public void RebreCopEdificiEspecial(int propietariaArma, int punts)
     {
+        Debug.Log("Monjes derrotades al rebre cop: " + monjesDerrotades);
         if (monjesDerrotades >= 4)
         {
+            Debug.Log("Monjes derrotades: " + monjesDerrotades);
             if (propietariaArma == 1)
             {
                 copsJug1++;

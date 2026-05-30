@@ -123,6 +123,13 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
+            if (other.transform.IsChildOf(EdificiDragg.transform))
+            {
+                EdificiDragg.monjesDerrotades++;
+                
+                Debug.Log("Monja derrotada del edifici especial");
+            }
+
             ColpejarObjecte(
                 other.gameObject,
                 null,
@@ -130,8 +137,6 @@ public class Colpejar : MonoBehaviour
                 dragg,
                 0
             );
-
-            EdificiDragg.monjesDerrotades++;
         }
 
         else if (other.CompareTag("porclicia_desnon"))
