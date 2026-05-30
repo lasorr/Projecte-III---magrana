@@ -49,44 +49,39 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public void RebreCopEdificiEspecial(int propietariaArma, int punts)
     {
-        Debug.Log("Monjes derrotades al rebre cop: " + monjesDerrotades);
-        if (monjesDerrotades >= 4)
+        if (propietariaArma == 1)
         {
-            Debug.Log("Monjes derrotades: " + monjesDerrotades);
-            if (propietariaArma == 1)
+            copsJug1++;
+            MostrarImatgeCop();
+
+            Debug.Log(gameObject.name + " rebut cop de J1: " + copsJug1 + "/" + copsNecessaris);
+
+            if ( superstarJug1 ||copsJug1 >= copsNecessaris)
             {
-                copsJug1++;
-                MostrarImatgeCop();
+                ActivarTransformacio(1, 3);
+                copsJug1 = 0;
+                monjesDerrotades = 0;
+                superstarJug1 = false; // Es gasta el superstar
 
-                Debug.Log(gameObject.name + " rebut cop de J1: " + copsJug1 + "/" + copsNecessaris);
-
-                if ( superstarJug1 ||copsJug1 >= copsNecessaris)
-                {
-                    ActivarTransformacio(1, 3);
-                    copsJug1 = 0;
-                    monjesDerrotades = 0;
-                    superstarJug1 = false; // Es gasta el superstar
-
-                    TimeManager.edificisTransformatJug1+=3;
-                }
+                TimeManager.edificisTransformatJug1+=3;
             }
+        }
 
-            else if (propietariaArma == 2)
+        else if (propietariaArma == 2)
+        {
+            copsJug2++;
+            MostrarImatgeCop();
+
+            Debug.Log(gameObject.name + " rebut cop de J2: " + copsJug2 + "/" + copsNecessaris);
+            
+            if (superstarJug2 || copsJug2 >= copsNecessaris)
             {
-                copsJug2++;
-                MostrarImatgeCop();
-
-                Debug.Log(gameObject.name + " rebut cop de J2: " + copsJug2 + "/" + copsNecessaris);
+                ActivarTransformacio(2, 3);
+                copsJug2 = 0;
+                monjesDerrotades = 0;
+                superstarJug2 = false; // es gasta el superstar
                 
-                if (superstarJug2 || copsJug2 >= copsNecessaris)
-                {
-                    ActivarTransformacio(2, 3);
-                    copsJug2 = 0;
-                    monjesDerrotades = 0;
-                    superstarJug2 = false; // es gasta el superstar
-                    
-                    TimeManager.edificisTransformatJug2+=3;
-                }
+                TimeManager.edificisTransformatJug2+=3;
             }
         }
     }
