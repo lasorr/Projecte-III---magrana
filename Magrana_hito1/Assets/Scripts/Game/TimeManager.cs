@@ -43,7 +43,6 @@ public class TimeManager : MonoBehaviour
 
     public static TimeManager Instance;
     private RectTransform rect;
-    float winnerScreenDuration = 5f;
 
     void Awake()
     {
