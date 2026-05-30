@@ -446,6 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1098391490372552858}
   - component: {fileID: 540837056905191365}
+  - component: {fileID: 6234512425456258489}
   m_Layer: 0
   m_Name: ModelJug1 1
   m_TagString: Untagged
@@ -500,6 +501,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6234512425456258489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2738694243775361181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c78d612ed09b76499b50bdd33315b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocitat: 5
+  move: {fileID: 698821300252711660, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
+  animator: {fileID: 540837056905191365}
+  potMoure: 1
+  stunJug: 0
+  modelTransform: {fileID: 7527718643294299446, guid: 90dd77d2d2a46dc41a1dff7dcf07bff2, type: 3}
+  rotationSpeed: 8
 --- !u!1 &3459073322404512842
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,14 +989,15 @@ MonoBehaviour:
   Arma: {fileID: 4639798087509124070}
   cop: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
   animator: {fileID: 540837056905191365}
-  ScriptPropietaria: {fileID: 0}
-  dragg: {fileID: 0}
-  propietariaArma: 0
-  ScriptMoviment1: {fileID: 0}
-  ScriptMoviment2: {fileID: 0}
-  EdificiDragg: {fileID: 0}
-  EdificiCalvo: {fileID: 0}
-  IAporcilia: {fileID: 0}
+  ScriptPropietaria: {fileID: 5990899918181808527, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
+  dragg: {fileID: 1255797495591861817, guid: 3462161158c64fd41aaea201aefa82b0, type: 3}
+  propietariaArma: 1
+  ScriptMoviment1: {fileID: 6234512425456258489}
+  ScriptMoviment2: {fileID: 6511496600514328795, guid: 018f3d178a7f8a141bc9fef2c4d81bfd, type: 3}
+  EdificiDragg: {fileID: 4627214585038584507, guid: eafc6e9636a969b41a00bc0adce1c453, type: 3}
+  EdificiCalvo: {fileID: 5363272648418635078, guid: 1292d6527167c744c8e31f737a2ae16f, type: 3}
+  IAporcilia: {fileID: 4961452747505522583, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
 --- !u!1 &4828495026868519877
 GameObject:
   m_ObjectHideFlags: 0

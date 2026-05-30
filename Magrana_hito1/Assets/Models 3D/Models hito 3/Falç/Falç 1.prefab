@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 7189126373148279537}
   - component: {fileID: 2773139028358532676}
   - component: {fileID: 2708859892185710074}
-  - component: {fileID: 624110144993610858}
-  - component: {fileID: 6137935359130963913}
-  - component: {fileID: 1631045822306487649}
+  - component: {fileID: 8075972430518567781}
+  - component: {fileID: 937644590104770959}
+  - component: {fileID: 8018365793145591982}
   m_Layer: 0
   m_Name: "Fal\xE7 1"
   m_TagString: Arma_2
@@ -178,28 +178,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &624110144993610858
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4087616248274969668}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.014024397, y: 0.05105692, z: 0.067830816}
-  m_Center: {x: -0.0010576507, y: 0.006694014, z: 0.017833492}
---- !u!54 &6137935359130963913
+--- !u!54 &8075972430518567781
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +205,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1631045822306487649
+--- !u!114 &937644590104770959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02bd5616b932d941b3650a09302865e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Arma: {fileID: 624110144993610858}
-  cop: {fileID: 6538341273052018607, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
+  Arma: {fileID: 0}
+  cop: {fileID: 0}
   animator: {fileID: 0}
   ScriptPropietaria: {fileID: 0}
   dragg: {fileID: 0}
@@ -249,7 +228,28 @@ MonoBehaviour:
   EdificiDragg: {fileID: 0}
   EdificiCalvo: {fileID: 0}
   IAporcilia: {fileID: 0}
-  bonkSound: {fileID: 0}
+  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
+--- !u!65 &8018365793145591982
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4087616248274969668}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.014136635, y: 0.07048288, z: 0.06649051}
+  m_Center: {x: 0.00043071035, y: 0.008956726, z: 0.028449712}
 --- !u!1 &4327834933535947581
 GameObject:
   m_ObjectHideFlags: 0
