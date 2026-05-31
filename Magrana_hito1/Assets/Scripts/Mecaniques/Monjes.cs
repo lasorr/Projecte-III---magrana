@@ -3,30 +3,26 @@ using UnityEngine;
 public class Monjes : MonoBehaviour
 {
     //a la monja li es de donar igual l'edifici , mana el valor de derrotades al objecte especial 
-    private EdificiEspecialTrans edificiPare; //canviar el nom confon
-    //fer public la refrencai a - Objecte especial pare
-
-    public GameObject dragg; //per instanciar
-
-    public GameObject monja; //no cal
+    private EdificiEspecialTrans objecteEspecialTrans;
+    public GameObject dragg;
 
     void Start()
     {
-        edificiPare = GetComponentInParent<EdificiEspecialTrans>();
+        objecteEspecialTrans = GetComponentInParent<EdificiEspecialTrans>();
     }
 
     public void Morir()
     {
-        if (edificiPare != null)
+        if (objecteEspecialTrans != null)
         {
-            edificiPare.RegistrarMonjaDerrotada();
+            objecteEspecialTrans.RegistrarMonjaDerrotada();
         }
 
-        Vector3 pos = monja.transform.position;
-        Quaternion rot = monja.transform.rotation;
-
-        Destroy(monja);
+        Vector3 pos = transform.position;
+        Quaternion rot = transform.rotation;
 
         Instantiate(dragg, pos, rot);
+
+        Destroy(gameObject);
     }
 }

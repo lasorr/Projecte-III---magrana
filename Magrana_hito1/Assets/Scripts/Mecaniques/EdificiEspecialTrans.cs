@@ -19,7 +19,7 @@ public class EdificiEspecialTrans : MonoBehaviour
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
 
-    public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2 
+    //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2 
     //fa refererncia a una varible d'un altre script que es fara servir
     //crec que no fa servir en cap moment la varible perque quan la referencia entra a un script i el valor ve per parametre
 
@@ -27,11 +27,12 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public int monjesDerrotades = 0; //CONTADOR MONJES DERROTADES
 
-    private GameObject edificiCap;
 
     void Awake()
     {
         GameObject pare = transform.parent.gameObject; //pare hauria de ser el edifici capitaliste
+        if (TimeManager == null)
+            TimeManager = FindObjectOfType<TimeManager>();
     }
 
     public void RegistrarMonjaDerrotada()
@@ -100,7 +101,7 @@ public class EdificiEspecialTrans : MonoBehaviour
         //aqui entra a al script del edifici bo i seteja propietaria etc
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
 
-        Destroy(edificiCap.gameObject); //aixo hauria de funcionar perf 
+        Destroy(edificiCapitalistaAssociat); //aixo hauria de funcionar perf 
     }
 
     public void ActivarSuperstarJug1()

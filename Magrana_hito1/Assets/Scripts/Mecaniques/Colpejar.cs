@@ -19,16 +19,14 @@ public class Colpejar : MonoBehaviour
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
 
-    public EdificiEspecialTrans EdificiDragg; //colpejar no deberia tener ref de los prefabs, sino el objeto especial
-    public EdificiEspecialDesnon EdificiCalvo; //same creo
     public IAEnemicPorclicia IAporcilia;
-    public Monjes monjaScript; 
 
     [SerializeField] private AudioClip bonkSound;
 
     void Start()
     {
         Arma.enabled = false;
+
         if (gameObject.CompareTag("Arma_1"))
         {
             propietariaArma = 1;
@@ -94,9 +92,9 @@ public class Colpejar : MonoBehaviour
 
             EdificiEspecialDesnon desnonScript = other.GetComponent<EdificiEspecialDesnon>();
 
-            if (EdificiCalvo != null) // desnonScript no es null - augmenta varible 
+            if (desnonScript != null)
             {
-                EdificiCalvo.RebreCopEdificiEspecial(propietariaArma, 3); //perque mira edificicalvo i no script desnon??
+                desnonScript.RebreCopEdificiEspecial(propietariaArma, 3);
             }
             else
             {
@@ -110,9 +108,9 @@ public class Colpejar : MonoBehaviour
 
             EdificiEspecialTrans transScript = other.GetComponent<EdificiEspecialTrans>();
 
-            if (EdificiDragg != null)  //
+            if (transScript != null)  //
             {
-                EdificiDragg.RebreCopEdificiEspecial(propietariaArma, 3);
+                transScript.RebreCopEdificiEspecial(propietariaArma, 3);
             }
             else
             {
@@ -120,10 +118,10 @@ public class Colpejar : MonoBehaviour
             }
         }
 
-        else if (other.CompareTag("Monja")) //tag de la monja per desbloquejar
+        else if (other.CompareTag("Monja")) 
         {
             jaHaColpejat = true;
-            //monja fill de objecte especial - puja al pare - busca script - suma ++
+  
             other.GetComponent<Monjes>().Morir();
         }
 
@@ -131,10 +129,15 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            //potser aqui falta fer als porcs fills objecte especial i que other busqui el pare - despres
-            // el script dintre el pare/objecte especial i llavors asigni puntuacio ++ .
-            EdificiCalvo.polisDerrotats++; //no pot tenir la existencia de tots els edificis calvos
-            //es la referencia a un prefab crec que no pot funcionar
+            EdificiEspecialDesnon desnonScript = other.GetComponentInParent<EdificiEspecialDesnon>();
+
+            if (desnonScript != null)
+            {
+                //falta?
+                desnonScript.RebreCopEdificiEspecial(propietariaArma, 3);
+                desnonScript.polisDerrotats++;
+            }
+
             Destroy(other.gameObject);
         }
 

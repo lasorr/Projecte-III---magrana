@@ -21,7 +21,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
 
-    public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
+    //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
     //AQUI com a cole catolic tampoc cal aquesta referncia perque ho pasa al instanciar el edifici
 
     public TimeManager TimeManager;
@@ -96,8 +96,6 @@ public class EdificiEspecialDesnon : MonoBehaviour
         Vector3 pos = edificiCapitalistaAssociat.transform.position; //edfici pare o referenciat
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation; 
 
-        Destroy(edificiCapitalistaAssociat);
-
         GameObject nouEdifici = Instantiate(
             edificiBoAssociat,
             pos,
@@ -107,8 +105,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
         //seteja la info todo perfecto 
 
-        Destroy(edificiCap.gameObject);
-        //faltaba aixo que esta tambe al edifici trans 
+        Destroy(edificiCapitalistaAssociat);
     }
 
     public void ActivarSuperstarJug1()
