@@ -80,7 +80,7 @@ public class ContadorCops : MonoBehaviour
         Vector3 pos = edificiCapitalistaAssociat.transform.position;
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
 
-        Destroy(edificiCapitalistaAssociat);
+        // estava aqui
 
         GameObject nouEdifici = Instantiate(
             edificiBoAssociat,
@@ -89,6 +89,7 @@ public class ContadorCops : MonoBehaviour
         );
 
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
+        Destroy(edificiCapitalistaAssociat); // mogut laia
     }
 
     public void ActivarSuperstarJug1()
