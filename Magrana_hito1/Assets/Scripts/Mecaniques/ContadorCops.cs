@@ -26,7 +26,7 @@ public class ContadorCops : MonoBehaviour
 
     void Awake()
     {
-        Transform t = transform;
+        Transform t = transform; //transform ya existe porque viene de MonoBehaviour
 
         while (t.parent != null)
         {
