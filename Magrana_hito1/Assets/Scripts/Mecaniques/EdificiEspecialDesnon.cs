@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EdificiEspecialDesnon : MonoBehaviour
 {
+    //aquest script esta al objecte especial del edifici desnonador
+
     private int copsJug1 = 0;
     private int copsJug2 = 0;
 
@@ -10,9 +12,9 @@ public class EdificiEspecialDesnon : MonoBehaviour
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
 
-    private GameObject edificiCapitalistaAssociat;
-    public GameObject edificiBoAssociat;
-    public GameObject cadenesBloqueig;
+    private GameObject edificiCapitalistaAssociat; //aquest es la referencia del edifici on esta l'objecte per destruir
+    public GameObject edificiBoAssociat; //referencia al prefab per instanciar prefab
+    public GameObject cadenesBloqueig; //ref al objecte
 
     public GameObject imatge1CopPrefab;
     public GameObject imatge2CopPrefab;
@@ -20,10 +22,11 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public GameObject imatgeStarCopPrefab;
 
     public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
+    //AQUI com a cole catolic tampoc cal aquesta referncia perque ho pasa al instanciar el edifici
 
     public TimeManager TimeManager;
 
-    public int polisDerrotats = 0;
+    public int polisDerrotats = 0; //CONTADOR POLIS DERROTATS
 
     void Awake()
     {
@@ -44,7 +47,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
         }
     }
 
-    public void RebreCopEdificiEspecial(int propietariaArma, int punts)
+    public void RebreCopEdificiEspecial(int propietariaArma, int punts) //colpejar mana aquesta info todo perfecto
     {
         if (polisDerrotats >= 4)
         {
@@ -90,8 +93,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
-        Vector3 pos = edificiCapitalistaAssociat.transform.position;
-        Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
+        Vector3 pos = edificiCapitalistaAssociat.transform.position; //edfici pare o referenciat
+        Quaternion rot = edificiCapitalistaAssociat.transform.rotation; 
 
         Destroy(edificiCapitalistaAssociat);
 
@@ -102,6 +105,10 @@ public class EdificiEspecialDesnon : MonoBehaviour
         );
 
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
+        //seteja la info todo perfecto 
+
+        Destroy(edificiCap.gameObject);
+        //faltaba aixo que esta tambe al edifici trans 
     }
 
     public void ActivarSuperstarJug1()

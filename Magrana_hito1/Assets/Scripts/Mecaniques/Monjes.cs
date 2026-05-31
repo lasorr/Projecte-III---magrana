@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Monjes : MonoBehaviour
 {
-    private EdificiEspecialTrans edificiPare;
+    //a la monja li es de donar igual l'edifici , mana el valor de derrotades al objecte especial 
+    private EdificiEspecialTrans edificiPare; //canviar el nom confon
+    //fer public la refrencai a - Objecte especial pare
 
-    public GameObject dragg;
+    public GameObject dragg; //per instanciar
 
-    public GameObject monja;
+    public GameObject monja; //no cal
 
     void Start()
     {
