@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class EdificiEspecialTrans : MonoBehaviour
-{
+{   //aquest script es troba a l'bjecte especial de Edifici cole catolic
     private int copsJug1 = 0;
     private int copsJug2 = 0;
 
@@ -10,9 +10,9 @@ public class EdificiEspecialTrans : MonoBehaviour
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
 
-    public GameObject edificiCapitalistaAssociat;
-    public GameObject edificiBoAssociat;
-    public GameObject cadenesBloqueig;
+    public GameObject edificiCapitalistaAssociat; //aixo ha de ser el edifici capitalista on sigui el obj especial
+    public GameObject edificiBoAssociat; //prefab edifici bo xd
+    public GameObject cadenesBloqueig; //ref 
 
     public GameObject imatge1CopPrefab;
     public GameObject imatge2CopPrefab;
@@ -87,8 +87,8 @@ public class EdificiEspecialTrans : MonoBehaviour
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
-        Vector3 pos = edificiCap.transform.position;
-        Quaternion rot = edificiCap.transform.rotation;
+        Vector3 pos = edificiCapitalistaAssociat.transform.position; // nom de la referencia 
+        Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
 
         GameObject nouEdifici = Instantiate(
             edificiBoAssociat,
@@ -98,7 +98,7 @@ public class EdificiEspecialTrans : MonoBehaviour
 
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
 
-        Destroy(edificiCap.gameObject);
+        Destroy(edificiCap.gameObject); //aixo hauria de funcionar perf 
     }
 
     public void ActivarSuperstarJug1()

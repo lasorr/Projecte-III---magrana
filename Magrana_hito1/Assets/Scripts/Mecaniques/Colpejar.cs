@@ -19,10 +19,10 @@ public class Colpejar : MonoBehaviour
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
 
-    public EdificiEspecialTrans EdificiDragg;
-    public EdificiEspecialDesnon EdificiCalvo;
+    public EdificiEspecialTrans EdificiDragg; //colpejar no deberia tener ref de los prefabs, sino el objeto especial
+    public EdificiEspecialDesnon EdificiCalvo; //same creo
     public IAEnemicPorclicia IAporcilia;
-    public Monjes monjaScript;
+    public Monjes monjaScript; 
 
     [SerializeField] private AudioClip bonkSound;
 
@@ -70,7 +70,7 @@ public class Colpejar : MonoBehaviour
         if (jaHaColpejat) return;
         if (!Arma.enabled) return;
 
-        if (other.CompareTag("Especial"))
+        if (other.CompareTag("Especial")) //envia a contador cops
         {
             jaHaColpejat = true;
 
@@ -80,7 +80,7 @@ public class Colpejar : MonoBehaviour
 
             if (contadorScript != null)
             {
-                contadorScript.RebreCopEdifici(propietariaArma, 1);
+                contadorScript.RebreCopEdifici(propietariaArma, 1); //augmenta la variable perque es faci el canvi
             }
             else
             {
@@ -88,29 +88,29 @@ public class Colpejar : MonoBehaviour
             }
         }
 
-        else if (other.CompareTag("EspecialDesnon"))
+        else if (other.CompareTag("EspecialDesnon")) //tag del objecte especial desnonament
         {
             jaHaColpejat = true;
 
             EdificiEspecialDesnon desnonScript = other.GetComponent<EdificiEspecialDesnon>();
 
-            if (EdificiCalvo != null)
+            if (EdificiCalvo != null) // desnonScript no es null - augmenta varible 
             {
-                EdificiCalvo.RebreCopEdificiEspecial(propietariaArma, 3);
+                EdificiCalvo.RebreCopEdificiEspecial(propietariaArma, 3); //perque mira edificicalvo i no script desnon??
             }
             else
             {
-                Debug.Log("Desde colpejar no reb contador cops script");
+                Debug.Log("Desde colpejar no reb Edifici calvo");
             }
         }
 
-        else if (other.CompareTag("EspecialMonja"))
+        else if (other.CompareTag("EspecialMonja")) //tag del objecte especial cole catolic
         {
             jaHaColpejat = true;
 
             EdificiEspecialTrans transScript = other.GetComponent<EdificiEspecialTrans>();
 
-            if (EdificiDragg != null)
+            if (EdificiDragg != null)  //
             {
                 EdificiDragg.RebreCopEdificiEspecial(propietariaArma, 3);
             }
@@ -120,23 +120,25 @@ public class Colpejar : MonoBehaviour
             }
         }
 
-        else if (other.CompareTag("Monja"))
+        else if (other.CompareTag("Monja")) //tag de la monja per desbloquejar
         {
             jaHaColpejat = true;
-
+            //monja fill de objecte especial - puja al pare - busca script - suma ++
             other.GetComponent<Monjes>().Morir();
         }
 
-        else if (other.CompareTag("porclicia_desnon"))
+        else if (other.CompareTag("porclicia_desnon")) //tag porclicies per desbloquejar
         {
             jaHaColpejat = true;
 
+            //potser aqui falta fer als porcs fills objecte especial i que other busqui el pare - despres
+            // el script dintre el pare/objecte especial i llavors asigni puntuacio ++ .
+            EdificiCalvo.polisDerrotats++; //no pot tenir la existencia de tots els edificis calvos
+            //es la referencia a un prefab crec que no pot funcionar
             Destroy(other.gameObject);
-
-            EdificiCalvo.polisDerrotats++;
         }
 
-        else if (other.CompareTag("Porclicia"))
+        else if (other.CompareTag("Porclicia")) //porcs ai per evitar transform
         {
             jaHaColpejat = true;
 

@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class PropietariaEdifici : MonoBehaviour
 {
+    //aquest script esta en cada edifici BO - per assignar jugadora als porcsIA
+
     public int Propietaria; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
 
     public int punts;
     
-    public GameObject edificiCapitalistaAssociat;
-    public GameObject edificiBoAssociat;
+    public GameObject edificiCapitalistaAssociat; //prefab edifici capitalista per destransformar
+    public GameObject edificiBoAssociat; // si mateix? //no cal declarar només fer servir gameObject
 
     public bool edificiTransformat = false;
 
