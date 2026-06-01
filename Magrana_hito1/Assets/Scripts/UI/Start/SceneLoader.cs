@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneLoader : MonoBehaviour
 {
+    AudioManager audioManager; // Referencia al AudioManager para reproducir sonidos
     private int sceneIndex = 1; // �ndex escena (Escena nivells)
+    void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Update()
     {
@@ -19,10 +25,14 @@ public class SceneLoader : MonoBehaviour
     }
     private void LoadNextScene()
     {
-        // Puedes a�adir un efecto de sonido aqu� si quieres
-        // AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
+        audioManager.PlayClickSound(audioManager.clickSFX);
 
-        /* Es carrega la seg�ent escena, per �ndex o t�tol */
-         SceneManager.LoadScene(sceneIndex);
+        StartCoroutine(waitAndPlaySound(0.5f));
+
+        IEnumerator waitAndPlaySound(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }
