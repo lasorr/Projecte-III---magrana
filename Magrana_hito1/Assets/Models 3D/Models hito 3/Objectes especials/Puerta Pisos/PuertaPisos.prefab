@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5117585283930909493}
+  - component: {fileID: 3047019793817627554}
   m_Layer: 0
   m_Name: PuertaPisos
   m_TagString: Untagged
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 5249019396392799518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3047019793817627554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041982381822103258}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4005318, y: 7.0090632, z: 7.812559}
+  m_Center: {x: 8.379305, y: 8.836105, z: 7.7117243}
 --- !u!1 &6424195061200782771
 GameObject:
   m_ObjectHideFlags: 0
