@@ -42,7 +42,7 @@ public class TimeManager : MonoBehaviour
     public AudioClip timeWarningClip;
     public AudioClip initialCountdownClip;
     public AudioClip winnerClip;
-
+    public AudioClip finalCountdownClip;
 
     public static TimeManager Instance;
     private RectTransform rect;
@@ -125,10 +125,14 @@ public class TimeManager : MonoBehaviour
             {
                 GestioSo.instance.PlaySound(timeWarningClip, transform, 1f);
             }
-        if (currentGameTime <= 0)
-        {
-            EndGame();
-        }
+            if (currentGameTime == 10f)
+            {
+                GestioSo.instance.PlaySound(finalCountdownClip, transform, 1f);
+            }
+            if (currentGameTime <= 0)
+            {
+                EndGame();
+            }
         }
     }
 
