@@ -23,7 +23,7 @@ public class MusicManager : MonoBehaviour
         if (musicSource != null)
         {
             musicSource.clip = musicClip;
-            musicSource.Play();
+            //musicSource.Play();
         }
     }
 }

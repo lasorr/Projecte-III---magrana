@@ -3,13 +3,14 @@ using UnityEngine;
 public class FXsManager : MonoBehaviour
 {
     public AudioSource sfxSource;
+    private static FXsManager instance;
+
  #region AUDIO CLIPS
     [Header("UI")]
     public AudioClip clickClip;
     public AudioClip focusedClip;
     public AudioClip initialCountdownClip;
     public AudioClip finalCountdownClip;
-    public AudioClip endAlarmClip;
 
     [Header("Gameplay")]
     public AudioClip spawnClip;
@@ -20,6 +21,7 @@ public class FXsManager : MonoBehaviour
     public AudioClip powerDownClip;
     public AudioClip transformClip;
     public AudioClip unTransformClip;
+    public AudioClip timeWarningClip;
     public AudioClip winnerClip;
 
     [Header("Characters")]
@@ -35,15 +37,29 @@ public class FXsManager : MonoBehaviour
     public AudioClip desnonamentClip;
     public AudioClip edificiCatolicClip;
     #endregion
-
+    private void Awake()
+    {
+        if (instance == null) // Singleton: evita duplicats d'audio manager
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // Destruye el duplicado si ya existe uno
+        }
+    }
     void Start()
     {
-        
+        sfxSource.PlayOneShot(spawnClip);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void PlayTimeWarning()
     {
-        
+        sfxSource.PlayOneShot(timeWarningClip);
+        Debug.Log("Queden 30 segundos");
+    }
+    public void PlayWalkSound()
+    {
+        sfxSource.PlayOneShot(walkClip);
     }
 }

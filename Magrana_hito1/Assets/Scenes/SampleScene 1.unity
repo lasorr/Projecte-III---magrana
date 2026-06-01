@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 138425319}
   m_Layer: 0
   m_Name: FXsManager
-  m_TagString: Untagged
+  m_TagString: SFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,7 +699,6 @@ MonoBehaviour:
   focusedClip: {fileID: 8300000, guid: d8b14e6a40d054462a8f3257de28e2ff, type: 3}
   initialCountdownClip: {fileID: 8300000, guid: a26b03c2a3eab4cbba21fcb0261e9217, type: 3}
   finalCountdownClip: {fileID: 8300000, guid: 9edd2fba88094474baf7524a5d65d833, type: 3}
-  endAlarmClip: {fileID: 8300000, guid: 514ac0c91217046f1829846cd601c115, type: 3}
   spawnClip: {fileID: 8300000, guid: 408893eae699e455da8889b45b1a513c, type: 3}
   walkClip: {fileID: 8300000, guid: d0cd9dc815f654319ac18ab54ffacba3, type: 3}
   wooshClip: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
@@ -708,6 +707,7 @@ MonoBehaviour:
   powerDownClip: {fileID: 8300000, guid: ede25581fdcf74d58aab86c9426fa9f3, type: 3}
   transformClip: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
   unTransformClip: {fileID: 8300000, guid: 0890ff08c2fb7440bb5dcf9fd4cf93b3, type: 3}
+  timeWarningClip: {fileID: 8300000, guid: 514ac0c91217046f1829846cd601c115, type: 3}
   winnerClip: {fileID: 8300000, guid: b6218a4d1e99447a798cde18a234a43a, type: 3}
   porcliciesClip: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
   mussolClips:
@@ -1897,7 +1897,7 @@ GameObject:
   - component: {fileID: 444981586}
   m_Layer: 0
   m_Name: MusicManager
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3088,6 +3088,7 @@ MonoBehaviour:
   animator: {fileID: 973352828}
   potMoure: 1
   stunJug: 0
+  ScriptFXsManager: {fileID: 0}
   modelTransform: {fileID: 973352827}
   rotationSpeed: 10
 --- !u!54 &687248455
@@ -3994,6 +3995,7 @@ MonoBehaviour:
   animator: {fileID: 1928406735}
   potMoure: 1
   stunJug: 0
+  ScriptFXsManager: {fileID: 0}
   modelTransform: {fileID: 1928406734}
   rotationSpeed: 10
 --- !u!54 &930704121
@@ -7333,7 +7335,7 @@ PrefabInstance:
       objectReference: {fileID: 1972454192}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: gameDuration
-      value: 300
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: winnerScreen
