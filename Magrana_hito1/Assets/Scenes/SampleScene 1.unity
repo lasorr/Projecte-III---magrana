@@ -339,8 +339,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb9f41f26e870a64d89f61ee1cd55dbb, type: 2}
-  m_sharedMaterial: {fileID: 833069977850823394, guid: bb9f41f26e870a64d89f61ee1cd55dbb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -597,7 +597,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -694,6 +694,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97da00b6f1e9d42e5a629fa566a8eaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSource: {fileID: 138425319}
+  clickClip: {fileID: 8300000, guid: 1d95b7e236a5e4774a05d3c77623d974, type: 3}
+  focusedClip: {fileID: 8300000, guid: d8b14e6a40d054462a8f3257de28e2ff, type: 3}
+  initialCountdownClip: {fileID: 8300000, guid: a26b03c2a3eab4cbba21fcb0261e9217, type: 3}
+  finalCountdownClip: {fileID: 8300000, guid: 9edd2fba88094474baf7524a5d65d833, type: 3}
+  endAlarmClip: {fileID: 8300000, guid: 514ac0c91217046f1829846cd601c115, type: 3}
+  spawnClip: {fileID: 8300000, guid: 408893eae699e455da8889b45b1a513c, type: 3}
+  walkClip: {fileID: 8300000, guid: d0cd9dc815f654319ac18ab54ffacba3, type: 3}
+  wooshClip: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
+  stunnedClip: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
+  powerUpClip: {fileID: 8300000, guid: ac3f3b511acf24a889af2fdda8874105, type: 3}
+  powerDownClip: {fileID: 8300000, guid: ede25581fdcf74d58aab86c9426fa9f3, type: 3}
+  transformClip: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
+  unTransformClip: {fileID: 8300000, guid: 0890ff08c2fb7440bb5dcf9fd4cf93b3, type: 3}
+  winnerClip: {fileID: 8300000, guid: b6218a4d1e99447a798cde18a234a43a, type: 3}
+  porcliciesClip: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
+  mussolClips:
+  - {fileID: 8300000, guid: 71bb086f640d44fd1b5ac7545a4806ac, type: 3}
+  - {fileID: 8300000, guid: df333fe3fd6cf4ad092a1f340b80c116, type: 3}
+  - {fileID: 8300000, guid: f8612ef7a95e84f498e0eea9be16922f, type: 3}
+  monjaClips:
+  - {fileID: 8300000, guid: 52f992a869e73432194374f3e8aed95c, type: 3}
+  - {fileID: 8300000, guid: eb6d5223649d64746a4debabb53fe6bd, type: 3}
+  - {fileID: 8300000, guid: c9feae46842d14c34a5948bc58759016, type: 3}
+  - {fileID: 8300000, guid: 10ebb0aded0a8495b88226f7324a06b8, type: 3}
+  iaiaClips:
+  - {fileID: 8300000, guid: 5a2d22394cc9a49639b19a20660b325a, type: 3}
+  - {fileID: 8300000, guid: 468aa223cef0e4f7989f364f3a2161f9, type: 3}
+  - {fileID: 8300000, guid: 48d4cb68b6e6c4313891f58787d398db, type: 3}
+  dragQueenClip: {fileID: 8300000, guid: 24d303e000bb043d39892a07d20bb3e9, type: 3}
+  officeClip: {fileID: 8300000, guid: 85b68cb003d0f4a68a085c54f8232830, type: 3}
+  coffeeShopClip: {fileID: 8300000, guid: 5f43f992e23b54fc8b1ad72f3338ce30, type: 3}
+  desnonamentClip: {fileID: 8300000, guid: 9c8a3df1fc0a4446da6e0c719900c7f4, type: 3}
+  edificiCatolicClip: {fileID: 8300000, guid: 81b964765a1d64024a612dbfe56735be, type: 3}
 --- !u!1 &155157569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1896,7 @@ GameObject:
   - component: {fileID: 444981587}
   - component: {fileID: 444981586}
   m_Layer: 0
-  m_Name: MusicManagers
+  m_Name: MusicManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1992,6 +2026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ec1631cc8764b48a05466e497c3d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSource: {fileID: 444981586}
+  musicClip: {fileID: 8300000, guid: 20628ac497e594fe4a79b2fb07825ded, type: 3}
 --- !u!1 &445276602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,8 +2333,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 25cfceb59961a484abba202814045569, type: 2}
-  m_sharedMaterial: {fileID: 7214778869918415187, guid: 25cfceb59961a484abba202814045569, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2764,11 +2800,13 @@ MonoBehaviour:
   animator: {fileID: 1928406735}
   ScriptPropietaria: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
   dragg: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
+  ScriptContador: {fileID: 0}
   propietariaArma: 1
   ScriptMoviment1: {fileID: 930704120}
   ScriptMoviment2: {fileID: 687248454}
   IAporcilia: {fileID: 1456048072}
   bonkSound: {fileID: 0}
+  TimeManager: {fileID: 0}
 --- !u!1 &622857233
 GameObject:
   m_ObjectHideFlags: 0
@@ -4822,8 +4860,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb9f41f26e870a64d89f61ee1cd55dbb, type: 2}
-  m_sharedMaterial: {fileID: 833069977850823394, guid: bb9f41f26e870a64d89f61ee1cd55dbb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5132,11 +5170,13 @@ MonoBehaviour:
   animator: {fileID: 973352828}
   ScriptPropietaria: {fileID: 1304502016799220225, guid: b44b6cc08be50bd4bb26ae588adf4414, type: 3}
   dragg: {fileID: 2307957069512962288, guid: 1f64b36811e7a754780743c76e29be4f, type: 3}
+  ScriptContador: {fileID: 0}
   propietariaArma: 2
   ScriptMoviment1: {fileID: 930704120}
   ScriptMoviment2: {fileID: 687248454}
   IAporcilia: {fileID: 1002594113}
   bonkSound: {fileID: 0}
+  TimeManager: {fileID: 0}
 --- !u!54 &1262119600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6471,8 +6511,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb9f41f26e870a64d89f61ee1cd55dbb, type: 2}
-  m_sharedMaterial: {fileID: 833069977850823394, guid: bb9f41f26e870a64d89f61ee1cd55dbb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
