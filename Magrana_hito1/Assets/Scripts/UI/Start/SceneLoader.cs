@@ -4,11 +4,11 @@ using System.Collections;
 
 public class SceneLoader : MonoBehaviour
 {
-    AudioManager audioManager; // Referencia al AudioManager para reproducir sonidos
+    public MenuAudioManager audioManager;
     private int sceneIndex = 1; // �ndex escena (Escena nivells)
     void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MenuAudioManager>();
     }
 
     void Update()
