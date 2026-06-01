@@ -31,7 +31,7 @@ public class MenuAudioManager : MonoBehaviour
     public void PlayClickSound(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
-        Debug.Log("Reproduciendo sonido de clic: ");
+        // Debug.Log("Reproduciendo sonido de clic: ");
     }
     public void PlayFocusedSound(AudioClip clip)
     {

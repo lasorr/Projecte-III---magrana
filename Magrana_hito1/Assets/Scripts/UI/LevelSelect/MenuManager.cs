@@ -9,6 +9,11 @@ public class MenuManager : MonoBehaviour
     public GameObject controlsUI; // Esquema dels controls
     public GameObject quitConfirmUI; // Missatge de confirmació sortir
 
+    public MenuAudioManager audioManager;
+    void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MenuAudioManager>();
+    }
     void Start()
     {
         Debug.Log("Menu Tancat");
@@ -44,6 +49,7 @@ public class MenuManager : MonoBehaviour
     A l'apartat OnClick() d'aquest component, establim que MenuManager executi la següent funció */
     public void OpenMainMenu()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         if (mainMenuPanel != null)
         {
             mainMenuPanel.SetActive(true); // Habilita el menú
@@ -54,6 +60,7 @@ public class MenuManager : MonoBehaviour
     }
     public void CloseMainMenu()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         if (mainMenuPanel != null)
         {
             mainMenuPanel.SetActive(false); // Deshabilita el menú
@@ -64,6 +71,7 @@ public class MenuManager : MonoBehaviour
 
     public void ShowOptions()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         mainMenuUI.SetActive(false);
         optionsUI.SetActive(true);
 
@@ -71,6 +79,7 @@ public class MenuManager : MonoBehaviour
     }
     public void HideOptions()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         mainMenuUI.SetActive(true);
         optionsUI.SetActive(false);
         Debug.Log("Opcions tancades, menú principal obert");
@@ -78,6 +87,7 @@ public class MenuManager : MonoBehaviour
 
     public void ShowControls()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         mainMenuUI.SetActive(false);
         controlsUI.SetActive(true);
 
@@ -85,6 +95,7 @@ public class MenuManager : MonoBehaviour
     }
     public void HideControls()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         mainMenuUI.SetActive(true);
         controlsUI.SetActive(false);
 
@@ -93,18 +104,21 @@ public class MenuManager : MonoBehaviour
 
     public void ShowQuitConfirm()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         quitConfirmUI.SetActive(true);
 
         Debug.Log("Vols sortir?");
     }
     public void HideQuitConfirm()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         quitConfirmUI.SetActive(false);
 
         Debug.Log("No vol sortir");
     }
     public void QuitConfirmed()
     {
+        audioManager.PlayClickSound(audioManager.clickSFX);
         PlayerPrefs.DeleteAll();
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;  // Para pruebas en el Editor
