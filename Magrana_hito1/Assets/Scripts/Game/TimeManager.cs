@@ -37,15 +37,19 @@ public class TimeManager : MonoBehaviour
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
     public NivellCompletat ScriptNivellCompletat;
-    public FXsManager ScriptFXsManager;
+    
+    [Header("Audio")]
+    public AudioClip timeWarningClip;
+    public AudioClip initialCountdownClip;
+    public AudioClip winnerClip;
+
 
     public static TimeManager Instance;
     private RectTransform rect;
 
     void Awake()
     {
-        Instance = this;
-        ScriptFXsManager = GameObject.FindGameObjectWithTag("SFX").GetComponent<FXsManager>();
+        Instance = this;    
     }
     
     void Start()
@@ -56,7 +60,8 @@ public class TimeManager : MonoBehaviour
         rect = PointsContainer.GetComponent<RectTransform>();
 
         SetUIElementsActive(false);
-         winnerScreen.SetActive(false);
+        winnerScreen.SetActive(false);
+        GestioSo.instance.PlaySound(initialCountdownClip, transform, 1f);
 
         StartCoroutine(InitialCountdownCoroutine());
     }
@@ -70,7 +75,6 @@ public class TimeManager : MonoBehaviour
     IEnumerator InitialCountdownCoroutine()
     {
         float remainingTime = initialCountdown;
-        ScriptFXsManager.sfxSource.PlayOneShot(ScriptFXsManager.initialCountdownClip);
         
         while (remainingTime > 0)
         {
@@ -83,6 +87,7 @@ public class TimeManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             remainingTime--;
         }
+
         
         if (countdownText != null)
         {
@@ -106,7 +111,6 @@ public class TimeManager : MonoBehaviour
     
     IEnumerator GameTimerCoroutine()
     {
-        bool warningPlayed = false;
         while (isGameActive && currentGameTime > 0)
         {
             if (gameTimerText != null)
@@ -117,20 +121,14 @@ public class TimeManager : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
             currentGameTime--;
-            if (currentGameTime <= 30f && !warningPlayed)
-        {
-            Debug.Log("Queden 30 segundos");
-
-            if (ScriptFXsManager != null)
+            if (currentGameTime == 30f)
             {
-                ScriptFXsManager.PlayTimeWarning();
+                GestioSo.instance.PlaySound(timeWarningClip, transform, 1f);
             }
-            warningPlayed = true; // Evitar que suene múltiples veces
-        }
-        }
         if (currentGameTime <= 0)
         {
             EndGame();
+        }
         }
     }
 
@@ -155,10 +153,6 @@ public class TimeManager : MonoBehaviour
 
         rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, scoreFinalPosY);
 
-        if(currentGameTime <= 30f)
-        {
-            ScriptFXsManager.PlayTimeWarning();
-        }
         
         if (gameTimerText != null)
         {
@@ -178,7 +172,7 @@ public class TimeManager : MonoBehaviour
                 winner.text="EMPAT";
                 Debug.Log($"EMPAT");            
             }
-            ScriptFXsManager.sfxSource.PlayOneShot(ScriptFXsManager.winnerClip);
+            GestioSo.instance.PlaySound(winnerClip, transform, 1f);
         }
         StartCoroutine(waitAndReturnToLevelSelect(winnerScreenDuration));
     }

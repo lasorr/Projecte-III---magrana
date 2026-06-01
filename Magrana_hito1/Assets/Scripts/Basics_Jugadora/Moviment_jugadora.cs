@@ -10,18 +10,14 @@ public class Moviment_jugadora : MonoBehaviour
     public bool potMoure = true;
 
     public bool stunJug = false;
-    public FXsManager ScriptFXsManager;
     
     [SerializeField] private Transform modelTransform;
     [SerializeField] private float rotationSpeed = 8f;
     
     private Vector2 moveDirection;
     private float currentSpeed;
+    public AudioClip stunSound;
 
-    void Awake()
-    {
-        ScriptFXsManager = GameObject.FindGameObjectWithTag("SFX").GetComponent<FXsManager>();
-    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -51,7 +47,7 @@ public class Moviment_jugadora : MonoBehaviour
         }
         if (stunJug)
         {
-            ScriptFXsManager.PlayStunnedSound();
+            GestioSo.instance.PlaySound(stunSound, transform, 1f);
         }
 
         else if (potMoure)
@@ -59,15 +55,6 @@ public class Moviment_jugadora : MonoBehaviour
             Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
             moviment.y = rb.linearVelocity.y;
             rb.linearVelocity = moviment;
-            /*if (moviment.x != 0 || moviment.z != 0)
-            {
-                ScriptFXsManager.PlayWalkSound();
-            }
-            else
-            {
-                ScriptFXsManager.StopWalkSound();
-            }
-            */
 
             if (moveDirection.magnitude > 0.1f)
             {
