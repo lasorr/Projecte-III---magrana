@@ -12,7 +12,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
 
-    private GameObject edificiCapitalistaAssociat; //aquest es la referencia del edifici on esta l'objecte per destruir
+    public GameObject edificiCapitalistaAssociat; //aquest es la referencia del edifici on esta l'objecte per destruir
     public GameObject edificiBoAssociat; //referencia al prefab per instanciar prefab
     public GameObject cadenesBloqueig; //ref al objecte
 
@@ -30,17 +30,23 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
     void Awake()
     {
-        Transform t = transform;
-
-        while (t.parent != null)
-        {
-            t = t.parent;
-        }
-
-        edificiCapitalistaAssociat = t.gameObject;
+        GameObject pare = transform.parent.gameObject; //pare hauria de ser el edifici capitaliste
+        if (TimeManager == null)
+            TimeManager = FindObjectOfType<TimeManager>();
     }
 
     void Update(){
+        if (polisDerrotats >= 4)
+        {
+            Destroy(cadenesBloqueig);
+        }
+    }
+    public void RegistrarPorcDerrotat()
+    {
+        polisDerrotats++;
+
+        Debug.Log("Polis derrotats: " + polisDerrotats);
+
         if (polisDerrotats >= 4)
         {
             Destroy(cadenesBloqueig);
