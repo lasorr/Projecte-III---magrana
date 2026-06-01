@@ -39,6 +39,7 @@ public class TimeManager : MonoBehaviour
     public NivellCompletat ScriptNivellCompletat;
     
     [Header("Audio")]
+    public AudioClip spawnClip;
     public AudioClip timeWarningClip;
     public AudioClip initialCountdownClip;
     public AudioClip winnerClip;
@@ -61,6 +62,8 @@ public class TimeManager : MonoBehaviour
 
         SetUIElementsActive(false);
         winnerScreen.SetActive(false);
+
+        GestioSo.instance.PlaySound(spawnClip, transform, 1f);
         GestioSo.instance.PlaySound(initialCountdownClip, transform, 1f);
 
         StartCoroutine(InitialCountdownCoroutine());

@@ -22,7 +22,9 @@ public class Colpejar : MonoBehaviour
 
     public IAEnemicPorclicia IAporcilia;
 
-    [SerializeField] private AudioClip bonkSound;
+    [Header("AudioClips")]
+    public AudioClip swingSound;
+    public AudioClip bonkSound;
 
     public TimeManager TimeManager;
 
@@ -46,6 +48,7 @@ public class Colpejar : MonoBehaviour
     {
         if (cop.action.WasPressedThisFrame())
         {
+            GestioSo.instance.PlaySound(swingSound, transform, 1f);
             StartCoroutine(Atac());
         }
     }

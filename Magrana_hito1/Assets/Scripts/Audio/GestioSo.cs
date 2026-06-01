@@ -4,6 +4,7 @@ public class GestioSo : MonoBehaviour
 {
     public AudioSource clipAudio;
     public static GestioSo instance;
+    
 
  /*#region AUDIO CLIPS
     [Header("UI")]
@@ -13,7 +14,7 @@ public class GestioSo : MonoBehaviour
     public AudioClip finalCountdownClip;
 
     [Header("Gameplay")]
-    public AudioClip spawnClip;
+    
     public AudioClip walkClip;
     public AudioClip wooshClip;
     public AudioClip stunnedClip;

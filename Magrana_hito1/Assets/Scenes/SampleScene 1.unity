@@ -2674,7 +2674,8 @@ MonoBehaviour:
   ScriptMoviment1: {fileID: 930704120}
   ScriptMoviment2: {fileID: 687248454}
   IAporcilia: {fileID: 1456048072}
-  bonkSound: {fileID: 0}
+  swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
+  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
   TimeManager: {fileID: 0}
 --- !u!1 &622857233
 GameObject:
@@ -2959,7 +2960,7 @@ MonoBehaviour:
   stunJug: 0
   modelTransform: {fileID: 973352827}
   rotationSpeed: 10
-  stunSound: {fileID: 0}
+  stunSound: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
 --- !u!54 &687248455
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3866,7 +3867,7 @@ MonoBehaviour:
   stunJug: 0
   modelTransform: {fileID: 1928406734}
   rotationSpeed: 10
-  stunSound: {fileID: 0}
+  stunSound: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
 --- !u!54 &930704121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5046,7 +5047,8 @@ MonoBehaviour:
   ScriptMoviment1: {fileID: 930704120}
   ScriptMoviment2: {fileID: 687248454}
   IAporcilia: {fileID: 1002594113}
-  bonkSound: {fileID: 0}
+  swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
+  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
   TimeManager: {fileID: 0}
 --- !u!54 &1262119600
 Rigidbody:
@@ -7208,6 +7210,10 @@ PrefabInstance:
       propertyPath: PointsJ2
       value: 
       objectReference: {fileID: 1972454192}
+    - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
+      propertyPath: spawnClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 408893eae699e455da8889b45b1a513c, type: 3}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: winnerClip
       value: 

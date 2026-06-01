@@ -16,6 +16,8 @@ public class Moviment_jugadora : MonoBehaviour
     
     private Vector2 moveDirection;
     private float currentSpeed;
+
+    [Header("AudioClips")]
     public AudioClip stunSound;
 
     void Start()
@@ -37,6 +39,11 @@ public class Moviment_jugadora : MonoBehaviour
         Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
         currentSpeed = horizontalVelocity.magnitude / velocitat;
         animator.SetFloat("Moviment", currentSpeed);
+
+        if (stunJug)
+        {
+            GestioSo.instance.PlaySound(stunSound, transform, 1f);
+        }
     }
 
     private void FixedUpdate()
@@ -44,10 +51,6 @@ public class Moviment_jugadora : MonoBehaviour
         if (stunJug || !potMoure)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
-        }
-        if (stunJug)
-        {
-            GestioSo.instance.PlaySound(stunSound, transform, 1f);
         }
 
         else if (potMoure)
