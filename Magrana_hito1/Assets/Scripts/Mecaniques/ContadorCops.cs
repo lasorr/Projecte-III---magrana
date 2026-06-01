@@ -11,6 +11,16 @@ public class ContadorCops : MonoBehaviour
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
     
+<<<<<<< Updated upstream
+=======
+    // Paràmetres per MONJA
+    public GameObject draggAlTransformar;
+    public GameObject getdragg()
+    {
+        return draggAlTransformar;
+    }
+
+>>>>>>> Stashed changes
     // Paràmetres per ESPECIAL
     private GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;

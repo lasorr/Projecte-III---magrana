@@ -9,12 +9,16 @@ public class Colpejar : MonoBehaviour
     public Animator animator;
 
     public PropietariaEdifici ScriptPropietaria;
+<<<<<<< Updated upstream
 
     public GameObject dragg;
+=======
+    public ContadorCops ScriptContador;
+>>>>>>> Stashed changes
     
     private bool jaHaColpejat = false;
 
-    public  int propietariaArma;
+    public int propietariaArma;
 
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
@@ -74,6 +78,7 @@ public class Colpejar : MonoBehaviour
 
             ContadorCops contadorScript = other.GetComponent<ContadorCops>();
 
+<<<<<<< Updated upstream
             GestioSo.instance.PlaySound(bonkSound, transform, 1f);
 
             if (contadorScript != null)
@@ -84,12 +89,22 @@ public class Colpejar : MonoBehaviour
             {
                 Debug.Log("Desde colpejar no reb contador cops script");
             }
+=======
+            ColpejarObjecte(
+                obj,
+                null,   // edificiCapitalista (mateix objecte si no tens jerarquia separada)
+                null,
+                null,
+                0
+            );
+>>>>>>> Stashed changes
         }
 
         else if (other.CompareTag("EspecialDesnon")) //tag del objecte especial desnonament
         {
             jaHaColpejat = true;
 
+<<<<<<< Updated upstream
             EdificiEspecialDesnon desnonScript = other.GetComponent<EdificiEspecialDesnon>();
 
             if (desnonScript != null)
@@ -148,6 +163,15 @@ public class Colpejar : MonoBehaviour
             IAporcilia.copsRebuts++;
 
             Debug.Log("Porcilia ha rebut un cop! Cops rebuts: " + IAporcilia.copsRebuts);
+=======
+            ColpejarObjecte(
+                other.gameObject,
+                null,
+                null,
+                ScriptContador.getdragg(), // assigna el prefab de Dragg a l'inspectors
+                0
+            );
+>>>>>>> Stashed changes
         }
 
         else if (other.CompareTag("Player1"))
@@ -192,18 +216,71 @@ public class Colpejar : MonoBehaviour
     }
 
     // Funció amb parametres de ContadorCops
-    public void ColpejarObjecte(GameObject objecteColpejat, GameObject edificiCapitalista, GameObject edificiBo, GameObject dragg, int propietaria)
+    public void ColpejarObjecte(GameObject objecteColpejat, GameObject edificiCapitalista, GameObject edificiComunista, GameObject dragg, int propietaria)
     {
         Debug.Log("Colpejant: " + objecteColpejat.name);
         
         // Cas ESPECIAL
         if (objecteColpejat.CompareTag("Especial"))
         {
+<<<<<<< Updated upstream
             Vector3 pos = edificiCapitalista.transform.position;
             Quaternion rot = edificiCapitalista.transform.rotation;
             Destroy(edificiCapitalista);
             Destroy(objecteColpejat);
             GameObject nouEdifici = Instantiate(edificiBo, pos, rot);
+=======
+            if (edificiCapitalista != null && edificiComunista != null)
+            {
+                Vector3 pos = edificiCapitalista.transform.position;
+                Quaternion rot = edificiCapitalista.transform.rotation;
+                Destroy(edificiCapitalista);
+                Destroy(objecteColpejat);
+                GameObject nouEdifici = Instantiate(edificiComunista, pos, rot);
+
+                if (gameObject.CompareTag("Arma_1"))
+                {
+                    edificisTransformatJug1++;
+                }
+                else if (gameObject.CompareTag("Arma_2"))
+                {
+                    edificisTransformatJug2++;
+                }
+            }
+            
+            else
+            {
+                Debug.LogError("L'objecte especial no té edificis assignats!");
+            }
+        }
+
+        else if (objecteColpejat.name == "Jugadora 1")
+        {
+            Debug.Log("Find player 1");
+            if (propietariaArma == 2)
+            {
+                ScriptMovimentJug1.stunJug = true;
+
+                Debug.Log("Stun player 1");
+                
+                Invoke("DesactivarStun", 2f);
+                ScriptMovimentJug1.animator.SetBool("Emputjar", true);
+            }
+        }
+
+        else if (objecteColpejat.name == "Jugadora 2")
+        {
+            Debug.Log("Find player 2");
+            if (propietariaArma == 1)
+            {
+                ScriptMovimentJug2.stunJug = true;
+
+                Debug.Log("Stun player 2");
+            
+                Invoke("DesactivarStun", 2f);
+                ScriptMovimentJug2.animator.SetBool("Emputjar", true);
+            }
+>>>>>>> Stashed changes
         }
     }
 
