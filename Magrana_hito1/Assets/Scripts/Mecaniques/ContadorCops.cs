@@ -11,6 +11,13 @@ public class ContadorCops : MonoBehaviour
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
     
+    // Paràmetres per MONJA
+    public GameObject draggAlTransformar;
+    public GameObject getdragg()
+    {
+        return draggAlTransformar;
+    }
+
     // Paràmetres per ESPECIAL
     private GameObject edificiCapitalistaAssociat;
     public GameObject edificiBoAssociat;

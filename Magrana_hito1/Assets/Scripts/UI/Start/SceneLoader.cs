@@ -5,7 +5,7 @@ using System.Collections;
 public class SceneLoader : MonoBehaviour
 {
     public MenuAudioManager audioManager;
-    private int sceneIndex = 1; // �ndex escena (Escena nivells)
+    private int sceneHistoria = 1; // �ndex escena (Escena nivells)
     void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MenuAudioManager>();
@@ -32,7 +32,7 @@ public class SceneLoader : MonoBehaviour
         IEnumerator waitAndPlaySound(float waitTime)
         {
             yield return new WaitForSeconds(waitTime);
-            SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene(sceneHistoria);
         }
     }
 }
