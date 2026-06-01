@@ -2409,6 +2409,7 @@ GameObject:
   - component: {fileID: 5084488657968846005}
   - component: {fileID: 8860836561962315563}
   - component: {fileID: 3702435049668887082}
+  - component: {fileID: 345068044018579915}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2506,6 +2507,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: f645c91421acd594aa46fcad221b95ca, type: 3}
+--- !u!65 &345068044018579915
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223284204248248570}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003063138, y: 0.1979036, z: 0.074572936}
+  m_Center: {x: -0.0008014575, y: 0.0018167072, z: 0.09457739}
 --- !u!1 &1394428580462961184
 GameObject:
   m_ObjectHideFlags: 0
