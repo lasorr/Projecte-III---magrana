@@ -1221,6 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Power: {fileID: 1235005018}
+  powerUpClip: {fileID: 8300000, guid: ac3f3b511acf24a889af2fdda8874105, type: 3}
 --- !u!1 &291644184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7736918538444292246, guid: 3ea0e54c31a0e43478956ee0a1a85690, type: 3}
@@ -1528,6 +1529,7 @@ MonoBehaviour:
   Jug1: {fileID: 930704116}
   Jug2: {fileID: 687248451}
   Power: {fileID: 1235005018}
+  powerDownClip: {fileID: 8300000, guid: ede25581fdcf74d58aab86c9426fa9f3, type: 3}
 --- !u!1 &374387830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,6 +1578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Power: {fileID: 447205333}
+  powerUpClip: {fileID: 8300000, guid: ac3f3b511acf24a889af2fdda8874105, type: 3}
 --- !u!65 &374387833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2450,6 +2453,10 @@ PrefabInstance:
       propertyPath: TimeManager
       value: 
       objectReference: {fileID: 2088424842}
+    - target: {fileID: 598188658669328527, guid: be608270f79eb4f9f9f169bea8b16d70, type: 3}
+      propertyPath: transformClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
     - target: {fileID: 1965438723948173496, guid: be608270f79eb4f9f9f169bea8b16d70, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3387,6 +3394,7 @@ MonoBehaviour:
   Jug1: {fileID: 930704116}
   Jug2: {fileID: 687248451}
   Power: {fileID: 1561511846}
+  powerDownClip: {fileID: 8300000, guid: ede25581fdcf74d58aab86c9426fa9f3, type: 3}
 --- !u!65 &841862342
 BoxCollider:
   m_ObjectHideFlags: 0

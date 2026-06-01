@@ -6,9 +6,11 @@ public class PowerDown : MonoBehaviour
     public GameObject Jug2;
     public GameObject Power;
     private Moviment_jugadora moviment;
+    public AudioClip powerDownClip;
     
     void OnCollisionEnter(Collision collision)
     {
+        GestioSo.instance.PlaySound(powerDownClip, transform, 1f);
         if (collision.gameObject.CompareTag("Player1"))
         {
             moviment = Jug1.GetComponent<Moviment_jugadora>();

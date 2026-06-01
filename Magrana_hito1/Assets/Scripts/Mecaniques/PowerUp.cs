@@ -3,8 +3,12 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     public GameObject Power;
+    public AudioClip powerUpClip;
+
+    
     void OnCollisionEnter(Collision collision)
     {
+        GestioSo.instance.PlaySound(powerUpClip, transform, 1f);
         // Comprovar quina jugadora toca el power-up
         if (collision.gameObject.CompareTag("Player1"))
         {

@@ -28,6 +28,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
     public int polisDerrotats = 0; //CONTADOR POLIS DERROTATS
 
+    public AudioClip transformClip;
+
     void Awake()
     {
         GameObject pare = transform.parent.gameObject; //pare hauria de ser el edifici capitaliste
@@ -72,6 +74,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
                     superstarJug1 = false; // Es gasta el superstar
 
                     TimeManager.edificisTransformatJug1+=3;
+                    GestioSo.instance.PlaySound(transformClip, transform, 1f);
                 }
             }
 
