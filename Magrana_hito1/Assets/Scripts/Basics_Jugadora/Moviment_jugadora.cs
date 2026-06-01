@@ -49,18 +49,25 @@ public class Moviment_jugadora : MonoBehaviour
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
+        if (stunJug)
+        {
+            ScriptFXsManager.PlayStunnedSound();
+        }
 
         else if (potMoure)
         {
             Vector3 moviment = new Vector3(moveDirection.x, 0, moveDirection.y) * velocitat;
             moviment.y = rb.linearVelocity.y;
             rb.linearVelocity = moviment;
-            while (moviment.x != 0 || moviment.z != 0)
+            /*if (moviment.x != 0 || moviment.z != 0)
             {
                 ScriptFXsManager.PlayWalkSound();
-                break;   
             }
-            
+            else
+            {
+                ScriptFXsManager.StopWalkSound();
+            }
+            */
 
             if (moveDirection.magnitude > 0.1f)
             {

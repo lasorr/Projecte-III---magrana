@@ -56,10 +56,33 @@ public class FXsManager : MonoBehaviour
     public void PlayTimeWarning()
     {
         sfxSource.PlayOneShot(timeWarningClip);
-        Debug.Log("Queden 30 segundos");
+
     }
     public void PlayWalkSound()
     {
-        sfxSource.PlayOneShot(walkClip);
+    // Solo reproduce si no está ya sonando el sonido de pasos
+        if (!sfxSource.isPlaying && sfxSource.clip != walkClip)
+        {
+            sfxSource.clip = walkClip;
+            sfxSource.loop = true;
+            sfxSource.Play();
+        }
+    }
+    public void StopWalkSound()
+    {
+        if (sfxSource.isPlaying && sfxSource.clip == walkClip)
+        {
+            sfxSource.Stop();
+            sfxSource.loop = false;
+        }
+    }
+    public void PlayStunnedSound()
+    {
+        sfxSource.loop = false;
+        if (!sfxSource.isPlaying)
+        {
+            sfxSource.PlayOneShot(stunnedClip);
+
+        }
     }
 }
