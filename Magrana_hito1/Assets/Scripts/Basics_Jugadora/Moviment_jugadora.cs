@@ -40,7 +40,7 @@ public class Moviment_jugadora : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (stunJug)
+        if (stunJug || !potMoure)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
