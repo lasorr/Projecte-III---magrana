@@ -464,6 +464,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 460801768}
+    - target: {fileID: 4961452747505522583, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+      propertyPath: jugadora
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5072972650345915958, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
       propertyPath: m_Name
       value: PorclicIA_Jug1
@@ -1241,6 +1245,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3957240df823604fb94a016deb14435, type: 3}
+--- !u!114 &1483629754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5913346011535778744, guid: f9de5694fdff7a44497a8013835f3503, type: 3}
+  m_PrefabInstance: {fileID: 428153360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c78d612ed09b76499b50bdd33315b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1517284531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1253,6 +1268,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1517284542}
+    - target: {fileID: 4961452747505522583, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+      propertyPath: jugadora
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5072972650345915958, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
       propertyPath: m_Name
       value: PorclicIA_Jug2
@@ -1530,7 +1549,7 @@ PrefabInstance:
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: ScriptMoviment2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1483629754}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: edificisTransformatJug2
       value: 0
