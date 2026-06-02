@@ -121,15 +121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0027270329
+      value: -0.00095
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00011090787
+      value: -0.00011
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00424
+      value: -0.00366
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -165,6 +165,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8101396809516410676}
+    - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2969801374837360999}
     - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       insertIndex: -1
@@ -180,6 +183,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
   m_PrefabInstance: {fileID: 5904332921845547131}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &8101396809516410676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858473342684389930}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.55, y: 2.59, z: 16.97}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2969801374837360999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -228,6 +252,7 @@ MonoBehaviour:
   DeQuiEsAquestEdifici: {fileID: 3082602718469164322, guid: bf202d239b1d15f4d9175da32eaddc8b, type: 3}
   TimeManager: {fileID: 2783416595596609395, guid: 025cd0be6cfd848f29016d716b657481, type: 3}
   transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
+  officeSound: {fileID: 8300000, guid: 85b68cb003d0f4a68a085c54f8232830, type: 3}
 --- !u!1 &3936690942464454895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7444881246459064468, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
