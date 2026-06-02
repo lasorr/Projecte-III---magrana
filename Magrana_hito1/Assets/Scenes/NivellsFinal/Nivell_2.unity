@@ -398,9 +398,17 @@ PrefabInstance:
       value: Jugadora 2
       objectReference: {fileID: 0}
     - target: {fileID: 5913346011535778744, guid: f9de5694fdff7a44497a8013835f3503, type: 3}
+      propertyPath: stunSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
+    - target: {fileID: 5913346011535778744, guid: f9de5694fdff7a44497a8013835f3503, type: 3}
       propertyPath: velocitat
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5913346011535778744, guid: f9de5694fdff7a44497a8013835f3503, type: 3}
+      propertyPath: walkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 919f4dd5c86834408aa94733f2b0002b, type: 3}
     - target: {fileID: 7438970882191880557, guid: f9de5694fdff7a44497a8013835f3503, type: 3}
       propertyPath: EdificiDragg
       value: 
@@ -1055,9 +1063,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7028975071387190500, guid: b2b4fda65cb537f46b79f3997dd8ddd9, type: 3}
+      propertyPath: stunSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
+    - target: {fileID: 7028975071387190500, guid: b2b4fda65cb537f46b79f3997dd8ddd9, type: 3}
       propertyPath: velocitat
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7028975071387190500, guid: b2b4fda65cb537f46b79f3997dd8ddd9, type: 3}
+      propertyPath: walkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 919f4dd5c86834408aa94733f2b0002b, type: 3}
     - target: {fileID: 7028975071387190500, guid: b2b4fda65cb537f46b79f3997dd8ddd9, type: 3}
       propertyPath: rotationSpeed
       value: 8
@@ -1355,6 +1371,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 666619047}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
+      propertyPath: spawnClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 514ac0c91217046f1829846cd601c115, type: 3}
+    - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
+      propertyPath: winnerClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b6218a4d1e99447a798cde18a234a43a, type: 3}
+    - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: winnerScreen
       value: 
       objectReference: {fileID: 872472616}
@@ -1378,6 +1402,18 @@ PrefabInstance:
       propertyPath: ScriptMoviment2
       value: 
       objectReference: {fileID: 1483629754}
+    - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
+      propertyPath: timeWarningClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 514ac0c91217046f1829846cd601c115, type: 3}
+    - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
+      propertyPath: finalCountdownClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9edd2fba88094474baf7524a5d65d833, type: 3}
+    - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
+      propertyPath: initialCountdownClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a26b03c2a3eab4cbba21fcb0261e9217, type: 3}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: edificisTransformatJug2
       value: 0
