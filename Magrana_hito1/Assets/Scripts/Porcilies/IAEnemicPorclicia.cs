@@ -54,8 +54,6 @@ public class IAEnemicPorclicia : MonoBehaviour
             if (edificiObjectiu == null)
             {
                 BuscarEdificiJug1();
-                animator.SetBool("Transformar", false);
-                animator.SetBool("Run", true);
             }
 
             else if (edificiObjectiu != null)
@@ -63,6 +61,7 @@ public class IAEnemicPorclicia : MonoBehaviour
                 agent.SetDestination(edificiObjectiu.transform.position);
 
                 float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
+                Debug.Log("Distancia a l'edifici objectiu: " + dist);
 
                 if (dist > 7f)
                 {
@@ -71,9 +70,11 @@ public class IAEnemicPorclicia : MonoBehaviour
 
                 else if (dist <= 7f)
                 {
+                    animator.SetBool("Run", false);
+                    animator.SetBool("Transformar", true);
+
                     if (copsRebuts >= 3)
                     {
-                        animator.SetBool("Run", false);
                         BuscarEdificiJug1();
                         copsRebuts = 0;
                         Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
@@ -120,7 +121,10 @@ public class IAEnemicPorclicia : MonoBehaviour
                 }
 
                 else if (dist <= 7f)
-                {
+                {        
+                    animator.SetBool("Run", false);
+                    animator.SetBool("Transformar", true);
+                    
                     if (copsRebuts >= 3)
                     {
                         BuscarEdificiJug2();
@@ -284,11 +288,11 @@ public class IAEnemicPorclicia : MonoBehaviour
 
     void ConvertirEdificiACapitalista()
     {
-        animator.SetBool("Transformar", true);
         PropietariaEdifici prop = edificiObjectiu.GetComponent<PropietariaEdifici>();
 
         prop.edificiTransformat = true;
 
         GestioSo.instance.PlaySound(unTransformSound, transform, 1f); // SO DESTRANSFORMACIO
+        animator.SetBool("Transformar", false);
     }
 }
