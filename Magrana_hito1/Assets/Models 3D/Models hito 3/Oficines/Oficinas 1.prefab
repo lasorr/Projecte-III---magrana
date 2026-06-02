@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 2368305508654333904}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 66.68, y: 13.8, z: -64.7}
-  m_LocalScale: {x: 3000.0002, y: 3000.0002, z: 3000.0002}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4056715448906616441}
@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrdenadorOficines
       objectReference: {fileID: 0}
+    - target: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
+      propertyPath: m_TagString
+      value: Especial
+      objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.00033333333
@@ -125,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0046000006
+      value: -0.00424
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalRotation.w

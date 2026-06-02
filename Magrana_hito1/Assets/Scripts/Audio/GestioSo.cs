@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GestioSo : MonoBehaviour
 {
-    public AudioSource clipAudio;
+    public AudioSource BonkAudioSource;
     public static GestioSo instance;
     
 
@@ -53,7 +53,7 @@ public class GestioSo : MonoBehaviour
     }
     public void PlaySound(AudioClip clip, Transform spawnTransform, float volume)
     {
-        AudioSource audioSource = Instantiate(clipAudio, spawnTransform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(BonkAudioSource, spawnTransform.position, Quaternion.identity);
         audioSource.clip = clip;
         audioSource.volume = volume;
         audioSource.Play();

@@ -25,6 +25,7 @@ public class Colpejar : MonoBehaviour
     [Header("AudioClips")]
     public AudioClip swingSound;
     public AudioClip bonkSound;
+    public GestioSo gestioSo;
 
     public TimeManager TimeManager;
 
@@ -48,7 +49,7 @@ public class Colpejar : MonoBehaviour
     {
         if (cop.action.WasPressedThisFrame())
         {
-            GestioSo.instance.PlaySound(swingSound, transform, 1f);
+            //GestioSo.instance.PlaySound(swingSound, transform, 1f);
             StartCoroutine(Atac());
         }
     }
@@ -83,8 +84,6 @@ public class Colpejar : MonoBehaviour
             jaHaColpejat = true;
 
             ContadorCops contadorScript = other.GetComponent<ContadorCops>();
-
-            GestioSo.instance.PlaySound(bonkSound, transform, 1f);
 
             if (contadorScript != null)
             {
@@ -146,16 +145,7 @@ public class Colpejar : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            EdificiEspecialDesnon desnonScript = other.GetComponentInParent<EdificiEspecialDesnon>();
-
-            if (desnonScript != null)
-            {
-                //falta?
-                desnonScript.RebreCopEdificiEspecial(propietariaArma, 3);
-                desnonScript.polisDerrotats++;
-            }
-
-            Destroy(other.gameObject);
+            other.GetComponent<PorcliciaDesnon>().Derrotada();
         }
 
         else if (other.CompareTag("Porclicia")) //porcs ai per evitar transform
@@ -185,6 +175,8 @@ public class Colpejar : MonoBehaviour
                 ScriptMoviment1.stunJug = true;
 
                 Debug.Log("Stun player 1");
+
+                GestioSo.instance.PlaySound(bonkSound, transform, 1f);
                 
                 Invoke("DesactivarStun", 2f);
                 ScriptMoviment1.animator.SetBool("Emputjar", true);
@@ -202,6 +194,8 @@ public class Colpejar : MonoBehaviour
                 ScriptMoviment2.stunJug = true;
 
                 Debug.Log("Stun player 2");
+
+                GestioSo.instance.PlaySound(bonkSound, transform, 1f);
             
                 Invoke("DesactivarStun", 2f);
                 ScriptMoviment2.animator.SetBool("Emputjar", true);

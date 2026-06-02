@@ -34,7 +34,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
     {
         GameObject pare = transform.parent.gameObject; //pare hauria de ser el edifici capitaliste
         if (TimeManager == null)
-            TimeManager = FindObjectOfType<TimeManager>();
+            TimeManager = FindFirstObjectByType<TimeManager>();
     }
 
     void Update(){
