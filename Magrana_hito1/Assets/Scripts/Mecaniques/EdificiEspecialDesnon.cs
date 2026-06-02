@@ -137,6 +137,13 @@ public class EdificiEspecialDesnon : MonoBehaviour
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
+        // Aturar so desnonament
+        if (desnonamentAudioSource != null)
+        {
+            GestioSo.instance.StopSound(desnonamentAudioSource);
+            desnonamentAudioSource = null;
+        }
+
         Vector3 pos = edificiCapitalistaAssociat.transform.position; //edfici pare o referenciat
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation; 
 
