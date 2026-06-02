@@ -21,6 +21,7 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public AudioClip transformSound; //so transformacio edifici
     public AudioClip cadenesSound; //so trencar cadenes
+    public AudioClip draggSound;
 
     //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2 
     //fa refererncia a una varible d'un altre script que es fara servir
@@ -96,6 +97,7 @@ public class EdificiEspecialTrans : MonoBehaviour
 
         // SO TRNASFORMACIO
         GestioSo.instance.PlaySound(transformSound, transform, 1f);
+        GestioSo.instance.PlaySound(draggSound, transform, 1f);
 
         Vector3 pos = edificiCapitalistaAssociat.transform.position; // nom de la referencia 
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
