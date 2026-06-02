@@ -21,6 +21,7 @@ public class Moviment_jugadora : MonoBehaviour
     public AudioClip stunSound;
     public AudioClip walkingSound;
     private bool isWalkingSound = false;
+    private bool stunSoundPlayed = false;
 
     void Start()
     {
@@ -42,15 +43,27 @@ public class Moviment_jugadora : MonoBehaviour
         currentSpeed = horizontalVelocity.magnitude / velocitat;
         animator.SetFloat("Moviment", currentSpeed);
 
+        // SO PASSES
         bool isMoving = moveDirection.magnitude > 0.1f && potMoure && !stunJug; // Condicions per a determinar si la jugadora està movent-se
         if (isMoving && !isWalkingSound)
         {
-            GestioSo.instance.PlaySound(walkingSound, transform, 1f);
+            // GestioSo.instance.PlaySound(walkingSound, transform, 1f);
             isWalkingSound = true;
         }
         else if (!isMoving)
         {
             isWalkingSound = false;
+        }
+
+        // SO STUN
+        if (stunJug && !stunSoundPlayed)
+        {
+            GestioSo.instance.PlaySound(stunSound, transform, 1f);
+            stunSoundPlayed = true;
+        }
+        else if (!stunJug)
+        {
+            stunSoundPlayed = false; // Reiniciar para el próximo stun
         }
     }
 

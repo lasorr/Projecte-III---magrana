@@ -19,6 +19,8 @@ public class EdificiEspecialTrans : MonoBehaviour
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
 
+    public AudioClip transformSound; //so transformacio edifici
+
     //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2 
     //fa refererncia a una varible d'un altre script que es fara servir
     //crec que no fa servir en cap moment la varible perque quan la referencia entra a un script i el valor ve per parametre
@@ -89,6 +91,9 @@ public class EdificiEspecialTrans : MonoBehaviour
     void ActivarTransformacio(int propietaria, int punts)
     {
         Debug.Log("Entra en activar transformacio edifici especial");
+
+        // SO TRNASFORMACIO
+        GestioSo.instance.PlaySound(transformSound, transform, 1f);
 
         Vector3 pos = edificiCapitalistaAssociat.transform.position; // nom de la referencia 
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation;

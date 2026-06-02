@@ -49,7 +49,7 @@ public class Colpejar : MonoBehaviour
     {
         if (cop.action.WasPressedThisFrame())
         {
-            //GestioSo.instance.PlaySound(swingSound, transform, 1f);
+            GestioSo.instance.PlaySound(swingSound, transform, 1f);
             StartCoroutine(Atac());
         }
     }
