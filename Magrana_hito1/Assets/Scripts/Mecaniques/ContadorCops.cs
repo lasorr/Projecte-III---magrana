@@ -52,9 +52,9 @@ public class ContadorCops : MonoBehaviour
     {
         if (!soEntradaReproduit && (other.CompareTag("Player1") || other.CompareTag("Player2")))
         {
-            if (GestioSo.instance != null && soEntrada != null)
+            if (GestioSo.instance != null && cafeteriaSound != null)
             {
-                GestioSo.instance.PlaySound(soEntrada, transform, 1f);
+                GestioSo.instance.PlaySound(cafeteriaSound, transform, 1f);
                 soEntradaReproduit = true;
             }
         }
