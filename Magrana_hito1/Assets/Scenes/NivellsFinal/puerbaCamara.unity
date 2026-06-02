@@ -1409,7 +1409,7 @@ PrefabInstance:
     - target: {fileID: 2327331788667415953, guid: 134025ed6ca9a45398c53f2d38ea74ad, type: 3}
       propertyPath: GameTime
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2069392794}
     - target: {fileID: 2327331788667415953, guid: 134025ed6ca9a45398c53f2d38ea74ad, type: 3}
       propertyPath: ingameUI
       value: 
@@ -1429,7 +1429,7 @@ PrefabInstance:
     - target: {fileID: 2327331788667415953, guid: 134025ed6ca9a45398c53f2d38ea74ad, type: 3}
       propertyPath: countdownText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1302383795}
     - target: {fileID: 2327331788667415953, guid: 134025ed6ca9a45398c53f2d38ea74ad, type: 3}
       propertyPath: exitConfirmUI
       value: 
@@ -2388,7 +2388,7 @@ PrefabInstance:
     - target: {fileID: 7440130629627595626, guid: b2b4fda65cb537f46b79f3997dd8ddd9, type: 3}
       propertyPath: IAporcilia
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1296938576}
     - target: {fileID: 7440130629627595626, guid: b2b4fda65cb537f46b79f3997dd8ddd9, type: 3}
       propertyPath: swingSound
       value: 
@@ -2553,6 +2553,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BonkAudioSource: {fileID: 1305510836222006284, guid: 927a3c9c040ee4ef6b46f3ad14c5c09b, type: 3}
+--- !u!114 &1296938576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4961452747505522583, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+  m_PrefabInstance: {fileID: 601006100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eef53c115e3147229095f22752535dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1302383795 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6698062757289947739, guid: 9a4cbe5039ded426193d69ddebc8ebf9, type: 3}
@@ -2564,6 +2575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1364397316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8448962700305808001, guid: 9a4cbe5039ded426193d69ddebc8ebf9, type: 3}
+  m_PrefabInstance: {fileID: 352317035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1426488506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3120,7 +3136,7 @@ PrefabInstance:
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: winnerScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1364397316}
     - target: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
       propertyPath: countdownText
       value: 
@@ -3210,12 +3226,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
+--- !u!1 &2069392794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6453652223993344612, guid: 9a4cbe5039ded426193d69ddebc8ebf9, type: 3}
+  m_PrefabInstance: {fileID: 352317035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2069392796 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4515010912528079245, guid: 9a4cbe5039ded426193d69ddebc8ebf9, type: 3}
   m_PrefabInstance: {fileID: 352317035}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2069392794}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -3511,7 +3532,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f75e41a34095a463582d9c61554e111d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e935156d1a6b2453a91e02c2ca495076, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
