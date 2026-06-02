@@ -29,6 +29,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public int polisDerrotats = 0; //CONTADOR POLIS DERROTATS
 
     public AudioClip transformClip;
+    public AudioClip cadenesSound; //so trencar cadenes
 
     void Awake()
     {

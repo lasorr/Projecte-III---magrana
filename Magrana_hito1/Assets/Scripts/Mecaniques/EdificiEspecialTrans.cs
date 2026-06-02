@@ -20,6 +20,7 @@ public class EdificiEspecialTrans : MonoBehaviour
     public GameObject imatgeStarCopPrefab;
 
     public AudioClip transformSound; //so transformacio edifici
+    public AudioClip cadenesSound; //so trencar cadenes
 
     //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2 
     //fa refererncia a una varible d'un altre script que es fara servir
@@ -45,6 +46,7 @@ public class EdificiEspecialTrans : MonoBehaviour
 
         if (monjesDerrotades >= 4)
         {
+            GestioSo.instance.PlaySound(cadenesSound, transform, 1f); // SO CADENES
             Destroy(cadenesBloqueig);
         }
     }

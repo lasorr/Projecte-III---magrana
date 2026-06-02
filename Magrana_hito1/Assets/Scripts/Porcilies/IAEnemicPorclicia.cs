@@ -25,6 +25,8 @@ public class IAEnemicPorclicia : MonoBehaviour
 
     public int jugadora = 0;
 
+    public AudioClip unTransformSound; //so destransformacions
+
     void Start()
     {
         agent.speed = velocitatLenta;
@@ -286,5 +288,7 @@ public class IAEnemicPorclicia : MonoBehaviour
         PropietariaEdifici prop = edificiObjectiu.GetComponent<PropietariaEdifici>();
 
         prop.edificiTransformat = true;
+
+        GestioSo.instance.PlaySound(unTransformSound, transform, 1f); // SO DESTRANSFORMACIO
     }
 }
