@@ -70,4 +70,23 @@ public class GestioSo : MonoBehaviour
         audioSource.Play();
         Destroy(audioSource.gameObject, clip[rand].length);
     }
+    public AudioSource PlaySoundPersistent(AudioClip clip, Transform spawnTransform, float volume, bool loop = false)
+    {
+        if (clip == null) return null;
+        
+        AudioSource audioSource = Instantiate(BonkAudioSource, spawnTransform.position, Quaternion.identity);
+        audioSource.clip = clip;
+        audioSource.volume = volume;
+        audioSource.loop = loop;
+        audioSource.Play();
+        return audioSource; // Devuelve referencia, NO se autodestruye
+    }
+    public void StopSound(AudioSource audioSource)
+    {
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+            Destroy(audioSource.gameObject);
+        }
+    }
 }

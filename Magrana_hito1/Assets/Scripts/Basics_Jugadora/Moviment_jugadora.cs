@@ -20,6 +20,7 @@ public class Moviment_jugadora : MonoBehaviour
     [Header("AudioClips")]
     public AudioClip stunSound;
     public AudioClip walkingSound;
+    private AudioSource walkingAudioSource;
     private bool isWalkingSound = false;
     private bool stunSoundPlayed = false;
 
@@ -47,11 +48,15 @@ public class Moviment_jugadora : MonoBehaviour
         bool isMoving = moveDirection.magnitude > 0.1f && potMoure && !stunJug; // Condicions per a determinar si la jugadora està movent-se
         if (isMoving && !isWalkingSound)
         {
-             GestioSo.instance.PlaySound(walkingSound, transform, 1f);
+            // Iniciar sonido de pasos en loop
+            walkingAudioSource = GestioSo.instance.PlaySoundPersistent(walkingSound, transform, 1f, true);
             isWalkingSound = true;
         }
         else if (!isMoving)
         {
+            // Detener sonido de pasos
+            GestioSo.instance.StopSound(walkingAudioSource);
+            walkingAudioSource = null;
             isWalkingSound = false;
         }
 
