@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4056715448906616441}
+  - {fileID: 4459166240228162416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5699821595123350534
@@ -91,6 +92,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4569649304176285588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4459166240228162416}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4459166240228162416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569649304176285588}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0000126268715, y: 0.0000045015477, z: 0.0042361836}
+  m_LocalScale: {x: 0.5, y: 0.49999988, z: 0.49999988}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3725877465650938700}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5904332921845547131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,15 +153,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00298
+      value: 0.0027270329
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00011090787
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00494
+      value: -0.00424
       objectReference: {fileID: 0}
     - target: {fileID: 7619033627935149570, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -165,9 +197,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8101396809516410676}
-    - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2969801374837360999}
     - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       insertIndex: -1
@@ -183,27 +212,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
   m_PrefabInstance: {fileID: 5904332921845547131}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8101396809516410676
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3858473342684389930}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 23.67, y: 2.59, z: 16.97}
-  m_Center: {x: -10.17, y: 2.54, z: 0}
 --- !u!54 &2969801374837360999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,7 +260,7 @@ MonoBehaviour:
   DeQuiEsAquestEdifici: {fileID: 3082602718469164322, guid: bf202d239b1d15f4d9175da32eaddc8b, type: 3}
   TimeManager: {fileID: 2783416595596609395, guid: 025cd0be6cfd848f29016d716b657481, type: 3}
   transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
-  officeSound: {fileID: 8300000, guid: 85b68cb003d0f4a68a085c54f8232830, type: 3}
+  cafeteriaSound: {fileID: 0}
 --- !u!1 &3936690942464454895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7444881246459064468, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
