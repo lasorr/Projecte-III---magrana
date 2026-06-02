@@ -47,7 +47,7 @@ public class Moviment_jugadora : MonoBehaviour
         bool isMoving = moveDirection.magnitude > 0.1f && potMoure && !stunJug; // Condicions per a determinar si la jugadora està movent-se
         if (isMoving && !isWalkingSound)
         {
-            // GestioSo.instance.PlaySound(walkingSound, transform, 1f);
+             GestioSo.instance.PlaySound(walkingSound, transform, 1f);
             isWalkingSound = true;
         }
         else if (!isMoving)
