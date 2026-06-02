@@ -197,9 +197,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2969801374837360999}
-    - targetCorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6266317720788515970}
   m_SourcePrefab: {fileID: 100100000, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
 --- !u!1 &3269536069145888365 stripped
@@ -212,33 +209,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7240779456543711825, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
   m_PrefabInstance: {fileID: 5904332921845547131}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &2969801374837360999
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3858473342684389930}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &6266317720788515970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +230,7 @@ MonoBehaviour:
   DeQuiEsAquestEdifici: {fileID: 3082602718469164322, guid: bf202d239b1d15f4d9175da32eaddc8b, type: 3}
   TimeManager: {fileID: 2783416595596609395, guid: 025cd0be6cfd848f29016d716b657481, type: 3}
   transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
-  cafeteriaSound: {fileID: 0}
+  officeSound: {fileID: 0}
 --- !u!1 &3936690942464454895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7444881246459064468, guid: e91c3ed8a34e64e48af02669e31898e2, type: 3}
