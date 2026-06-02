@@ -25,6 +25,7 @@ public class Colpejar : MonoBehaviour
     [Header("AudioClips")]
     public AudioClip swingSound;
     public AudioClip bonkSound;
+    public AudioClip porcliciaDamageSound;
     public GestioSo gestioSo;
 
     public TimeManager TimeManager;
@@ -153,6 +154,8 @@ public class Colpejar : MonoBehaviour
             jaHaColpejat = true;
 
             IAporcilia.copsRebuts++;
+
+            GestioSo.instance.PlaySound(porcliciaDamageSound, transform, 1f); // SO DANY PORCILIA
 
             Debug.Log("Porcilia ha rebut un cop! Cops rebuts: " + IAporcilia.copsRebuts);
             ColpejarObjecte(

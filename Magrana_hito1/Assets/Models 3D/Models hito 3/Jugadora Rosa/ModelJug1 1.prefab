@@ -520,6 +520,8 @@ MonoBehaviour:
   stunJug: 0
   modelTransform: {fileID: 7527718643294299446, guid: 90dd77d2d2a46dc41a1dff7dcf07bff2, type: 3}
   rotationSpeed: 8
+  stunSound: {fileID: 0}
+  walkingSound: {fileID: 0}
 --- !u!1 &3459073322404512842
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,13 +993,16 @@ MonoBehaviour:
   animator: {fileID: 540837056905191365}
   ScriptPropietaria: {fileID: 5990899918181808527, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
   dragg: {fileID: 1255797495591861817, guid: 3462161158c64fd41aaea201aefa82b0, type: 3}
+  ScriptContador: {fileID: 0}
   propietariaArma: 1
   ScriptMoviment1: {fileID: 6234512425456258489}
   ScriptMoviment2: {fileID: 6511496600514328795, guid: 018f3d178a7f8a141bc9fef2c4d81bfd, type: 3}
-  EdificiDragg: {fileID: 4627214585038584507, guid: eafc6e9636a969b41a00bc0adce1c453, type: 3}
-  EdificiCalvo: {fileID: 5363272648418635078, guid: 1292d6527167c744c8e31f737a2ae16f, type: 3}
   IAporcilia: {fileID: 4961452747505522583, guid: 6ecb04c099f617049bfc358f16742d89, type: 3}
+  swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
   bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
+  porcliciaDamageSound: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
+  gestioSo: {fileID: 0}
+  TimeManager: {fileID: 0}
 --- !u!1 &4828495026868519877
 GameObject:
   m_ObjectHideFlags: 0
