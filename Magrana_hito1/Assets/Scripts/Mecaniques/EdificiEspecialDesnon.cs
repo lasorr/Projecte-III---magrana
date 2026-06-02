@@ -29,6 +29,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public int polisDerrotats = 0; //CONTADOR POLIS DERROTATS
 
     public AudioClip transformClip;
+    public AudioClip desnonamentSound;
+    private bool soEntradaReproduit = false;
     public AudioClip cadenesSound; //so trencar cadenes
     public AudioClip iaiaContentaSound;
 
@@ -37,6 +39,19 @@ public class EdificiEspecialDesnon : MonoBehaviour
         GameObject pare = transform.parent.gameObject; //pare hauria de ser el edifici capitaliste
         if (TimeManager == null)
             TimeManager = FindFirstObjectByType<TimeManager>();
+    }
+
+    // SO DESNONAMENT
+    void OnTriggerEnter(Collider other)
+    {
+        if (!soEntradaReproduit && (other.CompareTag("Player1") || other.CompareTag("Player2")))
+        {
+            if (GestioSo.instance != null && desnonamentSound != null)
+            {
+                GestioSo.instance.PlaySound(desnonamentSound, transform, 1f);
+                soEntradaReproduit = true;
+            }
+        }
     }
 
     void Update(){
