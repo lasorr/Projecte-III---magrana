@@ -33,6 +33,7 @@ public class ContadorCops : MonoBehaviour
 
     public AudioClip transformSound;
     public AudioClip officeSound;
+    public AudioSource officeAudioSource;
     private bool soEntradaReproduit = false;
 
     void Awake()
@@ -50,12 +51,22 @@ public class ContadorCops : MonoBehaviour
     // SO OFICINA
     void OnTriggerEnter(Collider other)
     {
-        if (!soEntradaReproduit && (other.CompareTag("Player1") || other.CompareTag("Player2")))
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
         {
             if (GestioSo.instance != null && officeSound != null)
             {
-                GestioSo.instance.PlaySound(officeSound, transform, 1f);
-                soEntradaReproduit = true;
+                officeAudioSource = GestioSo.instance.PlaySoundPersistent(officeSound, transform, 0.5f, true);
+            }
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
+        {
+            if (officeAudioSource != null)
+            {
+                GestioSo.instance.StopSound(officeAudioSource);
+                officeAudioSource = null;
             }
         }
     }
@@ -100,6 +111,13 @@ public class ContadorCops : MonoBehaviour
     void ActivarTransformacio(int propietaria, int punts)
     {
         Debug.Log("Transformant edifici a comunista");
+
+        // Aturar so oficina
+        if (officeAudioSource != null)
+        {
+            GestioSo.instance.StopSound(officeAudioSource);
+            officeAudioSource = null;
+        }
 
         // SO TRANSFORMACIO
         GestioSo.instance.PlaySound(transformSound, transform, 1f);
