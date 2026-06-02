@@ -22,6 +22,8 @@ public class EdificiEspecialTrans : MonoBehaviour
     public AudioClip transformSound; //so transformacio edifici
     public AudioClip cadenesSound; //so trencar cadenes
     public AudioClip draggSound;
+    public AudioClip coleSound; //so entrar a cole catolic
+    private bool soEntradaReproduit = false;
 
     //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2 
     //fa refererncia a una varible d'un altre script que es fara servir
@@ -37,6 +39,19 @@ public class EdificiEspecialTrans : MonoBehaviour
         GameObject pare = transform.parent.gameObject; //pare hauria de ser el edifici capitaliste
         if (TimeManager == null)
             TimeManager = FindFirstObjectByType<TimeManager>();
+    }
+
+    // SO COLE
+    void OnTriggerEnter(Collider other)
+    {
+        if (!soEntradaReproduit && (other.CompareTag("Player1") || other.CompareTag("Player2")))
+        {
+            if (GestioSo.instance != null && coleSound != null)
+            {
+                GestioSo.instance.PlaySound(coleSound, transform, 1f);
+                soEntradaReproduit = true;
+            }
+        }
     }
 
     public void RegistrarMonjaDerrotada()

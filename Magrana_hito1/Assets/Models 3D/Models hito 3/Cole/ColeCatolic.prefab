@@ -7102,7 +7102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3939170772712295005, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0916795
+      value: -0.404
       objectReference: {fileID: 0}
     - target: {fileID: 3939170772712295005, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7149,6 +7149,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 422295084350173154, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1440797254493049513}
+    - targetCorrespondingSourceObject: {fileID: 422295084350173154, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 280125821379622185}
   m_SourcePrefab: {fileID: 100100000, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
 --- !u!1 &1723340333249038371 stripped
@@ -7166,6 +7169,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 422295084350173154, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
   m_PrefabInstance: {fileID: 3405980584593208833}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1440797254493049513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069258600617335267}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.52, y: 1.05, z: 1.45}
+  m_Center: {x: 0.004067952, y: -0.000081637874, z: 0}
 --- !u!114 &280125821379622185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7188,6 +7212,7 @@ MonoBehaviour:
   transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
   cadenesSound: {fileID: 8300000, guid: 14d0604d6114b4a36848e8856f181732, type: 3}
   draggSound: {fileID: 8300000, guid: 24d303e000bb043d39892a07d20bb3e9, type: 3}
+  coleSound: {fileID: 8300000, guid: 81b964765a1d64024a612dbfe56735be, type: 3}
   TimeManager: {fileID: 2783416595596609395, guid: 025cd0be6cfd848f29016d716b657481, type: 3}
   monjesDerrotades: 0
 --- !u!1 &3660639681274697450 stripped
