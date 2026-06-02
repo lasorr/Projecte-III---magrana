@@ -32,7 +32,7 @@ public class ContadorCops : MonoBehaviour
     public TimeManager TimeManager;
 
     public AudioClip transformSound;
-    public AudioClip cafeteriaSound;
+    public AudioClip officeSound;
     private bool soEntradaReproduit = false;
 
     void Awake()
@@ -47,14 +47,14 @@ public class ContadorCops : MonoBehaviour
         edificiCapitalistaAssociat = t.gameObject;
     }
 
-    // SO CAFETERIA
+    // SO OFICINA
     void OnTriggerEnter(Collider other)
     {
         if (!soEntradaReproduit && (other.CompareTag("Player1") || other.CompareTag("Player2")))
         {
-            if (GestioSo.instance != null && cafeteriaSound != null)
+            if (GestioSo.instance != null && officeSound != null)
             {
-                GestioSo.instance.PlaySound(cafeteriaSound, transform, 1f);
+                GestioSo.instance.PlaySound(officeSound, transform, 1f);
                 soEntradaReproduit = true;
             }
         }
