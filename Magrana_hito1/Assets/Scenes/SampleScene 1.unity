@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97da00b6f1e9d42e5a629fa566a8eaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipAudio: {fileID: 302625995609277894, guid: 292c8701c757b452ba996b52b9bd373e, type: 3}
+  BonkAudioSource: {fileID: 302625995609277894, guid: 292c8701c757b452ba996b52b9bd373e, type: 3}
 --- !u!1 &155157569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,6 +2683,7 @@ MonoBehaviour:
   IAporcilia: {fileID: 1456048072}
   swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
   bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
+  gestioSo: {fileID: 0}
   TimeManager: {fileID: 0}
 --- !u!1 &622857233
 GameObject:
@@ -2968,6 +2969,7 @@ MonoBehaviour:
   modelTransform: {fileID: 973352827}
   rotationSpeed: 10
   stunSound: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
+  walkingSound: {fileID: 0}
 --- !u!54 &687248455
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3876,6 +3878,7 @@ MonoBehaviour:
   modelTransform: {fileID: 1928406734}
   rotationSpeed: 10
   stunSound: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
+  walkingSound: {fileID: 0}
 --- !u!54 &930704121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5057,6 +5060,7 @@ MonoBehaviour:
   IAporcilia: {fileID: 1002594113}
   swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
   bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
+  gestioSo: {fileID: 0}
   TimeManager: {fileID: 0}
 --- !u!54 &1262119600
 Rigidbody:
