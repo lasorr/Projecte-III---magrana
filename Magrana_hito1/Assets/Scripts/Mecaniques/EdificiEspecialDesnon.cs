@@ -30,6 +30,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
     public AudioClip transformClip;
     public AudioClip desnonamentSound;
+    public AudioSource desnonamentAudioSource;
     private bool soEntradaReproduit = false;
     public AudioClip cadenesSound; //so trencar cadenes
     public AudioClip iaiaContentaSound;
@@ -44,12 +45,24 @@ public class EdificiEspecialDesnon : MonoBehaviour
     // SO DESNONAMENT
     void OnTriggerEnter(Collider other)
     {
-        if (!soEntradaReproduit && (other.CompareTag("Player1") || other.CompareTag("Player2")))
-        {
-            if (GestioSo.instance != null && desnonamentSound != null)
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
+        {        
+            // ✅ Ambiente en loop mientras esté dentro
+            if (desnonamentAudioSource == null && desnonamentSound != null)
             {
-                GestioSo.instance.PlaySound(desnonamentSound, transform, 1f);
-                soEntradaReproduit = true;
+                desnonamentAudioSource = GestioSo.instance.PlaySoundPersistent(desnonamentSound, transform, 0.5f, true);
+            }
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
+        {
+            // ✅ Detener ambiente al salir
+            if (desnonamentAudioSource != null)
+            {
+                GestioSo.instance.StopSound(desnonamentAudioSource);
+                desnonamentAudioSource = null;
             }
         }
     }
