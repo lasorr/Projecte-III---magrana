@@ -376,7 +376,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101382512649221853}
-  - component: {fileID: 7320216908883722971}
   m_Layer: 0
   m_Name: Pisos
   m_TagString: Untagged
@@ -412,33 +411,6 @@ Transform:
   - {fileID: 2674814753450396509}
   m_Father: {fileID: 7429947468992109746}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7320216908883722971
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3032381693863237978}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &3463533052967838665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,30 +1233,6 @@ PrefabInstance:
     - target: {fileID: 1532348535770379107, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484962522372655739, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 894.2267
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484962522372655739, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 894.2267
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484962522372655739, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 894.2267
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484962522372655739, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484962522372655739, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484962522372655739, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.79
       objectReference: {fileID: 0}
     - target: {fileID: 4041982381822103258, guid: d571cd0c535e14d4ea88d26b9215adef, type: 3}
       propertyPath: m_Name
