@@ -31,6 +31,8 @@ public class ContadorCops : MonoBehaviour
 
     public TimeManager TimeManager;
 
+    public AudioClip transformSound;
+
     void Awake()
     {
         Transform t = transform; //transform ya existe porque viene de MonoBehaviour
@@ -83,6 +85,9 @@ public class ContadorCops : MonoBehaviour
     void ActivarTransformacio(int propietaria, int punts)
     {
         Debug.Log("Transformant edifici a comunista");
+
+        // SO TRANSFORMACIO
+        GestioSo.instance.PlaySound(transformSound, transform, 1f);
 
         Vector3 pos = edificiCapitalistaAssociat.transform.position;
         Quaternion rot = edificiCapitalistaAssociat.transform.rotation;
