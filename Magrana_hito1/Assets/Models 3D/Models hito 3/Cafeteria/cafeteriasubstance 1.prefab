@@ -678,7 +678,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 994356678480196322}
-  - {fileID: 8681519646097269122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &521251808192409239
@@ -12848,68 +12847,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4531580727440952339, guid: 2c77a7da5528449fea267e5fc657441e, type: 3}
   m_PrefabInstance: {fileID: 377332328287483174}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2462132421176889989
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 587391001677511694}
-    m_Modifications:
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.018681
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.2764847
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.06625271
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885264852859210271, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-      propertyPath: m_Name
-      value: Particle System
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
---- !u!4 &8681519646097269122 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6508181378948625159, guid: 696a4f79d82d745409a3ca19172eb744, type: 3}
-  m_PrefabInstance: {fileID: 2462132421176889989}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5879036614591194214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12918,6 +12855,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 994356678480196322}
     m_Modifications:
+    - target: {fileID: 3020926580077282788, guid: 093ec85a7050e0d43a754d507d853a28, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11238733
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020926580077282788, guid: 093ec85a7050e0d43a754d507d853a28, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11238733
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020926580077282788, guid: 093ec85a7050e0d43a754d507d853a28, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11238736
+      objectReference: {fileID: 0}
     - target: {fileID: 3313638488061999410, guid: 093ec85a7050e0d43a754d507d853a28, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42548004
