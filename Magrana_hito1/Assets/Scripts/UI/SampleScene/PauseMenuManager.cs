@@ -54,7 +54,6 @@ public class PauseMenuManager : MonoBehaviour
             {
                 OpenMainMenu();
                 mainMenuPanel.SetActive(true);
-                Debug.Log("Menu Obert");
             }
         }
     }
