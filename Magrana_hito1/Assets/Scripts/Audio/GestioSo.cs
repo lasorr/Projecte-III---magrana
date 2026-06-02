@@ -59,4 +59,15 @@ public class GestioSo : MonoBehaviour
         audioSource.Play();
         Destroy(audioSource.gameObject, clip.length);
     }
+    public void PlayRandomSound(AudioClip[] clip, Transform spawnTransform, float volume)
+    {
+        int rand = Random.Range(0, clip.Length);
+
+        AudioSource audioSource = Instantiate(BonkAudioSource, spawnTransform.position, Quaternion.identity);
+
+        audioSource.clip = clip[rand];
+        audioSource.volume = volume;
+        audioSource.Play();
+        Destroy(audioSource.gameObject, clip[rand].length);
+    }
 }

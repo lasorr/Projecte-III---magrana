@@ -6,6 +6,8 @@ public class Monjes : MonoBehaviour
     private EdificiEspecialTrans objecteEspecialTrans;
     public GameObject dragg;
 
+    public AudioClip[] monjaSounds;
+
     void Start()
     {
         objecteEspecialTrans = GetComponentInParent<EdificiEspecialTrans>();
@@ -16,6 +18,7 @@ public class Monjes : MonoBehaviour
         if (objecteEspecialTrans != null)
         {
             objecteEspecialTrans.RegistrarMonjaDerrotada();
+            GestioSo.instance.PlayRandomSound(monjaSounds, transform, 1f); // SO MONJA MORINT
         }
 
         Vector3 pos = transform.position;
