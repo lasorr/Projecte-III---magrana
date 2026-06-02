@@ -30,6 +30,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
     public AudioClip transformClip;
     public AudioClip cadenesSound; //so trencar cadenes
+    public AudioClip iaiaContentaSound;
 
     void Awake()
     {
@@ -76,6 +77,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
                     TimeManager.edificisTransformatJug1+=3;
                     GestioSo.instance.PlaySound(transformClip, transform, 1f);
+                    GestioSo.instance.PlaySound(iaiaContentaSound, transform, 1f);
                 }
             }
 
@@ -94,6 +96,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
                     superstarJug2 = false; // es gasta el superstar
                     
                     TimeManager.edificisTransformatJug2+=3;
+                    GestioSo.instance.PlaySound(transformClip, transform, 1f);
+                    GestioSo.instance.PlaySound(iaiaContentaSound, transform, 1f);
                 }
             }
         }
