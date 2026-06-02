@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a6d49a8dc96274ca1b55af1b5f7daf92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ebcf292480ba46019ff3d1bd8fdeff7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fe3c948d1c48a4ed2a5417c8be97bcba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd7c4d3ccb6da472e8cb4a319b154cac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -442,6 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843da4b84589642fbab8bfbba0349a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  edificiCapitalistaAssociat: {fileID: 0}
   edificiBoAssociat: {fileID: 6886499873228177267, guid: 73c8bc12dad043240a5f4f9d8a882823, type: 3}
   cadenesBloqueig: {fileID: 2315284811914168058}
   imatge1CopPrefab: {fileID: 7111107539082956194}
@@ -450,6 +451,10 @@ MonoBehaviour:
   imatgeStarCopPrefab: {fileID: 8742028472227445536}
   TimeManager: {fileID: 2783416595596609395, guid: 72d72a9b7676243b98aebe025397f074, type: 3}
   polisDerrotats: 0
+  transformClip: {fileID: 0}
+  desnonamentSound: {fileID: 0}
+  cadenesSound: {fileID: 0}
+  iaiaContentaSound: {fileID: 0}
 --- !u!1 &7111107539082956194
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +531,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 487fa6127beb54f388abef8cc0316abd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bade2f011a3694e7482a8bf0ec639b00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
