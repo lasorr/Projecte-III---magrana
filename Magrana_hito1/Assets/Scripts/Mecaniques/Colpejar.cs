@@ -65,7 +65,7 @@ public class Colpejar : MonoBehaviour
         Arma.enabled = true;
 
         // temps real d’impacte (AJUSTA A L’ANIMACIÓ)
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         Arma.enabled = false;
 
@@ -158,13 +158,6 @@ public class Colpejar : MonoBehaviour
             GestioSo.instance.PlaySound(porcliciaDamageSound, transform, 1f); // SO DANY PORCILIA
 
             Debug.Log("Porcilia ha rebut un cop! Cops rebuts: " + IAporcilia.copsRebuts);
-            ColpejarObjecte(
-                other.gameObject,
-                null,
-                null,
-                ScriptContador.getdragg(), // assigna el prefab de Dragg a l'inspectors
-                0
-            );
         }
 
         else if (other.CompareTag("Player1"))

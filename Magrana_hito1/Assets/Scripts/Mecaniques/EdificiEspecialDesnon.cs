@@ -85,12 +85,12 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
                 if ( superstarJug1 ||copsJug1 >= copsNecessaris)
                 {
+                    TimeManager.edificisTransformatJug1+=3;
                     ActivarTransformacio(1, 3);
                     copsJug1 = 0;
                     polisDerrotats = 0;
                     superstarJug1 = false; // Es gasta el superstar
 
-                    TimeManager.edificisTransformatJug1+=3;
                     GestioSo.instance.PlaySound(transformClip, transform, 1f);
                     GestioSo.instance.PlaySound(iaiaContentaSound, transform, 1f);
                 }
@@ -105,12 +105,12 @@ public class EdificiEspecialDesnon : MonoBehaviour
                 
                 if (superstarJug2 || copsJug2 >= copsNecessaris)
                 {
+                    TimeManager.edificisTransformatJug2+=3;
                     ActivarTransformacio(2, 3);
                     copsJug2 = 0;
                     polisDerrotats = 0;
                     superstarJug2 = false; // es gasta el superstar
                     
-                    TimeManager.edificisTransformatJug2+=3;
                     GestioSo.instance.PlaySound(transformClip, transform, 1f);
                     GestioSo.instance.PlaySound(iaiaContentaSound, transform, 1f);
                 }
