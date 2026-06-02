@@ -33,6 +33,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public AudioSource desnonamentAudioSource;
     private bool soEntradaReproduit = false;
     public AudioClip cadenesSound; //so trencar cadenes
+    public AudioClip aviaTristaSound;
     public AudioClip iaiaContentaSound;
 
     void Awake()
@@ -52,6 +53,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
             {
                 desnonamentAudioSource = GestioSo.instance.PlaySoundPersistent(desnonamentSound, transform, 0.5f, true);
             }
+            GestioSo.instance.PlaySound(aviaTristaSound, transform, 1f);
         }
     }
     void OnTriggerExit(Collider other)

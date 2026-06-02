@@ -21,8 +21,10 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public AudioClip transformSound; //so transformacio edifici
     public AudioClip cadenesSound; //so trencar cadenes
+    public AudioClip monjaDerrotadaSound; //so monja derrotada
     public AudioClip draggSound;
     public AudioClip coleSound; //so entrar a cole catolic
+    public AudioSource coleAudioSource;
     private bool soEntradaReproduit = false;
 
     //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2 
@@ -44,12 +46,22 @@ public class EdificiEspecialTrans : MonoBehaviour
     // SO COLE
     void OnTriggerEnter(Collider other)
     {
-        if (!soEntradaReproduit && (other.CompareTag("Player1") || other.CompareTag("Player2")))
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
         {
             if (GestioSo.instance != null && coleSound != null)
             {
-                GestioSo.instance.PlaySound(coleSound, transform, 1f);
-                soEntradaReproduit = true;
+                coleAudioSource = GestioSo.instance.PlaySoundPersistent(coleSound, transform, 1f, true);
+            }
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
+        {
+            if (coleAudioSource != null)
+            {
+                GestioSo.instance.StopSound(coleAudioSource);
+                coleAudioSource = null;
             }
         }
     }
