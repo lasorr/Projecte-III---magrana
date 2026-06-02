@@ -65,7 +65,7 @@ public class Colpejar : MonoBehaviour
         Arma.enabled = true;
 
         // temps real d’impacte (AJUSTA A L’ANIMACIÓ)
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         Arma.enabled = false;
 
@@ -162,12 +162,12 @@ public class Colpejar : MonoBehaviour
 
         else if (other.CompareTag("Player1"))
         {
-            jaHaColpejat = true;
-
             Debug.Log("Collision player 1");
 
             if (propietariaArma == 2)
             {
+                jaHaColpejat = true;
+
                 ScriptMoviment1.stunJug = true;
 
                 Debug.Log("Stun player 1");
@@ -181,12 +181,11 @@ public class Colpejar : MonoBehaviour
 
         else if (other.CompareTag("Player2"))
         {
-            jaHaColpejat = true;
-
-
             Debug.Log("Collision player 2");
             if (propietariaArma == 1)
             {
+                jaHaColpejat = true;
+
                 ScriptMoviment2.stunJug = true;
 
                 Debug.Log("Stun player 2");
