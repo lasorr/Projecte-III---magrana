@@ -122,6 +122,13 @@ public class EdificiEspecialTrans : MonoBehaviour
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
+        // Aturar so cole
+        if (coleAudioSource != null)
+        {
+            GestioSo.instance.StopSound(coleAudioSource);
+            coleAudioSource = null;
+        }
+
         // SO TRNASFORMACIO
         GestioSo.instance.PlaySound(transformSound, transform, 1f);
         GestioSo.instance.PlaySound(draggSound, transform, 1f);
