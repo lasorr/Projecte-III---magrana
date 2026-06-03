@@ -35,7 +35,6 @@ public class TimeManager_Tutorial : MonoBehaviour
 
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
-    public NivellCompletat ScriptNivellCompletat;
     
     [Header("Audio")]
     public AudioClip spawnClip;
@@ -65,7 +64,7 @@ public class TimeManager_Tutorial : MonoBehaviour
     {
         PointsJ1.text = edificisTransformatJug1.ToString();
         PointsJ2.text = edificisTransformatJug2.ToString();
-        if (edificisTransformatJug1 + edificisTransformatJug2 >= 2)
+        if (edificisTransformatJug1 + edificisTransformatJug2 >= 4)
         {
             Acaba();
         }
@@ -158,14 +157,6 @@ public class TimeManager_Tutorial : MonoBehaviour
             winner.text="EMPAT";
             Debug.Log($"EMPAT");            
         }
-
-        StartCoroutine(waitAndReturnLevelSelect(winnerScreenDuration));
-    }
-
-    IEnumerator waitAndReturnLevelSelect(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        ScriptNivellCompletat.DesbloquejarSeguent();
     }
 
     // NOVA FUNCI�:
