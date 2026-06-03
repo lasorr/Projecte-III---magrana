@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class IAEnemicPorclicia : MonoBehaviour
 {
@@ -14,9 +15,9 @@ public class IAEnemicPorclicia : MonoBehaviour
     public float thinkRate = 2f;
 
     [Header("Velocitats")]
-    public float velocitatLenta = 2f;
-    public float velocitatMitjana = 3.5f;
-    public float velocitatRapida = 5f;
+    public float velocitatLenta = 10f;
+    public float velocitatMitjana = 20f;
+    public float velocitatRapida = 30f;
 
     private float tempsSobreEdifici = 0f;
     public float tempsNecessari = 6f;
@@ -59,6 +60,17 @@ public class IAEnemicPorclicia : MonoBehaviour
             else if (edificiObjectiu != null)
             {
                 agent.SetDestination(edificiObjectiu.transform.position);
+
+                // Buscar directament el fill amb el tag
+                foreach (Transform fill in edificiObjectiu.transform)
+                {
+                    if (fill.CompareTag("porcliciaObjectiu"))
+                    {
+                        GameObject obj = fill.gameObject;
+                        StartCoroutine(Parpellejar(obj));
+                        break;
+                    }
+                }
 
                 float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
                 Debug.Log("Distancia a l'edifici objectiu: " + dist);
@@ -122,7 +134,6 @@ public class IAEnemicPorclicia : MonoBehaviour
 
                 else if (dist <= 7f)
                 {        
-                    animator.SetBool("Run", false);
                     animator.SetBool("Transformar", true);
                     
                     if (copsRebuts >= 3)
@@ -154,6 +165,15 @@ public class IAEnemicPorclicia : MonoBehaviour
             }
         }
         
+    }
+
+    IEnumerator Parpellejar(GameObject obj)
+    {
+        while (true)
+        {
+            obj.SetActive(!obj.activeSelf);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     void BuscarEdificiJug1()
