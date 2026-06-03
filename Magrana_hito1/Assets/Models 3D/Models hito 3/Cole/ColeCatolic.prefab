@@ -7389,6 +7389,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.303
       objectReference: {fileID: 0}
+    - target: {fileID: 3217625913649857320, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
+      propertyPath: edificiCapitalistaAssociat
+      value: 
+      objectReference: {fileID: 5360472504923161222}
     - target: {fileID: 3353976167659549810, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.189
@@ -7493,7 +7497,8 @@ PrefabInstance:
     - {fileID: 4144115958587632379, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
     - {fileID: 2209269459713909010, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
     - {fileID: 4641323117573901689, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4084467636579581474, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3939170772712295005, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
       insertIndex: -1
@@ -7505,9 +7510,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 94152583272992394}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 422295084350173154, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 280125821379622185}
     - targetCorrespondingSourceObject: {fileID: 6259417080142960443, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 269085507097334971}
@@ -7546,11 +7548,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb6d5223649d64746a4debabb53fe6bd, type: 3}
   - {fileID: 8300000, guid: c9feae46842d14c34a5948bc58759016, type: 3}
   - {fileID: 8300000, guid: 10ebb0aded0a8495b88226f7324a06b8, type: 3}
---- !u!1 &1723340333249038371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4084467636579581474, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-  m_PrefabInstance: {fileID: 3405980584593208833}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1868650495767231580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3939170772712295005, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
@@ -7606,59 +7603,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb6d5223649d64746a4debabb53fe6bd, type: 3}
   - {fileID: 8300000, guid: c9feae46842d14c34a5948bc58759016, type: 3}
   - {fileID: 8300000, guid: 10ebb0aded0a8495b88226f7324a06b8, type: 3}
---- !u!1 &3069258600617335267 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 422295084350173154, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-  m_PrefabInstance: {fileID: 3405980584593208833}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &280125821379622185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069258600617335267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b420acb0eaa404e81984421a0162ae2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  edificiCapitalistaAssociat: {fileID: 5360472504923161222}
-  edificiBoAssociat: {fileID: 3806361775438998568, guid: 732b98a1784a11146abbd62b85351279, type: 3}
-  cadenesBloqueig: {fileID: 1723340333249038371}
-  imatge1CopPrefab: {fileID: 6153246415256388475}
-  imatge2CopPrefab: {fileID: 3660639681274697450}
-  imatge3CopPrefab: {fileID: 3785820547182482241}
-  imatgeStarCopPrefab: {fileID: 5664102496597865977}
-  brillPart: {fileID: 296161634034315084, guid: e9905ace09fed304d9422b1eb7fd3424, type: 3}
-  transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
-  cadenesSound: {fileID: 8300000, guid: 14d0604d6114b4a36848e8856f181732, type: 3}
-  monjaDerrotadaSound: {fileID: 8300000, guid: c9feae46842d14c34a5948bc58759016, type: 3}
-  draggSound: {fileID: 8300000, guid: 24d303e000bb043d39892a07d20bb3e9, type: 3}
-  coleSound: {fileID: 8300000, guid: 81b964765a1d64024a612dbfe56735be, type: 3}
-  coleAudioSource: {fileID: 0}
-  TimeManager: {fileID: 0}
-  monjesDerrotades: 0
---- !u!1 &3660639681274697450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2128317162725433579, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-  m_PrefabInstance: {fileID: 3405980584593208833}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3785820547182482241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2003423371259405632, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-  m_PrefabInstance: {fileID: 3405980584593208833}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5664102496597865977 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7052239533505528824, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-  m_PrefabInstance: {fileID: 3405980584593208833}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6153246415256388475 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8800245090108028282, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
-  m_PrefabInstance: {fileID: 3405980584593208833}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8762197141958500666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6259417080142960443, guid: 3f5a18c02afafa44b87375b4f9d148ef, type: 3}
