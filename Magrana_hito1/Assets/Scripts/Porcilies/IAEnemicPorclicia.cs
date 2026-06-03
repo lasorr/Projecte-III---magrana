@@ -5,7 +5,6 @@ using System.Collections;
 
 public class IAEnemicPorclicia : MonoBehaviour
 {
-    //animator.SetBool("Run", true);
     //animator.SetBool("Transformar", true);
     public Animator animator; 
     public NavMeshAgent agent;
@@ -73,7 +72,7 @@ public class IAEnemicPorclicia : MonoBehaviour
                 }
 
                 float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
-                Debug.Log("Distancia a l'edifici objectiu jug1: " + dist);
+                //Debug.Log("Distancia a l'edifici objectiu jug1: " + dist);
 
                 if (dist > 50f)
                 {
@@ -82,7 +81,6 @@ public class IAEnemicPorclicia : MonoBehaviour
 
                 else if (dist <= 50f)
                 {
-                    animator.SetBool("Run", false);
                     animator.SetBool("Transformar", true);
 
                     if (copsRebuts >= 3)
@@ -106,11 +104,6 @@ public class IAEnemicPorclicia : MonoBehaviour
 
                     edificiObjectiu = null;
                 }
-
-                else
-                {
-                    tempsSobreEdifici = 0f;
-                }
             }
         }
 
@@ -126,7 +119,7 @@ public class IAEnemicPorclicia : MonoBehaviour
                 agent.SetDestination(edificiObjectiu.transform.position);
 
                 float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
-                Debug.Log("Distancia a l'edifici objectiu jug2: " + dist);
+                //Debug.Log("Distancia a l'edifici objectiu jug2: " + dist);
 
                 if (dist > 50f)
                 {
@@ -158,18 +151,14 @@ public class IAEnemicPorclicia : MonoBehaviour
 
                     edificiObjectiu = null;
                 }
-
-                else
-                {
-                    tempsSobreEdifici = 0f;
-                }
             }
         }
-        
     }
 
     IEnumerator Parpellejar(GameObject obj)
     {
+        Debug.Log("Porcilia està parpellejant l'edifici objectiu");
+        
         while (true)
         {
             obj.SetActive(!obj.activeSelf);
@@ -229,10 +218,8 @@ public class IAEnemicPorclicia : MonoBehaviour
 
         else if (quantitatEdificis >= 12)
         {
-            Debug.Log("Porcilia velocitat ràpida");
             agent.speed = velocitatRapida;
             tempsNecessari = 4f;
-            Debug.Log("Temps necessari per transformar: " + tempsNecessari);
         }
 
         // Escollir edifici random
@@ -296,10 +283,8 @@ public class IAEnemicPorclicia : MonoBehaviour
 
         else if (quantitatEdificis >= 12)
         {
-            Debug.Log("Porcilia velocitat ràpida");
             agent.speed = velocitatRapida;
             tempsNecessari = 4f;
-            Debug.Log("Temps necessari per transformar: " + tempsNecessari);
         }
 
         // Escollir edifici random
