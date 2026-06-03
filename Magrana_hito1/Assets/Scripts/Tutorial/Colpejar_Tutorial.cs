@@ -8,9 +8,6 @@ public class Colpejar_Tutorial : MonoBehaviour
     public InputActionReference cop;
     public Animator animator;
 
-    public PropietariaEdifici ScriptPropietaria;
-
-    public GameObject dragg;
     public ContadorCops ScriptContador;
     
     private bool jaHaColpejat = false;
@@ -19,16 +16,14 @@ public class Colpejar_Tutorial : MonoBehaviour
 
     public Moviment_jugadora ScriptMoviment1;
     public Moviment_jugadora ScriptMoviment2;
-
-    public IAEnemicPorclicia IAporcilia;
-
+    
     [Header("AudioClips")]
     public AudioClip swingSound;
     public AudioClip bonkSound;
     public AudioClip porcliciaDamageSound;
     public GestioSo gestioSo;
 
-    public TimeManager TimeManager;
+    public TimeManager_Tutorial TimeManager_Tutorial;
 
     void Start()
     {
@@ -153,11 +148,7 @@ public class Colpejar_Tutorial : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            IAporcilia.copsRebuts++;
-
             GestioSo.instance.PlaySound(porcliciaDamageSound, transform, 1f); // SO DANY PORCILIA
-
-            Debug.Log("Porcilia ha rebut un cop! Cops rebuts: " + IAporcilia.copsRebuts);
         }
 
         else if (other.CompareTag("Player1"))
@@ -222,11 +213,11 @@ public class Colpejar_Tutorial : MonoBehaviour
 
                 if (gameObject.CompareTag("Arma_1"))
                 {
-                    TimeManager.Instance.edificisTransformatJug1++;
+                    TimeManager_Tutorial.edificisTransformatJug1++;
                 }
                 else if (gameObject.CompareTag("Arma_2"))
                 {
-                    TimeManager.Instance.edificisTransformatJug2++;
+                    TimeManager_Tutorial.edificisTransformatJug2++;
                 }
             }
         }

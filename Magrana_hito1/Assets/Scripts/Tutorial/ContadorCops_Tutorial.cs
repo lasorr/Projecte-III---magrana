@@ -10,13 +10,6 @@ public class ContadorCops_Tutorial : MonoBehaviour
     // SUPERSTAR per cada jugadora (ARA AQUÍ!)
     private bool superstarJug1 = false;
     private bool superstarJug2 = false;
-    
-    // Paràmetres per MONJA
-    public GameObject draggAlTransformar;
-    public GameObject getdragg()
-    {
-        return draggAlTransformar;
-    }
 
     // Paràmetres per ESPECIAL
     private GameObject edificiCapitalistaAssociat;
@@ -27,11 +20,9 @@ public class ContadorCops_Tutorial : MonoBehaviour
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
 
-    public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
-
     public GameObject brillPart;
 
-    public TimeManager TimeManager;
+    public TimeManager_Tutorial TimeManager_Tutorial;
 
     public AudioClip transformSound;
     public AudioClip officeSound;
@@ -89,7 +80,7 @@ public class ContadorCops_Tutorial : MonoBehaviour
                 copsJug1 = 0;
                 superstarJug1 = false;
                 
-                TimeManager.Instance.edificisTransformatJug1++;
+                TimeManager_Tutorial.edificisTransformatJug1++;
             }
         }
 
@@ -105,7 +96,7 @@ public class ContadorCops_Tutorial : MonoBehaviour
                 copsJug2 = 0;
                 superstarJug2 = false;
                 
-                TimeManager.Instance.edificisTransformatJug2++;
+                TimeManager_Tutorial.edificisTransformatJug2++;
             }
         }
     }

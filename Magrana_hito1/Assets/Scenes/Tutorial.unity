@@ -6829,35 +6829,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 994356676763149575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1325891318255800823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6486178405404359070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 843da4b84589642fbab8bfbba0349a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  edificiCapitalistaAssociat: {fileID: 5145379529187695686}
-  edificiBoAssociat: {fileID: 6886499873228177267, guid: 73c8bc12dad043240a5f4f9d8a882823, type: 3}
-  cadenesBloqueig: {fileID: 2060527430057491775}
-  imatge1CopPrefab: {fileID: 4162999169624390266}
-  imatge2CopPrefab: {fileID: 6803950397500911595}
-  imatge3CopPrefab: {fileID: 6352510934175935040}
-  imatgeStarCopPrefab: {fileID: 2466749412138208504}
-  brillPart: {fileID: 296161634034315084, guid: e9905ace09fed304d9422b1eb7fd3424, type: 3}
-  TimeManager: {fileID: 0}
-  polisDerrotats: 0
-  transformClip: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
-  desnonamentSound: {fileID: 8300000, guid: 9c8a3df1fc0a4446da6e0c719900c7f4, type: 3}
-  desnonamentAudioSource: {fileID: 0}
-  cadenesSound: {fileID: 8300000, guid: 5dbfe4e9b5da07d41956d3c08eb2596f, type: 3}
-  aviaTristaSound: {fileID: 8300000, guid: 5a2d22394cc9a49639b19a20660b325a, type: 3}
-  iaiaContentaSound: {fileID: 8300000, guid: 48d4cb68b6e6c4313891f58787d398db, type: 3}
-  porcliciaDerrotatSound: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
 --- !u!33 &1333418536564906174
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6931,8 +6902,8 @@ GameObject:
   - component: {fileID: 5072596651165184404}
   - component: {fileID: 2726050621776827037}
   - component: {fileID: 5263228656664478118}
-  - component: {fileID: 1483834679510241507}
   - component: {fileID: 6853933516429615517}
+  - component: {fileID: 6853933516429615518}
   m_Layer: 0
   m_Name: "Fal\xE7"
   m_TagString: Arma_2
@@ -7595,33 +7566,6 @@ MonoBehaviour:
   rotationSpeed: 8
   stunSound: {fileID: 8300000, guid: 6f5bce46e9cc94e7285113718eee4b53, type: 3}
   walkingSound: {fileID: 8300000, guid: 919f4dd5c86834408aa94733f2b0002b, type: 3}
---- !u!114 &1483834679510241507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356411516248550779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02bd5616b932d941b3650a09302865e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Arma: {fileID: 6853933516429615517}
-  cop: {fileID: 6538341273052018607, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  animator: {fileID: 7009934675059721885}
-  ScriptPropietaria: {fileID: 177672061398916245, guid: 73c8bc12dad043240a5f4f9d8a882823, type: 3}
-  dragg: {fileID: 4465392546376565657, guid: ec770fdf908d2744d93b3a3ac9e9706c, type: 3}
-  ScriptContador: {fileID: 0}
-  propietariaArma: 2
-  ScriptMoviment1: {fileID: 7028975071387190500, guid: b2b4fda65cb537f46b79f3997dd8ddd9, type: 3}
-  ScriptMoviment2: {fileID: 1474423240457226491}
-  IAporcilia: {fileID: 0}
-  swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
-  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
-  porcliciaDamageSound: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
-  gestioSo: {fileID: 1293492860}
-  TimeManager: {fileID: 0}
 --- !u!4 &1484204844745618661
 Transform:
   m_ObjectHideFlags: 0
@@ -14584,30 +14528,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2101382511508759025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3333799537400244944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576732965649446727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772250912bae2724b926ab74d3447311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  draggAlTransformar: {fileID: 0}
-  edificiBoAssociat: {fileID: 5319697291392989399, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
-  imatge1CopPrefab: {fileID: 8561457038168326331}
-  imatge2CopPrefab: {fileID: 1259295640615441706}
-  imatge3CopPrefab: {fileID: 1674548965123084417}
-  imatgeStarCopPrefab: {fileID: 7867280461399684665}
-  DeQuiEsAquestEdifici: {fileID: 5990899918181808527, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
-  brillPart: {fileID: 296161634034315084, guid: e9905ace09fed304d9422b1eb7fd3424, type: 3}
-  TimeManager: {fileID: 2783416595596609395, guid: 025cd0be6cfd848f29016d716b657481, type: 3}
-  transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
-  officeSound: {fileID: 8300000, guid: 85b68cb003d0f4a68a085c54f8232830, type: 3}
-  officeAudioSource: {fileID: 0}
 --- !u!4 &3336406499163657032
 Transform:
   m_ObjectHideFlags: 0
@@ -17168,7 +17088,7 @@ GameObject:
   - component: {fileID: 2353681741456679849}
   - component: {fileID: 4020670392219493672}
   - component: {fileID: 3480333719745297712}
-  - component: {fileID: 4971791195906049213}
+  - component: {fileID: 6437601526623690260}
   m_Layer: 0
   m_Name: martilloLow
   m_TagString: Arma_1
@@ -21467,33 +21387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4971791195906049213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3952095480713585793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02bd5616b932d941b3650a09302865e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Arma: {fileID: 4020670392219493672}
-  cop: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
-  animator: {fileID: 8083651115953641739}
-  ScriptPropietaria: {fileID: 5990899918181808527, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
-  dragg: {fileID: 4465392546376565657, guid: ec770fdf908d2744d93b3a3ac9e9706c, type: 3}
-  ScriptContador: {fileID: 0}
-  propietariaArma: 1
-  ScriptMoviment1: {fileID: 1007963860411048905}
-  ScriptMoviment2: {fileID: 1474423240457226491}
-  IAporcilia: {fileID: 0}
-  swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
-  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
-  porcliciaDamageSound: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
-  gestioSo: {fileID: 1293492860}
-  TimeManager: {fileID: 0}
 --- !u!1 &4972603489857372534
 GameObject:
   m_ObjectHideFlags: 0
@@ -32531,6 +32424,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3952095480713585793}
   m_Mesh: {fileID: -2266886331552406869, guid: fd60bd5e1126ea446a83fd5577910926, type: 3}
+--- !u!114 &6437601526623690260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952095480713585793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b671630ce4bed48fd879f4fac4f159fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arma: {fileID: 4020670392219493672}
+  cop: {fileID: -9177403770562952854, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
+  animator: {fileID: 8083651115953641739}
+  ScriptContador: {fileID: 0}
+  propietariaArma: 0
+  ScriptMoviment1: {fileID: 1007963860411048905}
+  ScriptMoviment2: {fileID: 1474423240457226491}
+  swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
+  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
+  porcliciaDamageSound: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
+  gestioSo: {fileID: 1293492860}
+  TimeManager_Tutorial: {fileID: 1999382829}
 --- !u!1 &6441505384703502782
 GameObject:
   m_ObjectHideFlags: 0
@@ -32680,7 +32597,7 @@ GameObject:
   - component: {fileID: 2674814754727173233}
   - component: {fileID: 5211431337602194662}
   - component: {fileID: 6911617409695350356}
-  - component: {fileID: 1325891318255800823}
+  - component: {fileID: 6911617409695350357}
   m_Layer: 0
   m_Name: PuertaPisos
   m_TagString: EspecialDesnon
@@ -34228,6 +34145,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.054483104, y: 0.11326201, z: 0.16212174}
   m_Center: {x: 0.0017055168, y: 0.010546995, z: 0.0057580303}
+--- !u!114 &6853933516429615518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356411516248550779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b671630ce4bed48fd879f4fac4f159fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arma: {fileID: 6853933516429615517}
+  cop: {fileID: 6538341273052018607, guid: aac035fcf2022de469c4495051ec29b3, type: 3}
+  animator: {fileID: 7009934675059721885}
+  ScriptContador: {fileID: 0}
+  propietariaArma: 0
+  ScriptMoviment1: {fileID: 1007963860411048905}
+  ScriptMoviment2: {fileID: 1474423240457226491}
+  swingSound: {fileID: 8300000, guid: be5b8a82fe7d84f6dab57e0757a15dcf, type: 3}
+  bonkSound: {fileID: 8300000, guid: 844c3f90bc8d64f62bb43bbc214672ca, type: 3}
+  porcliciaDamageSound: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
+  gestioSo: {fileID: 1293492860}
+  TimeManager_Tutorial: {fileID: 1999382829}
 --- !u!1 &6860584452373844935
 GameObject:
   m_ObjectHideFlags: 0
@@ -34469,6 +34410,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6911617409695350357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486178405404359070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a21e1ed8dd2437f978aa1d35c0bf6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edificiCapitalistaAssociat: {fileID: 5145379529187695686}
+  edificiBoAssociat: {fileID: 6886499873228177267, guid: 73c8bc12dad043240a5f4f9d8a882823, type: 3}
+  cadenesBloqueig: {fileID: 2060527430057491775}
+  imatge1CopPrefab: {fileID: 4162999169624390266}
+  imatge2CopPrefab: {fileID: 6803950397500911595}
+  imatge3CopPrefab: {fileID: 6352510934175935040}
+  imatgeStarCopPrefab: {fileID: 2466749412138208504}
+  brillPart: {fileID: 296161634034315084, guid: e9905ace09fed304d9422b1eb7fd3424, type: 3}
+  TimeManager_Tutorial: {fileID: 1999382829}
+  polisDerrotats: 0
+  transformClip: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
+  desnonamentSound: {fileID: 0}
+  desnonamentAudioSource: {fileID: 0}
+  cadenesSound: {fileID: 8300000, guid: 5dbfe4e9b5da07d41956d3c08eb2596f, type: 3}
+  aviaTristaSound: {fileID: 8300000, guid: 5a2d22394cc9a49639b19a20660b325a, type: 3}
+  iaiaContentaSound: {fileID: 8300000, guid: 48d4cb68b6e6c4313891f58787d398db, type: 3}
+  porcliciaDerrotatSound: {fileID: 8300000, guid: 9bf3dde3a56c04ce0925a018812adb3b, type: 3}
 --- !u!114 &6918568916870546782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37762,7 +37732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8965224304788523697}
   - component: {fileID: 1525555565899026279}
-  - component: {fileID: 3333799537400244944}
+  - component: {fileID: 8965224304788523698}
   m_Layer: 0
   m_Name: CafeEspecial
   m_TagString: Especial
@@ -43117,6 +43087,28 @@ Transform:
   - {fileID: 8681519647610893927}
   m_Father: {fileID: 994356676763149575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8965224304788523698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7576732965649446727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1158a9665bb491a8d31db0aaab103f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edificiBoAssociat: {fileID: 5319697291392989399, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
+  imatge1CopPrefab: {fileID: 8561457038168326331}
+  imatge2CopPrefab: {fileID: 1259295640615441706}
+  imatge3CopPrefab: {fileID: 1674548965123084417}
+  imatgeStarCopPrefab: {fileID: 7867280461399684665}
+  brillPart: {fileID: 296161634034315084, guid: e9905ace09fed304d9422b1eb7fd3424, type: 3}
+  TimeManager_Tutorial: {fileID: 1999382829}
+  transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
+  officeSound: {fileID: 0}
+  officeAudioSource: {fileID: 0}
 --- !u!222 &8968638224933911723
 CanvasRenderer:
   m_ObjectHideFlags: 0

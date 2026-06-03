@@ -108,7 +108,6 @@ public class EdificiEspecialDesnon_Tutorial : MonoBehaviour
                     ActivarTransformacio(1, 3);
                     copsJug1 = 0;
                     polisDerrotats = 0;
-                    superstarJug1 = false; // Es gasta el superstar
 
                 }
             }
@@ -126,7 +125,6 @@ public class EdificiEspecialDesnon_Tutorial : MonoBehaviour
                     ActivarTransformacio(2, 3);
                     copsJug2 = 0;
                     polisDerrotats = 0;
-                    superstarJug2 = false; // es gasta el superstar
                 }
             }
         }
@@ -180,11 +178,7 @@ public class EdificiEspecialDesnon_Tutorial : MonoBehaviour
 
     void MostrarImatgeCop()
     {
-        if(superstarJug1 || superstarJug2){
-            MostrarImatgeStar();
-            return;
-        }
-        else if(copsJug1 == 1 || copsJug2 == 1){
+        if(copsJug1 == 1 || copsJug2 == 1){
             Debug.Log("Mostrar imatge cop 1");
 
             // Posició una mica per sobre de l'objecte                
