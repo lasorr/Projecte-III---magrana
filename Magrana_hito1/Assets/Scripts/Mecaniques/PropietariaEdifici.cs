@@ -14,6 +14,7 @@ public class PropietariaEdifici : MonoBehaviour
     public bool edificiTransformat = false;
 
     public TimeManager TimeManager;
+    public AudioClip unTransformClip;
     
     void Update ()
     {
@@ -23,6 +24,8 @@ public class PropietariaEdifici : MonoBehaviour
 
             Vector3 pos = edificiBoAssociat.transform.position;
             Quaternion rot = edificiBoAssociat.transform.rotation;
+
+            GestioSo.instance.PlaySound(unTransformClip, transform, 1f);
             
             if (Propietaria == 1)
             {
