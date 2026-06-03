@@ -81,40 +81,47 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public void RebreCopEdificiEspecial(int propietariaArma, int punts)
     {
-        if (propietariaArma == 1)
+        if (monjesDerrotades > 4)
         {
-            copsJug1++;
-            MostrarImatgeCop();
-
-            Debug.Log(gameObject.name + " rebut cop de J1: " + copsJug1 + "/" + copsNecessaris);
-
-            if ( superstarJug1 ||copsJug1 >= copsNecessaris)
+            if (propietariaArma == 1)
             {
-                ActivarTransformacio(1, punts);
-                copsJug1 = 0;
-                monjesDerrotades = 0;
-                superstarJug1 = false; // Es gasta el superstar
+                copsJug1++;
+                MostrarImatgeCop();
 
-                TimeManager.edificisTransformatJug1+=3;
+                Debug.Log(gameObject.name + " rebut cop de J1: " + copsJug1 + "/" + copsNecessaris);
+
+                if ( superstarJug1 ||copsJug1 >= copsNecessaris)
+                {
+                    ActivarTransformacio(1, punts);
+                    copsJug1 = 0;
+                    monjesDerrotades = 0;
+                    superstarJug1 = false; // Es gasta el superstar
+
+                    TimeManager.edificisTransformatJug1+=3;
+                }
+            }
+
+            else if (propietariaArma == 2)
+            {
+                copsJug2++;
+                MostrarImatgeCop();
+
+                Debug.Log(gameObject.name + " rebut cop de J2: " + copsJug2 + "/" + copsNecessaris);
+                
+                if (superstarJug2 || copsJug2 >= copsNecessaris)
+                {
+                    ActivarTransformacio(2, 3);
+                    copsJug2 = 0;
+                    monjesDerrotades = 0;
+                    superstarJug2 = false; // es gasta el superstar
+                    
+                    TimeManager.edificisTransformatJug2+=3;
+                }
             }
         }
-
-        else if (propietariaArma == 2)
+        else
         {
-            copsJug2++;
-            MostrarImatgeCop();
-
-            Debug.Log(gameObject.name + " rebut cop de J2: " + copsJug2 + "/" + copsNecessaris);
-            
-            if (superstarJug2 || copsJug2 >= copsNecessaris)
-            {
-                ActivarTransformacio(2, 3);
-                copsJug2 = 0;
-                monjesDerrotades = 0;
-                superstarJug2 = false; // es gasta el superstar
-                
-                TimeManager.edificisTransformatJug2+=3;
-            }
+            Debug.Log("L'edifici especial ja està desbloquejat, no es poden registrar més cops fins que es transformi.");
         }
     }
 
