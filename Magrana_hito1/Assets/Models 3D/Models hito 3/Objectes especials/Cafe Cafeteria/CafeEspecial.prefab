@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3313638488061999410}
   - component: {fileID: 4953207606679780580}
+  - component: {fileID: 9210566727077419347}
   - component: {fileID: 869853262221191954}
   m_Layer: 0
   m_Name: CafeEspecial
@@ -230,6 +231,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0514145, y: 4.758411, z: 1.7303715}
   m_Center: {x: -0.16141129, y: 2.4477875, z: -0.15673351}
+--- !u!114 &9210566727077419347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085748763063731396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772250912bae2724b926ab74d3447311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggAlTransformar: {fileID: 0}
+  edificiBoAssociat: {fileID: 5319697291392989399, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
+  imatge1CopPrefab: {fileID: 0}
+  imatge2CopPrefab: {fileID: 0}
+  imatge3CopPrefab: {fileID: 0}
+  imatgeStarCopPrefab: {fileID: 0}
+  DeQuiEsAquestEdifici: {fileID: 5990899918181808527, guid: e8a53397bc01c1e40853ffd95b7089f8, type: 3}
+  brillPart: {fileID: 296161634034315084, guid: e9905ace09fed304d9422b1eb7fd3424, type: 3}
+  TimeManager: {fileID: 2783416595596609395, guid: 025cd0be6cfd848f29016d716b657481, type: 3}
+  transformSound: {fileID: 8300000, guid: ffa0192854a58425b933e90f0f83bd70, type: 3}
+  officeSound: {fileID: 8300000, guid: 85b68cb003d0f4a68a085c54f8232830, type: 3}
+  officeAudioSource: {fileID: 0}
 --- !u!65 &869853262221191954
 BoxCollider:
   m_ObjectHideFlags: 0
