@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EdificiEspecialDesnon : MonoBehaviour
 {
@@ -157,6 +158,22 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
         //seteja la info todo perfecto 
+
+            // Mover hijos al nuevo edificio
+        List<Transform> fillsAMoure = new List<Transform>();
+
+        foreach (Transform fill in edificiCapitalistaAssociat.transform)
+        {
+            if (fill.CompareTag("Dragg"))
+            {
+                fillsAMoure.Add(fill);
+            }
+        }
+
+        foreach (Transform fill in fillsAMoure)
+        {
+            fill.SetParent(nouEdifici.transform);
+        }
 
         Destroy(edificiCapitalistaAssociat);
     }
