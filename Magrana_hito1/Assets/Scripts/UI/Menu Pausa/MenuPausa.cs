@@ -5,6 +5,8 @@ public class MenuPausa : MonoBehaviour
 {
     public GameObject pausaMenuUI;
 
+    public GameObject menuOpcionsUI;
+
     private bool estaPausat = false;
 
     void Update()
@@ -29,6 +31,18 @@ public class MenuPausa : MonoBehaviour
         estaPausat = false;
     }
 
+    public void ObrirOpcions()
+    {
+        menuOpcionsUI.SetActive(true);
+        pausaMenuUI.SetActive(false);
+    }
+
+    public void TancarOpcions()
+    {
+        menuOpcionsUI.SetActive(false);
+        pausaMenuUI.SetActive(true );
+    }
+
     void Pausa()
     {
         pausaMenuUI.SetActive(true);
@@ -36,7 +50,7 @@ public class MenuPausa : MonoBehaviour
         estaPausat = true;
     }
 
-    public void escenaSeleccioNivells()
+    public void EscenaSeleccioNivells()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelection"); //POSAR NOM ESCENA MENU NIVELLS
