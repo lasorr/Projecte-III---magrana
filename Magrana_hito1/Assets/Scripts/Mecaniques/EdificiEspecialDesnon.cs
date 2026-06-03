@@ -234,7 +234,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
             Debug.Log("Mostrar imatge cop 1");
 
             // Posició una mica per sobre de l'objecte                
-            Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+            Vector3 posicio = transform.position + new Vector3(0, 3f, 1f);
 
             // Crear la imatge
             GameObject img = UnityEngine.Object.Instantiate(

@@ -88,6 +88,7 @@ public class IAEnemicPorclicia : MonoBehaviour
                         BuscarEdificiJug1();
                         copsRebuts = 0;
                         Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
+                        edificiObjectiu = null; //AFEGIT 21:23
                     }
 
                     if (dist < 6.04f)
@@ -146,6 +147,7 @@ public class IAEnemicPorclicia : MonoBehaviour
                         BuscarEdificiJug2();
                         copsRebuts = 0;
                         Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
+                        edificiObjectiu = null; //AFEGIT 21:24
                     }
 
                     if (dist < 6.04f)
@@ -168,8 +170,6 @@ public class IAEnemicPorclicia : MonoBehaviour
 
     IEnumerator Parpellejar(GameObject obj)
     {
-        Debug.Log("Porcilia està parpellejant l'edifici objectiu");
-
         while (true)
         {
             obj.SetActive(!obj.activeSelf);
