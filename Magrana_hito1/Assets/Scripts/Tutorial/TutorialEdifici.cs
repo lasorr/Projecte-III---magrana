@@ -9,6 +9,8 @@ public class TutorialEdifici : MonoBehaviour
     public GameObject imagen2Golpe;
     public GameObject imagen3Golpe;
 
+    public GameObject particulasPolvo;
+
     private int contadorGolpes = 0;
     private const int golpesNecesarios = 3;
 
@@ -61,18 +63,15 @@ public class TutorialEdifici : MonoBehaviour
 
     void TransformarEdificio()
     {
+        GameObject polvo = Instantiate(particulasPolvo, transform.position, Quaternion.identity);
+        Destroy(polvo, 2f);
         Debug.Log("¡Edificio transformado a bueno!");
 
         Vector3 pos = edificiCapitalista.transform.position;
         Quaternion rot = edificiCapitalista.transform.rotation;
 
-        // Instanciar edificio bueno
         Instantiate(edificiComunista, pos, rot);
-
-        // Destruir edificio viejo
         Destroy(edificiCapitalista);
-
-        // (Opcional) Destruir este script o el objeto
         Destroy(gameObject);
     }
 }
