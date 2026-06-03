@@ -9,6 +9,8 @@ public class MenuPausa : MonoBehaviour
 
     private bool estaPausat = false;
 
+    public GameObject controlPanel;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -54,5 +56,15 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelection"); //POSAR NOM ESCENA MENU NIVELLS
+    }
+
+    public void ObrirControls()
+    {
+        controlPanel.SetActive(true);
+    }
+
+    public void TancarControls()
+    {
+        controlPanel.SetActive(false);
     }
 }
