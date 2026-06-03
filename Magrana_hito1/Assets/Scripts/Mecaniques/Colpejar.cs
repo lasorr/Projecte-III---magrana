@@ -229,11 +229,6 @@ public class Colpejar : MonoBehaviour
                     TimeManager.Instance.edificisTransformatJug2++;
                 }
             }
-            
-            else
-            {
-                Debug.LogError("L'objecte especial no té edificis assignats!");
-            }
         }
 
         else if (objecteColpejat.name == "Jugadora 1")
