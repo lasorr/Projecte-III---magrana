@@ -73,14 +73,14 @@ public class IAEnemicPorclicia : MonoBehaviour
                 }
 
                 float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
-                Debug.Log("Distancia a l'edifici objectiu: " + dist);
+                Debug.Log("Distancia a l'edifici objectiu jug1: " + dist);
 
-                if (dist > 7f)
+                if (dist > 50f)
                 {
                     copsRebuts = 0;
                 }
 
-                else if (dist <= 7f)
+                else if (dist <= 50f)
                 {
                     animator.SetBool("Run", false);
                     animator.SetBool("Transformar", true);
@@ -126,13 +126,14 @@ public class IAEnemicPorclicia : MonoBehaviour
                 agent.SetDestination(edificiObjectiu.transform.position);
 
                 float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
+                Debug.Log("Distancia a l'edifici objectiu jug2: " + dist);
 
-                if (dist > 7f)
+                if (dist > 50f)
                 {
                     copsRebuts = 0;
                 }
 
-                else if (dist <= 7f)
+                else if (dist <= 50f)
                 {        
                     animator.SetBool("Transformar", true);
                     
@@ -228,8 +229,10 @@ public class IAEnemicPorclicia : MonoBehaviour
 
         else if (quantitatEdificis >= 12)
         {
+            Debug.Log("Porcilia velocitat ràpida");
             agent.speed = velocitatRapida;
             tempsNecessari = 4f;
+            Debug.Log("Temps necessari per transformar: " + tempsNecessari);
         }
 
         // Escollir edifici random
@@ -293,8 +296,10 @@ public class IAEnemicPorclicia : MonoBehaviour
 
         else if (quantitatEdificis >= 12)
         {
+            Debug.Log("Porcilia velocitat ràpida");
             agent.speed = velocitatRapida;
             tempsNecessari = 4f;
+            Debug.Log("Temps necessari per transformar: " + tempsNecessari);
         }
 
         // Escollir edifici random
@@ -312,7 +317,7 @@ public class IAEnemicPorclicia : MonoBehaviour
 
         prop.edificiTransformat = true;
 
-        GestioSo.instance.PlaySound(unTransformSound, transform, 1f); // SO DESTRANSFORMACIO
+        //GestioSo.instance.PlaySound(unTransformSound, transform, 1f); // SO DESTRANSFORMACIO
         animator.SetBool("Transformar", false);
     }
 }
