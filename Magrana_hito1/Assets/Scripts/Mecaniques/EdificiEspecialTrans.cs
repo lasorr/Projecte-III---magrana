@@ -220,7 +220,7 @@ public class EdificiEspecialTrans : MonoBehaviour
             );
 
             // Destruir-la després de 1 segon
-            Destroy(img, 1f);
+            Destroy(img, 1f); 
 
         }
 
