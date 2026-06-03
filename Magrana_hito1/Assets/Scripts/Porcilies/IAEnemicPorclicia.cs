@@ -5,7 +5,8 @@ using System.Collections;
 
 public class IAEnemicPorclicia : MonoBehaviour
 {
-    //animator.SetBool("Run", true);
+    private Rigidbody rb;
+
     //animator.SetBool("Transformar", true);
     public Animator animator; 
     public NavMeshAgent agent;
@@ -37,6 +38,8 @@ public class IAEnemicPorclicia : MonoBehaviour
             Debug.Log("ESTÀ al NavMesh");
         else
             Debug.Log("NO està al NavMesh");
+
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -82,7 +85,6 @@ public class IAEnemicPorclicia : MonoBehaviour
 
                 else if (dist <= 50f)
                 {
-                    animator.SetBool("Run", false);
                     animator.SetBool("Transformar", true);
 
                     if (copsRebuts >= 3)
@@ -144,9 +146,13 @@ public class IAEnemicPorclicia : MonoBehaviour
                         Debug.Log("Porcilia ha rebut 3 cops, canviant d'objectiu");
                     }
 
-                    if (dist < 6.04f)
+                    tempsSobreEdifici += Time.deltaTime;
+
+                    if (dist < 45f)
                     {
-                        tempsSobreEdifici += Time.deltaTime;
+                        Vector3 horizontalVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+                        
+                        Debug.Log("Temps sobre edifici: " + tempsSobreEdifici);
                     }
                 }
 
@@ -158,14 +164,8 @@ public class IAEnemicPorclicia : MonoBehaviour
 
                     edificiObjectiu = null;
                 }
-
-                else
-                {
-                    tempsSobreEdifici = 0f;
-                }
             }
         }
-        
     }
 
     IEnumerator Parpellejar(GameObject obj)

@@ -35,13 +35,13 @@ public class PropietariaEdifici : MonoBehaviour
                 Debug.Log("Edifici de J2 transformat a capitalista");
             }
 
-            Destroy(edificiBoAssociat);
-
             GameObject nouEdifici = Instantiate(
                 edificiCapitalistaAssociat,
                 pos,
                 rot
             );
+ 
+            Destroy(edificiBoAssociat);
         }
     }
         
