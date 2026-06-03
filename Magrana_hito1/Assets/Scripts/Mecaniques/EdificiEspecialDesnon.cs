@@ -137,6 +137,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
+        GestioSo.instance.PlaySound(cadenesSound, transform, 1f);
+        
         // Aturar so desnonament
         if (desnonamentAudioSource != null)
         {
