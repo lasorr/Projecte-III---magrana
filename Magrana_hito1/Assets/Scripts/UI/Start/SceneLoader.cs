@@ -22,6 +22,15 @@ public class SceneLoader : MonoBehaviour
         {
             LoadNextScene();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlayerPrefs.DeleteAll();
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;  // Para pruebas en el Editor
+        #else
+        Application.Quit();  // Para la build final
+        #endif
+        }
     }
     private void LoadNextScene()
     {
