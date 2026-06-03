@@ -4,6 +4,7 @@ using UnityEngine;
 public class KeyTutorial : MonoBehaviour
 {
     public GameObject Cadenas;
+    public GameObject pOscuras;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -13,12 +14,13 @@ public class KeyTutorial : MonoBehaviour
             Destroy(Cadenas);
 
             // Llamar al método DestruirLlave después de 1 segundo
-            Invoke("DestruirLlave", 1f);
+            Invoke("DestruirLlave", 0.5f);
         }
     }
 
     void DestruirLlave()
     {
+        Instantiate(pOscuras, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
