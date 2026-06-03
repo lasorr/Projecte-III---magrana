@@ -8,6 +8,8 @@ public class Monjes : MonoBehaviour
     public GameObject dragg;
     public GameObject edificiCapitalistaAssociat; //referencia al prefab per instanciar prefab
 
+    public GameObject purpurina;
+
     public AudioClip[] monjaSounds;
 
     void Start()
@@ -28,6 +30,9 @@ public class Monjes : MonoBehaviour
 
         GameObject novaDragg = Instantiate(dragg, pos, rot);
         novaDragg.transform.SetParent(edificiCapitalistaAssociat.transform);
+
+        GameObject brilliMonja = Instantiate(purpurina, transform.position, Quaternion.identity);
+        Destroy(brilliMonja, 2f);
 
         Destroy(gameObject);
     }

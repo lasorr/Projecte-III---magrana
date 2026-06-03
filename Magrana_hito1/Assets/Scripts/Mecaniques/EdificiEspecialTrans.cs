@@ -19,6 +19,8 @@ public class EdificiEspecialTrans : MonoBehaviour
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
 
+    public GameObject brillPart;
+
     public AudioClip transformSound; //so transformacio edifici
     public AudioClip cadenesSound; //so trencar cadenes
     public AudioClip monjaDerrotadaSound; //so monja derrotada
@@ -150,6 +152,9 @@ public class EdificiEspecialTrans : MonoBehaviour
         );
         //aqui entra a al script del edifici bo i seteja propietaria etc
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
+
+        GameObject brilliComu = Instantiate(brillPart, transform.position, Quaternion.identity);
+        Destroy(brilliComu, 2f);
 
         Destroy(edificiCapitalistaAssociat); //aixo hauria de funcionar perf 
     }

@@ -11,6 +11,8 @@ public class PropietariaEdifici : MonoBehaviour
     public GameObject edificiCapitalistaAssociat; //prefab edifici capitalista per destransformar
     public GameObject edificiBoAssociat; // si mateix? //no cal declarar només fer servir gameObject
 
+    public GameObject polsPart;
+
     public bool edificiTransformat = false;
 
     public TimeManager TimeManager;
@@ -43,7 +45,10 @@ public class PropietariaEdifici : MonoBehaviour
                 pos,
                 rot
             );
- 
+
+            GameObject polsCapi = Instantiate(polsPart, transform.position, Quaternion.identity);
+            Destroy(polsCapi, 2f);
+
             Destroy(edificiBoAssociat);
         }
     }

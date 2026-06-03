@@ -21,6 +21,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public GameObject imatge2CopPrefab;
     public GameObject imatge3CopPrefab;
     public GameObject imatgeStarCopPrefab;
+    
+    public GameObject brillPart;
 
     //public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
     //AQUI com a cole catolic tampoc cal aquesta referncia perque ho pasa al instanciar el edifici
@@ -174,6 +176,9 @@ public class EdificiEspecialDesnon : MonoBehaviour
         {
             fill.SetParent(nouEdifici.transform);
         }
+
+        GameObject brilliComu = Instantiate(brillPart, transform.position, Quaternion.identity);
+        Destroy(brilliComu, 2f);
 
         Destroy(edificiCapitalistaAssociat);
     }

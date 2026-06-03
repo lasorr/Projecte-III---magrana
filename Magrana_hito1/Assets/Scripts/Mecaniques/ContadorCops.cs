@@ -29,6 +29,8 @@ public class ContadorCops : MonoBehaviour
 
     public PropietariaEdifici DeQuiEsAquestEdifici; // 0 = no és ni de J1 ni de J2, 1 = és de J1, 2 = és de J2
 
+    public GameObject brillPart;
+
     public TimeManager TimeManager;
 
     public AudioClip transformSound;
@@ -134,6 +136,10 @@ public class ContadorCops : MonoBehaviour
         );
 
         nouEdifici.GetComponent<PropietariaEdifici>().SetPropietari(propietaria, punts);
+
+        GameObject brilliComu = Instantiate(brillPart, transform.position, Quaternion.identity);
+        Destroy(brilliComu, 2f);
+        
         Destroy(edificiCapitalistaAssociat); // mogut laia
     }
 
