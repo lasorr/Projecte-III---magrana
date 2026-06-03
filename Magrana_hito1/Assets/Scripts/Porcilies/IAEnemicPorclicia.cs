@@ -118,6 +118,17 @@ public class IAEnemicPorclicia : MonoBehaviour
             {
                 agent.SetDestination(edificiObjectiu.transform.position);
 
+                // Buscar directament el fill amb el tag
+                foreach (Transform fill in edificiObjectiu.transform)
+                {
+                    if (fill.CompareTag("porcliciaObjectiu"))
+                    {
+                        GameObject obj = fill.gameObject;
+                        StartCoroutine(Parpellejar(obj));
+                        break;
+                    }
+                }
+
                 float dist = Vector3.Distance(agent.transform.position, edificiObjectiu.transform.position);
                 //Debug.Log("Distancia a l'edifici objectiu jug2: " + dist);
 
@@ -158,11 +169,11 @@ public class IAEnemicPorclicia : MonoBehaviour
     IEnumerator Parpellejar(GameObject obj)
     {
         Debug.Log("Porcilia està parpellejant l'edifici objectiu");
-        
+
         while (true)
         {
             obj.SetActive(!obj.activeSelf);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2f);
         }
     }
 
