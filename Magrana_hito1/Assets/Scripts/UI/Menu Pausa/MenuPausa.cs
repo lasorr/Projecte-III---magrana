@@ -42,7 +42,7 @@ public class MenuPausa : MonoBehaviour
     public void TancarOpcions()
     {
         menuOpcionsUI.SetActive(false);
-        pausaMenuUI.SetActive(true );
+        pausaMenuUI.SetActive(true);
     }
 
     void Pausa()
@@ -58,13 +58,20 @@ public class MenuPausa : MonoBehaviour
         SceneManager.LoadScene("SeleccioNivells");
     }
 
+    public void EscenaInici()
+    {
+        SceneManager.LoadScene("Inici");
+    }
+
     public void ObrirControls()
     {
         controlPanel.SetActive(true);
+        pausaMenuUI.SetActive(false);
     }
 
     public void TancarControls()
     {
         controlPanel.SetActive(false);
+        pausaMenuUI.SetActive(true);
     }
 }
