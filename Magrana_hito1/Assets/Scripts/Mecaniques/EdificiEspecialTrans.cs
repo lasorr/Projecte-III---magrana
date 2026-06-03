@@ -83,7 +83,7 @@ public class EdificiEspecialTrans : MonoBehaviour
 
     public void RebreCopEdificiEspecial(int propietariaArma, int punts)
     {
-        if (monjesDerrotades > 4)
+        if (monjesDerrotades >= 4)
         {
             if (propietariaArma == 1)
             {
@@ -123,7 +123,7 @@ public class EdificiEspecialTrans : MonoBehaviour
         }
         else
         {
-            Debug.Log("L'edifici especial ja està desbloquejat, no es poden registrar més cops fins que es transformi.");
+            Debug.Log("L'edifici especial està bloquejat, no es poden registrar més cops fins que es transformi.");
         }
     }
 
