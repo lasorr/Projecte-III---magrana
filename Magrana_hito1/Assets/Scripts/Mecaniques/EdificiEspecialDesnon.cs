@@ -83,6 +83,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
 
         if (polisDerrotats >= 4)
         {
+            GestioSo.instance.PlaySound(cadenesSound, transform, 1f);
             Destroy(cadenesBloqueig);
         }
     }
@@ -106,8 +107,6 @@ public class EdificiEspecialDesnon : MonoBehaviour
                     polisDerrotats = 0;
                     superstarJug1 = false; // Es gasta el superstar
 
-                    GestioSo.instance.PlaySound(transformClip, transform, 1f);
-                    GestioSo.instance.PlaySound(iaiaContentaSound, transform, 1f);
                 }
             }
 
@@ -125,9 +124,6 @@ public class EdificiEspecialDesnon : MonoBehaviour
                     copsJug2 = 0;
                     polisDerrotats = 0;
                     superstarJug2 = false; // es gasta el superstar
-                    
-                    GestioSo.instance.PlaySound(transformClip, transform, 1f);
-                    GestioSo.instance.PlaySound(iaiaContentaSound, transform, 1f);
                 }
             }
         }
@@ -137,7 +133,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
     {
         Debug.Log("Entra en activar transformacio edifici especial");
 
-        GestioSo.instance.PlaySound(cadenesSound, transform, 1f);
+        GestioSo.instance.PlaySound(iaiaContentaSound, transform, 1f);
+        GestioSo.instance.PlaySound(transformClip, transform, 1f);
         
         // Aturar so desnonament
         if (desnonamentAudioSource != null)
