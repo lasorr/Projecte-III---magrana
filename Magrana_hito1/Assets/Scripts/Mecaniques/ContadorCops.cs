@@ -162,7 +162,8 @@ public class ContadorCops : MonoBehaviour
     {
         Debug.Log("Mostrar imatge cop star");
 
-        Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+        Vector3 posicio = transform.position + new Vector3(0, 5f, 0);
+        Vector3 escala = new Vector3(1.2f, 1.2f, 1.2f);
 
         // Crear la imatge
         GameObject img = UnityEngine.Object.Instantiate(
@@ -170,6 +171,7 @@ public class ContadorCops : MonoBehaviour
             posicio,
             Quaternion.identity
         );
+        img.transform.localScale = escala;
 
         // Destruir-la després de 1 segon
         Destroy(img, 1f);
@@ -185,7 +187,8 @@ public class ContadorCops : MonoBehaviour
             Debug.Log("Mostrar imatge cop 1");
 
             // Posició una mica per sobre de l'objecte                
-            Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+            Vector3 posicio = transform.position + new Vector3(0, 5f, 0);
+            Vector3 escala = new Vector3(1.2f, 1.2f, 1.2f);
 
             // Crear la imatge
             GameObject img = UnityEngine.Object.Instantiate(
@@ -193,7 +196,7 @@ public class ContadorCops : MonoBehaviour
                 posicio,
                 Quaternion.identity
             );
-
+            img.transform.localScale = escala;
             // Destruir-la després de 1 segon
             Destroy(img, 1f);
 
@@ -203,7 +206,8 @@ public class ContadorCops : MonoBehaviour
             Debug.Log("Mostrar imatge cop 2");
 
             // Posició una mica per sobre de l'objecte
-            Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+            Vector3 posicio = transform.position + new Vector3(0, 5f, 0);
+            Vector3 escala = new Vector3(1.2f, 1.2f, 1.2f);
 
             // Crear la imatge
             GameObject img = UnityEngine.Object.Instantiate(
@@ -211,7 +215,7 @@ public class ContadorCops : MonoBehaviour
                 posicio,
                 Quaternion.identity
             );
-
+            img.transform.localScale = escala;
             // Destruir-la després de 1 segon
             Destroy(img, 1f);
 
@@ -221,7 +225,8 @@ public class ContadorCops : MonoBehaviour
             Debug.Log("Mostrar imatge cop 3");
 
             // Posició una mica per sobre de l'objecte
-            Vector3 posicio = transform.position + new Vector3(0, 3f, 0);
+            Vector3 posicio = transform.position + new Vector3(0, 5f, 0);
+            Vector3 escala = new Vector3(1.2f, 1.2f, 1.2f);
 
             // Crear la imatge
             GameObject img = UnityEngine.Object.Instantiate(
@@ -229,7 +234,7 @@ public class ContadorCops : MonoBehaviour
                 posicio,
                 Quaternion.identity
             );
-
+            img.transform.localScale = escala;
             // Destruir-la després de 1 segon
             Destroy(img, 1f);
 
