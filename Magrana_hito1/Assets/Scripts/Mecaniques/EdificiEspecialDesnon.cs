@@ -35,6 +35,7 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public AudioClip cadenesSound; //so trencar cadenes
     public AudioClip aviaTristaSound;
     public AudioClip iaiaContentaSound;
+    public AudioClip porcliciaDerrotatSound;
 
     void Awake()
     {
@@ -78,6 +79,8 @@ public class EdificiEspecialDesnon : MonoBehaviour
     public void RegistrarPorcDerrotat()
     {
         polisDerrotats++;
+
+        GestioSo.instance.PlaySound(porcliciaDerrotatSound, transform, 1f); // SO PORC DERROTAT
 
         Debug.Log("Polis derrotats: " + polisDerrotats);
 
