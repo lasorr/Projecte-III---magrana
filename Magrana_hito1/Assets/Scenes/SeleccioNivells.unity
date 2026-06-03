@@ -627,7 +627,6 @@ GameObject:
   - component: {fileID: 304676816}
   - component: {fileID: 304676815}
   - component: {fileID: 304676818}
-  - component: {fileID: 304676819}
   m_Layer: 5
   m_Name: Nivell2Boto
   m_TagString: Untagged
@@ -694,14 +693,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 304676816}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 523210167}
         m_TargetAssemblyTypeName: SeleccioNivells, Assembly-CSharp
-        m_MethodName: CarergarNivell2
+        m_MethodName: CarregarNivell2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -762,20 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaThreshold: 0.1
---- !u!114 &304676819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304676813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca099c5abb7cb4b7c86882db235ef833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexNivell: 5
-  boto: {fileID: 304676815}
 --- !u!1 &309273940
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +774,6 @@ GameObject:
   - component: {fileID: 309273943}
   - component: {fileID: 309273942}
   - component: {fileID: 309273945}
-  - component: {fileID: 309273946}
   m_Layer: 5
   m_Name: Nivell1Boto
   m_TagString: Untagged
@@ -856,14 +840,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 309273943}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 523210167}
         m_TargetAssemblyTypeName: SeleccioNivells, Assembly-CSharp
-        m_MethodName: CarergarNivell1
+        m_MethodName: CarregarNivell1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -924,20 +908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaThreshold: 0.1
---- !u!114 &309273946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309273940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca099c5abb7cb4b7c86882db235ef833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexNivell: 4
-  boto: {fileID: 309273942}
 --- !u!1 &398442126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1548,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1298027562}
   m_OnClick:
     m_PersistentCalls:
@@ -1805,43 +1775,8 @@ PrefabInstance:
     - {fileID: 4160965268216200478, guid: 13740a418d27444baa5a227462234be8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9015315144022150947, guid: 13740a418d27444baa5a227462234be8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1374053108}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13740a418d27444baa5a227462234be8, type: 3}
---- !u!1 &1374053105 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9015315144022150947, guid: 13740a418d27444baa5a227462234be8, type: 3}
-  m_PrefabInstance: {fileID: 1374053104}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1374053106 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1719572871369388963, guid: 13740a418d27444baa5a227462234be8, type: 3}
-  m_PrefabInstance: {fileID: 1374053104}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1374053107 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 9002790400446299835, guid: 13740a418d27444baa5a227462234be8, type: 3}
-  m_PrefabInstance: {fileID: 1374053104}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1374053108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374053105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ca6fe1ebd18423798ac8fb011034d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSource: {fileID: 1374053107}
-  sfxSource: {fileID: 1374053106}
-  musicClip: {fileID: 8300000, guid: fdd22d682ad4547c390340067ccd84d6, type: 3}
-  clickSFX: {fileID: 8300000, guid: 1d95b7e236a5e4774a05d3c77623d974, type: 3}
-  focusedSFX: {fileID: 8300000, guid: d8b14e6a40d054462a8f3257de28e2ff, type: 3}
 --- !u!1 &1668594057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,7 +1926,6 @@ GameObject:
   - component: {fileID: 1948148817}
   - component: {fileID: 1948148816}
   - component: {fileID: 1948148819}
-  - component: {fileID: 1948148820}
   m_Layer: 5
   m_Name: TutorialBoto
   m_TagString: Untagged
@@ -2065,7 +1999,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 523210167}
         m_TargetAssemblyTypeName: SeleccioNivells, Assembly-CSharp
-        m_MethodName: CarergarTutorial
+        m_MethodName: CarregarTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2126,20 +2060,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaThreshold: 0.1
---- !u!114 &1948148820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948148814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca099c5abb7cb4b7c86882db235ef833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexNivell: 3
-  boto: {fileID: 1948148816}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

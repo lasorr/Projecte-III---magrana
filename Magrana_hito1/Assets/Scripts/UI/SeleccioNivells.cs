@@ -1,30 +1,31 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections;
-using System.Collections.Generic;
 
 public class SeleccioNivells : MonoBehaviour
 {
     public float alphaThreshold = 0.1f;
+
     void Start()
     {
-        this.GetComponent<Image>().alphaHitTestMinimumThreshold = alphaThreshold;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = alphaThreshold;
     }
 
-    public void CarergarTutorial()
+    public void CarregarTutorial()
     {
+        Debug.Log("Carregant Tutorial...");
         SceneManager.LoadScene("Tutorial");
     }
 
-    public void CarergarNivell1()
+    public void CarregarNivell1()
     {
+        Debug.Log("Carregant Nivell 1...");
         SceneManager.LoadScene("Nivell_1");
     }
 
-    public void CarergarNivell2()
+    public void CarregarNivell2()
     {
+        Debug.Log("Carregant Nivell 2...");
         SceneManager.LoadScene("Nivell_2");
     }
 }
