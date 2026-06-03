@@ -76,6 +76,7 @@ public class Moviment_jugadora : MonoBehaviour
     {
         if (stunJug || !potMoure)
         {
+            //ANIMATOR STUN
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
 
