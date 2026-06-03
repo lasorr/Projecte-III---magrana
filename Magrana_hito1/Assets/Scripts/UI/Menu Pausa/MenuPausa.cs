@@ -55,7 +55,7 @@ public class MenuPausa : MonoBehaviour
     public void EscenaSeleccioNivells()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("LevelSelection"); //POSAR NOM ESCENA MENU NIVELLS
+        SceneManager.LoadScene("SeleccioNivells");
     }
 
     public void ObrirControls()
