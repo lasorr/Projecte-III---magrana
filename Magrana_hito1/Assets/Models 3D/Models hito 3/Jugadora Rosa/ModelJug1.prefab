@@ -157,12 +157,16 @@ MonoBehaviour:
   animator: {fileID: 0}
   ScriptPropietaria: {fileID: 0}
   dragg: {fileID: 0}
+  ScriptContador: {fileID: 0}
   propietariaArma: 0
   ScriptMoviment1: {fileID: 0}
   ScriptMoviment2: {fileID: 0}
-  EdificiDragg: {fileID: 0}
-  EdificiCalvo: {fileID: 0}
   IAporcilia: {fileID: 0}
+  swingSound: {fileID: 0}
+  bonkSound: {fileID: 0}
+  porcliciaDamageSound: {fileID: 0}
+  gestioSo: {fileID: 0}
+  TimeManager: {fileID: 0}
 --- !u!1001 &8069726252721308381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,7 +277,7 @@ Animator:
   m_GameObject: {fileID: 7150595343872442252}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e7712408b67c72419521cc05b18f299, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

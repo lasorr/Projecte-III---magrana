@@ -61,7 +61,6 @@ public class Moviment_jugadora : MonoBehaviour
         }
 
         // SO STUN
-        /*
         if (stunJug && !stunSoundPlayed)
         {
             GestioSo.instance.PlaySound(stunSound, transform, 1f);
@@ -70,7 +69,7 @@ public class Moviment_jugadora : MonoBehaviour
         else if (!stunJug)
         {
             stunSoundPlayed = false; // Reiniciar para el próximo stun
-        }*/
+        }
     }
 
     private void FixedUpdate()
