@@ -60,8 +60,6 @@ public class Colpejar : MonoBehaviour
         animator.SetBool("Colpejar", true);
 
         jaHaColpejat = false;
-        ScriptMoviment1.potMoure = false;
-        ScriptMoviment2.potMoure = false;
         Arma.enabled = true;
 
         // temps real d’impacte (AJUSTA A L’ANIMACIÓ)
@@ -70,8 +68,6 @@ public class Colpejar : MonoBehaviour
         Arma.enabled = false;
 
         animator.SetBool("Colpejar", false);
-        ScriptMoviment1.potMoure = true;
-        ScriptMoviment2.potMoure = true;
         jaHaColpejat = false;
     }
 

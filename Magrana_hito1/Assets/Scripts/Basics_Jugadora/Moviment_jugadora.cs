@@ -8,6 +8,7 @@ public class Moviment_jugadora : MonoBehaviour
     public InputActionReference move;
     public Animator animator;
     public bool potMoure = true;
+    public InputActionReference cop;
 
     public bool stunJug = false;
     
@@ -70,6 +71,17 @@ public class Moviment_jugadora : MonoBehaviour
         {
             stunSoundPlayed = false; // Reiniciar para el próximo stun
         }
+
+        if (cop.action.WasPressedThisFrame())
+        {
+            potMoure = false;
+            Invoke("emVullMoure", 2.5f);
+        }
+    }
+
+    private void emVullMoure()
+    {
+        potMoure = true;
     }
 
     private void FixedUpdate()

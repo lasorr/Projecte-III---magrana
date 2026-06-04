@@ -7,8 +7,6 @@ public class Colpejar_Tutorial : MonoBehaviour
     public BoxCollider Arma; 
     public InputActionReference cop;
     public Animator animator;
-
-    public ContadorCops ScriptContador;
     
     private bool jaHaColpejat = false;
 
@@ -55,8 +53,6 @@ public class Colpejar_Tutorial : MonoBehaviour
         animator.SetBool("Colpejar", true);
 
         jaHaColpejat = false;
-        ScriptMoviment1.potMoure = false;
-        ScriptMoviment2.potMoure = false;
         Arma.enabled = true;
 
         // temps real d’impacte (AJUSTA A L’ANIMACIÓ)
@@ -65,8 +61,6 @@ public class Colpejar_Tutorial : MonoBehaviour
         Arma.enabled = false;
 
         animator.SetBool("Colpejar", false);
-        ScriptMoviment1.potMoure = true;
-        ScriptMoviment2.potMoure = true;
         jaHaColpejat = false;
     }
 
@@ -79,7 +73,7 @@ public class Colpejar_Tutorial : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            ContadorCops contadorScript = other.GetComponent<ContadorCops>();
+            ContadorCops_Tutorial contadorScript = other.GetComponent<ContadorCops_Tutorial>();
 
             if (contadorScript != null)
             {
@@ -102,7 +96,7 @@ public class Colpejar_Tutorial : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            EdificiEspecialDesnon desnonScript = other.GetComponent<EdificiEspecialDesnon>();
+            EdificiEspecialDesnon_Tutorial desnonScript = other.GetComponent<EdificiEspecialDesnon_Tutorial>();
 
             if (desnonScript != null)
             {
@@ -111,22 +105,6 @@ public class Colpejar_Tutorial : MonoBehaviour
             else
             {
                 Debug.Log("Desde colpejar no reb Edifici calvo");
-            }
-        }
-
-        else if (other.CompareTag("EspecialMonja")) //tag del objecte especial cole catolic
-        {
-            jaHaColpejat = true;
-
-            EdificiEspecialTrans transScript = other.GetComponent<EdificiEspecialTrans>();
-
-            if (transScript != null)  //
-            {
-                transScript.RebreCopEdificiEspecial(propietariaArma, 3);
-            }
-            else
-            {
-                Debug.Log("Desde colpejar no reb contador cops script MONJAX");
             }
         }
 
@@ -141,7 +119,7 @@ public class Colpejar_Tutorial : MonoBehaviour
         {
             jaHaColpejat = true;
 
-            other.GetComponent<PorcliciaDesnon>().Derrotada();
+            other.GetComponent<PorcliciaDesnon_Tutorial>().Derrotada();
         }
 
         else if (other.CompareTag("Porclicia")) //porcs ai per evitar transform
