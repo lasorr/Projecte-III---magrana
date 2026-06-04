@@ -90,6 +90,11 @@ public class Moviment_jugadora : MonoBehaviour
         {
             //ANIMATOR STUN
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+            if (stunJug)
+            {
+                animator.SetBool("Emputjar", true);
+                Invoke("DesactivarStun", 2.05f);
+            }
         }
 
         else if (potMoure)
@@ -105,5 +110,10 @@ public class Moviment_jugadora : MonoBehaviour
                 modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, desti, rotationSpeed * Time.fixedDeltaTime);
             }
         }
+    }
+    private void DesactivarStun()
+    {
+        stunJug = false;
+        animator.SetBool("Emputjar", false);
     }
 }

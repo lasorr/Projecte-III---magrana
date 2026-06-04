@@ -20,7 +20,7 @@ public class PowerDown : MonoBehaviour
             moviment = Jug2.GetComponent<Moviment_jugadora>();
         }
 
-            moviment.potMoure = false;  // Accedeix directament al bool
+            moviment.stunJug = true;  // Accedeix directament al bool
             Invoke("ActivarMoviment", 3f);        
     }
 
@@ -29,7 +29,7 @@ public class PowerDown : MonoBehaviour
         if (moviment != null) 
         {
             Debug.Log("Entra al void activar moviment");
-            moviment.potMoure = true;
+            moviment.stunJug = false;
         }
         else
         {

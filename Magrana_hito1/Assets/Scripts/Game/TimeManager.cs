@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -167,27 +168,26 @@ public class TimeManager : MonoBehaviour
 
             if(edificisTransformatJug1>edificisTransformatJug2){
                 winner.text="GUANYA J1";
-                Debug.Log($"GUANYADORA: JUGADORA 1");  
             }
 
             else if(edificisTransformatJug1<edificisTransformatJug2){
                 winner.text="GUANYA J2";
-                Debug.Log($"GUANYADORA: JUGADORA 2");            
             }
 
             else if(edificisTransformatJug1==edificisTransformatJug2){
                 winner.text="EMPAT";
-                Debug.Log($"EMPAT");            
             }
             GestioSo.instance.PlaySound(winnerClip, transform, 1f);
         }
-        StartCoroutine(waitAndReturnToLevelSelect(winnerScreenDuration));
+
+        Invoke("TornarMenu", 5f);
     }
 
-    IEnumerator waitAndReturnToLevelSelect(float waitTime)
+    // NOVA FUNCIÓ PER TORNAR AL MENU PRINCIPAL DESPRÉS DE MOSTRAR LA PANTALLA DE GUANYADOR
+    void TornarMenu()
     {
-        yield return new WaitForSeconds(waitTime);
-        ScriptNivellCompletat.DesbloquejarSeguent();
+        SceneManager.LoadScene("SeleccioNivells");
+        Debug.Log("Tornant al menú principal...");
     }
 
     // NOVA FUNCI�:
